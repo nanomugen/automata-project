@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://br1gfpl0sb5x3"]
+
+[ext_resource type="Shader" uid="uid://dyu1nexohn66h" path="res://shaders/circle.gdshader" id="1_f7lrs"]
+[ext_resource type="Texture2D" uid="uid://fb57f2xl7otf" path="res://assets/10x10.png" id="2_d05vm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iviqo"]
+shader = ExtResource("1_f7lrs")
+shader_parameter/border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh10o"]
+
+[node name="Ring" type="Sprite2D"]
+material = SubResource("ShaderMaterial_iviqo")
+scale = Vector2(60.8, 60.8)
+texture = ExtResource("2_d05vm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fh10o")

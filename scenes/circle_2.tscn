@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://djlor1g7r75i6"]
+
+[ext_resource type="Texture2D" uid="uid://cqadi3d47digc" path="res://assets/circle.png" id="1_yxae3"]
+[ext_resource type="Shader" uid="uid://dyu1nexohn66h" path="res://shaders/circle.gdshader" id="2_hgat3"]
+[ext_resource type="Texture2D" uid="uid://fb57f2xl7otf" path="res://assets/10x10.png" id="3_l8gy5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lp6xw"]
+shader = ExtResource("2_hgat3")
+shader_parameter/border_color = Color(0, 0, 0, 1)
+
+[node name="Circle2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+visible = false
+scale = Vector2(3, 3)
+texture = ExtResource("1_yxae3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(3, 3)
+build_mode = 1
+polygon = PackedVector2Array(-0.33333334, 138, 12, 137.33334, 23.666668, 135.66667, 38.666668, 132, 53.333336, 127, 67, 120.333336, 80, 111.66667, 91.66667, 103, 103.66667, 91, 113.333336, 78.66667, 122.66667, 64, 130.66667, 43.666668, 136, 22.666668, 137.66667, -0.33333334, 136.33334, -18.666668, 133.33334, -34, 129.66667, -46.666668, 122, -63.666668, 113.66667, -77.66667, 99.66667, -94.66667, 83.66667, -109.66667, 64, -122.333336, 39.666668, -132.66667, 0, -138.66667, -27.333334, -135, -55.333336, -127, -72.66667, -116.66667, -85.66667, -108, -98.333336, -96.333336, -111.333336, -82, -120.66667, -66.66667, -128, -51.333336, -132, -39, -136, -24, -137.66667, -3.6666667, -137, 15.333334, -135, 28, -131, 41.666668, -126.333336, 55, -119, 69.333336, -106.333336, 87.333336, -90.66667, 104, -80.333336, 111.66667, -69, 119.333336, -51, 128, -32, 134.33334, -16.333334, 136.66667)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_lp6xw")
+scale = Vector2(87.8, 87.8)
+texture = ExtResource("3_l8gy5")

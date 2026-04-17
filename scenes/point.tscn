@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dx35h0vtsw52k"]
+
+[ext_resource type="Script" uid="uid://bakenx2ucop7c" path="res://scripts/point.gd" id="1_r0uly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tue75"]
+size = Vector2(100, 100)
+
+[node name="point" type="Node2D" unique_id=404380536]
+script = ExtResource("1_r0uly")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1466431849]
+collision_mask = 2
+
+[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=1196000162]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 0.70000005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1952890186]
+shape = SubResource("RectangleShape2D_tue75")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

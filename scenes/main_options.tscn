@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ct381273fjas3"]
+
+[ext_resource type="Script" uid="uid://ccuqvqisb7omb" path="res://scripts/main_options.gd" id="1_sk2vr"]
+[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_hfi38"]
+
+[node name="main_options" type="Node2D" unique_id=634228196]
+script = ExtResource("1_sk2vr")
+
+[node name="options_control" type="Control" parent="." unique_id=1266434734]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="back_button" type="Button" parent="options_control" unique_id=1397900642]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 214.0
+offset_right = 651.0
+offset_bottom = 285.0
+text = "BACK TO MAIN MENU"
+
+[node name="Label" type="Label" parent="." unique_id=548042373]
+offset_left = 208.0
+offset_top = 22.0
+offset_right = 810.0
+offset_bottom = 150.0
+text = "NÃO TEM NADA AQUI AINDA"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="fade_trasition" parent="." unique_id=1907557553 instance=ExtResource("2_hfi38")]
+
+[node name="fade_out_timer" type="Timer" parent="fade_trasition" unique_id=1913183551]
+wait_time = 1.15
+
+[node name="fade_in_timer" type="Timer" parent="fade_trasition" unique_id=1716847696]
+wait_time = 1.15
+
+[connection signal="pressed" from="options_control/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="fade_trasition/fade_out_timer" to="." method="_on_fade_out_timer_timeout"]
+[connection signal="timeout" from="fade_trasition/fade_in_timer" to="." method="_on_fade_in_timer_timeout"]

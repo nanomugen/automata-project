@@ -1,0 +1,114 @@
+extends Node
+
+
+##
+"""
+####################################################################################################
+TODO
+####################################################################################################
+
+
+FAZER BOTÕES E PORTAS INTERMEDIÁRIOS PARA ABRIR E FECHAR PASSAGENS
+
+
+
+COLOCAR O VALOR DE CADA BOTÃO EM UMA CAIXA DE TEXTO SOBRE O BOTÃO E COLCOAR O VALOR ATUAL NO HUD
+
+CRIAR O OBJETO PHASE PARA COLOCAR AS FASES
+
+EDITAR O EXIT PARA PERGUNTAR SE É O FINAL, SE FOR CONCLUIR A FASE
+
+FAZER UM MENU PARA QUANDO APERTAR ESC
+
+DOUBLE JUMP
+
+WALL SLIDE
+
+
+CAMERA
+LIMITAÇÕES DE CAMERA
+CAMERA SMOOTH (?)
+CAMERA SHAKE/CAMERA MICRO FREEZE/SLOW MOTION
+
+CRIAR PLATAFORMAS
+
+CRIAR OBSTACULOS
+- ESPINHOS
+- MAQUINAS DE ATIRAR LASER (FAZEM VOLTAR AO INICIO DO STATE(?))
+
+CRIAR ARMAS QUE ATIRAM E FAZEM VOLTAR AO INIT DO STATE
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+UM CONCEITO DE PLATFORMVANIA/PLATDROIDVANIA
+UMA ESPÉCIE DE METROIDVANIA PORÉM NÃO EM UM MAPA CONTINUO,
+MAS NO ESQUEMA DE FASES, COMO SE EM MÁRIO WORLD TIVESSEM SEGREDOS 
+QUE SÓ SÃO ACESSÍVEIS DEPOIS DE ADQUIRIR HABILIDADES/FERRAMENTAS
+HÁ UM BACKTRACKING NO ESQUEMA DE FASES
+MEGAMAN TEM UM POUCO DISSO, PORÉM É MUITO POUCO E GERALMENTE OPCIONAL
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+
+SFX
+
+MAPA/HUD
+PARA O MAPA É NECESSÁRIO FAZER UMA CONTA DE TODOS OS STATES POSSIVEIS E VER A DISTANCIA ENTRE ELES PARA DESENHAR
+
+MENU
+- OBTER INFORMAÇÕES PARA VER COMO SALVAR INFO DE FASES E PROGRESSO, VARIAVEIS GLOBAIS ETC
+- FAZER UM MENU DAS FASES, DEPOIS DO MAIN_MENU
+
+
+
+
+
+
+
+FAZER O HUMAN GLOBAL DE ALGUMA FORMA, PARA NÃO TER QUE REFERENCIAR EM TODOS OS STATES
+
+CHECAR DE TEMPO EM TEMPO:
+
+- MASKS E LAYERS
+(HUMAN FICA NA LAYER 2 MASK 1, OS OBJETOS QUE SÓ DEVEM INTERAGIR COM ELE O CONTRÁRIO)
+(CHEGAR SE É ISSO MESMO)
+
+OBSERVAR O ORDERING ->Z INDEX
+HUMAN ESTÁ NO 2 E O RESTO NO 0 POR AGORA
+MUDARÁ SE PRECISAR COLOCAR ALGUMA COISA 'A FRENTE' DO HUMAN
+
+
+####################################################################################################
+WORK IN PROGRESS
+####################################################################################################
+
+
+
+
+
+####################################################################################################
+DONE
+####################################################################################################
+DESACOPLAR O INIT DOS STATES PARA PODER MUDAR DE LUGAR
+
+saidas
+//talvez os valores devessem ser associados as saídas, já que podem ter mais de uma
+devem mudar de cor quando forem habilitadas
+os nexts também devem ser associados as saídas
+
+MUDAR O PULO, DE FORMA QUE SE SOLTAR O BOTÃO DE PULO PARA DE PULAR
+
+TRANSIÇÃO (BLOQUEAR MOVIMENTOS ENTRE STATES)
+
+COYOTE TIME
+
+
+####################################################################################################
+####################################################################################################
+
+####################################################################################################
+####################################################################################################
+"""
+##
