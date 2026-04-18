@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var jump_time_to_peak: float = 0.4
 @export var jump_time_to_descent: float = 0.3
 
+@onready var test_rect: ColorRect = $test_rect
 
 @onready var jump_velocity:float = (2.0 * jump_height)/jump_time_to_peak * -1.0
 @onready var jump_gravity:float = (-2.0 * jump_height)/(jump_time_to_peak * jump_time_to_peak) * -1.0
@@ -42,15 +43,19 @@ func _physics_process(delta: float) -> void:
 	if freeze:
 		return
 	if not is_on_floor():
+		test_rect.color = Color(1,1,0)
 		if !jump_pressed and !coyote_jump:
 			coyote_jump = true
+			#test_rect.color = Color(0,1,0)
 			timer_coyote_jump.start()
 			print("started")
 		if !cancel_gravity:
 			velocity.y += get_gravity2() * delta
 			velocity.y = clamp(velocity.y,velocity.y,1500)
 	else:
+		test_rect.color = Color(0,0,1)
 		timer_coyote_jump.stop()
+		#test_rect.color = Color(1,0,0)
 		coyote_jump = false
 		jump_pressed=false
 		dashed_once = false
@@ -174,5 +179,6 @@ func _on_time_idle_wait_timeout() -> void:
 func _on_timer_coyote_jump_timeout() -> void:
 	timer_coyote_jump.stop()
 	coyote_jump = false
+	#test_rect.color = Color(1,0,0)
 	jump_pressed = true
 	print("finished")
