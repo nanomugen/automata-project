@@ -53,6 +53,8 @@ func check_exits()->void:
 func transition_next_state(exit:Exit)->void:
 	print(exit.is_final)
 	if exit.is_final :
+		FileSystem.save_data["test_value"] += 1
+		FileSystem._save()
 		get_tree().change_scene_to_file("res://scenes/congratulations.tscn")
 	if exit.nextState == null:
 		return

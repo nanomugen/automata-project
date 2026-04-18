@@ -19,7 +19,7 @@ z_index = 2
 position = Vector2(706, -559)
 
 [node name="Start_State" parent="." unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("2_sugp2")]
-position = Vector2(3427, -2665)
+position = Vector2(1000, 0)
 init = NodePath("init")
 points = [NodePath("point"), NodePath("point2")]
 exits = [NodePath("exit")]
@@ -114,7 +114,7 @@ position = Vector2(428, -884)
 position = Vector2(554, -1138)
 
 [node name="State" parent="." unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("2_sugp2")]
-position = Vector2(3500, 0)
+position = Vector2(3670, 0)
 init = NodePath("init2")
 points = [NodePath("point3")]
 exits = [NodePath("exit2")]
@@ -254,7 +254,7 @@ position = Vector2(-681, -1666)
 scale = Vector2(0.6, 1)
 
 [node name="State2" parent="." unique_id=1827339490 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("2_sugp2")]
-position = Vector2(5502, 2102)
+position = Vector2(6577, 0)
 init = NodePath("init")
 points = [NodePath("point"), NodePath("point2"), NodePath("point3")]
 exits = [NodePath("exit"), NodePath("exit2"), NodePath("exit3")]
@@ -292,3 +292,8 @@ is_final = true
 
 [node name="ruler" parent="." unique_id=276425642 instance=ExtResource("5_tbgi4")]
 position = Vector2(2776, -2692)
+
+[node name="testValue" type="Label" parent="." unique_id=2003271680]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "teste de texto"
