@@ -21,7 +21,7 @@ func reset_exit():
 	label.text = "0.0/"+str(goal)
 	color_rect.color = color_closed
 	inside_area = false
-
+	print("test")
 func update_opened(current_value) -> void:
 	label.text = str(current_value)+"/"+str(goal)
 	if(current_value == goal):
