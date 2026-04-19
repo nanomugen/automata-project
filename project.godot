@@ -21,7 +21,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-FileSystem="*uid://g8nw5uc88ylv"
+DataSystem="*uid://g8nw5uc88ylv"
+PlayerHudControl="*uid://dosv2jc52cjor"
 
 [input]
 

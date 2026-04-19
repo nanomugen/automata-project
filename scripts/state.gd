@@ -8,7 +8,7 @@ extends Node2D
 @export var human: Human
 
 var initPos:Vector2; 
-var current_value:float = 0.0
+var current_value:int = 0
 var this_is_current_state:bool = false
 func _ready() -> void:
 	initPos = init.position;
@@ -47,14 +47,17 @@ func check_exits()->void:
 	var filtered_exits:Array[Exit] = exits.filter(check_inside_area) 
 	print("size filtered exits: " + str(filtered_exits.size()))
 	if filtered_exits.size() > 0:
-		if filtered_exits[0].goal == current_value:
+		#if filtered_exits[0].goal == current_value:
+		if filtered_exits[0].opened:
 			transition_next_state(filtered_exits[0])
 
 func transition_next_state(exit:Exit)->void:
+	PlayerHudControl.clear_hud()
 	print(exit.is_final)
 	if exit.is_final :
-		FileSystem.save_data["test_value"] += 1
-		FileSystem._save()
+		DataSystem.DATA_OBJECT["test_value"] += 1
+		DataSystem._save()
+		
 		get_tree().change_scene_to_file("res://scenes/congratulations.tscn")
 	if exit.nextState == null:
 		return
@@ -71,6 +74,7 @@ func transition_next_state(exit:Exit)->void:
 	var transition_camera:Camera2D = human.get_node("Camera2D")
 	transition_camera.reparent(human.get_parent())
 	transition_camera.position_smoothing_enabled = false
+	transition_camera.drag_vertical_offset = 0
 	
 	human.position = pos
 	human.freeze = true
@@ -87,6 +91,7 @@ func transition_next_state(exit:Exit)->void:
 	tween.parallel().tween_property(transition_camera,"zoom",Vector2(1,1),1)
 	tween.tween_callback(transition_camera.reparent.bind(human))
 	tween.tween_property(human,"freeze",false,0)
+	tween.tween_property(transition_camera,"drag_vertical_offset",-1.0,0.5)
 	tween.tween_property(transition_camera,"position",Vector2(0,0),1)
 	tween.tween_property(transition_camera,"position_smoothing_enabled",true,0)
 	

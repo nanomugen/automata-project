@@ -37,6 +37,6 @@ theme_override_font_sizes/font_size = 128
 text = "PARABÉNS!!"
 
 [node name="timer_to_main_menu" type="Timer" parent="." unique_id=1675534592]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="timeout" from="timer_to_main_menu" to="." method="_on_timer_to_main_menu_timeout"]

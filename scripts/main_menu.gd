@@ -17,7 +17,7 @@ func _on_option_pressed() -> void:
 	tween.tween_callback(go_to_options)
 	
 func go_to_main():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/phase_01.tscn")
 	
 func go_to_options():
 	get_tree().change_scene_to_file("res://scenes/main_options.tscn")
@@ -50,7 +50,7 @@ func _ready() -> void:
 
 func _on_fade_in_timer_timeout() -> void:
 	if button_type == "start":
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		get_tree().change_scene_to_file("res://scenes/phase_01.tscn")
 	if button_type == "options":
 		
 		

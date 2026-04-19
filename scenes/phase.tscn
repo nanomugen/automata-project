@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4bntx5n7fu7c"]
+
+[ext_resource type="Script" uid="uid://b5xmj5cowppbn" path="res://scripts/player_hud.gd" id="1_blum4"]
+
+[node name="phase" type="Node2D" unique_id=43470455]
+script = ExtResource("1_blum4")

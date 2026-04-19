@@ -579,6 +579,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="test_rect" type="ColorRect" parent="." unique_id=1701136980]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

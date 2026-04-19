@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://j2bta7crk76w"]
+
+[ext_resource type="Script" uid="uid://hcym00mkjtlf" path="res://scripts/exit_item_hud.gd" id="1_0t176"]
+
+[node name="exit_item_hud" type="Control" unique_id=1831623706]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0t176")
+
+[node name="enabled" type="ColorRect" parent="." unique_id=54726654]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="value" type="Label" parent="." unique_id=288160180]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 65.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0.45411357, 0.45411357, 1)
+theme_override_font_sizes/font_size = 13

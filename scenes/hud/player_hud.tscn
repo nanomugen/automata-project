@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dosv2jc52cjor"]
+
+[ext_resource type="Script" uid="uid://b5xmj5cowppbn" path="res://scripts/player_hud.gd" id="1_7em14"]
+
+[node name="player_hud" type="CanvasLayer" unique_id=1674099476]
+process_mode = 3
+layer = 2
+script = ExtResource("1_7em14")
+
+[node name="Control" type="Control" parent="." unique_id=660459479]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="exits_label" type="Label" parent="Control" unique_id=1055924765]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 28
+
+[node name="points_label" type="Label" parent="Control" unique_id=682098694]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 20.0
+offset_right = 440.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 2
+
+[node name="Discovery" type="Control" parent="." unique_id=1876185680]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buttons" type="Control" parent="." unique_id=1293102824]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 500.0
+grow_horizontal = 0

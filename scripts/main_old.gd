@@ -1,4 +1,5 @@
 extends Node2D
+var comment = """"
 @onready var human: Human = $human
 @export var start_state: State;
 @onready var test_value: Label = $testValue
@@ -11,3 +12,4 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	pass
+"""

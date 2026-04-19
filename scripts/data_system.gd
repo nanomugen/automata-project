@@ -1,10 +1,11 @@
 extends Node2D
 
-const FILE_PATH: String = "user://file_save.json"
+const FILE_PATH: String = "user://data_system.json"
 
-var save_data: Dictionary = {
+var DATA_OBJECT: Dictionary = {
 	"test_value" : 0,
-	"test_value 2": 0
+	"test_value 2": 0,
+	"version": 0.1
 }
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 func _save() -> void:
 	var file:FileAccess = FileAccess.open(FILE_PATH,FileAccess.WRITE)
-	file.store_var(save_data)
+	file.store_var(DATA_OBJECT)
 	file.close()
 	
 func _load() -> void:
@@ -20,6 +21,6 @@ func _load() -> void:
 		var file: FileAccess = FileAccess.open(FILE_PATH,FileAccess.READ)
 		var data:Dictionary = file.get_var()
 		for i in data:
-			if save_data.has(i):
-				save_data[i] = data[i]
+			if DATA_OBJECT.has(i):
+				DATA_OBJECT[i] = data[i]
 		file.close()

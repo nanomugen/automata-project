@@ -6,13 +6,14 @@ extends Node
 ####################################################################################################
 TODO
 ####################################################################################################
-
+HUD
+LISTAR OS BOTOES E SAIDAS E OS VALORES ATUAIS
+SERIA BOM LISTAR APENAS OS BOTÕES E SAÍDAS QUE JÁ FORAM LOCALIZADOS
+ESCONDER OS VALORES DOS BOTÕES E DAS SAÍDAS ATÉ QUE SE ENTRE NA AREA DELES PELA PRIMEIRA VEZ
 
 FAZER BOTÕES E PORTAS INTERMEDIÁRIOS PARA ABRIR E FECHAR PASSAGENS
 
-
-
-COLOCAR O VALOR DE CADA BOTÃO EM UMA CAIXA DE TEXTO SOBRE O BOTÃO E COLCOAR O VALOR ATUAL NO HUD
+HUD PARA BOTÕES (TUTORIAL)
 
 CRIAR O OBJETO PHASE PARA COLOCAR AS FASES
 
@@ -40,16 +41,7 @@ CRIAR ARMAS QUE ATIRAM E FAZEM VOLTAR AO INIT DO STATE
 
 
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-UM CONCEITO DE PLATFORMVANIA/PLATDROIDVANIA
-UMA ESPÉCIE DE METROIDVANIA PORÉM NÃO EM UM MAPA CONTINUO,
-MAS NO ESQUEMA DE FASES, COMO SE EM MÁRIO WORLD TIVESSEM SEGREDOS 
-QUE SÓ SÃO ACESSÍVEIS DEPOIS DE ADQUIRIR HABILIDADES/FERRAMENTAS
-HÁ UM BACKTRACKING NO ESQUEMA DE FASES
-MEGAMAN TEM UM POUCO DISSO, PORÉM É MUITO POUCO E GERALMENTE OPCIONAL
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
 
 
 SFX
@@ -70,6 +62,8 @@ MENU
 FAZER O HUMAN GLOBAL DE ALGUMA FORMA, PARA NÃO TER QUE REFERENCIAR EM TODOS OS STATES
 
 CHECAR DE TEMPO EM TEMPO:
+
+- usar mais o set para atualizar valores em nodes
 
 - MASKS E LAYERS
 (HUMAN FICA NA LAYER 2 MASK 1, OS OBJETOS QUE SÓ DEVEM INTERAGIR COM ELE O CONTRÁRIO)
@@ -104,9 +98,20 @@ TRANSIÇÃO (BLOQUEAR MOVIMENTOS ENTRE STATES)
 
 COYOTE TIME
 
+COLOCAR O VALOR DE CADA BOTÃO EM UMA CAIXA DE TEXTO SOBRE O BOTÃO E COLCOAR O VALOR ATUAL NO HUD
+####################################################################################################
+####################################################################################################
 
-####################################################################################################
-####################################################################################################
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+UM CONCEITO DE PLATFORMVANIA/PLATDROIDVANIA
+UMA ESPÉCIE DE METROIDVANIA PORÉM NÃO EM UM MAPA CONTINUO,
+MAS NO ESQUEMA DE FASES, COMO SE EM MÁRIO WORLD TIVESSEM SEGREDOS 
+QUE SÓ SÃO ACESSÍVEIS DEPOIS DE ADQUIRIR HABILIDADES/FERRAMENTAS
+HÁ UM BACKTRACKING NO ESQUEMA DE FASES
+MEGAMAN TEM UM POUCO DISSO, PORÉM É MUITO POUCO E GERALMENTE OPCIONAL
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
 ####################################################################################################
 ####################################################################################################

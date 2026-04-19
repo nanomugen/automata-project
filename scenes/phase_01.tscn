@@ -1,0 +1,311 @@
+[gd_scene format=3 uid="uid://jj4arf4e4pyu"]
+
+[ext_resource type="Script" uid="uid://cvlmjy5jiflli" path="res://scripts/main_old.gd" id="1_m6uvx"]
+[ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="2_t116b"]
+[ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human.tscn" id="2_wfxxj"]
+[ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="3_t116b"]
+[ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/init.tscn" id="4_6ww8d"]
+[ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/point.tscn" id="5_nsumr"]
+[ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/exit.tscn" id="6_df44k"]
+[ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/platform.tscn" id="7_p1kg2"]
+[ext_resource type="PackedScene" uid="uid://8uoi20lcij0y" path="res://scenes/block.tscn" id="8_px7wo"]
+[ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/ruler.tscn" id="9_4o6ff"]
+
+[node name="phase01" type="Node2D" unique_id=448904820]
+script = ExtResource("1_m6uvx")
+
+[node name="Phase" type="Node2D" parent="." unique_id=462732468 node_paths=PackedStringArray("start_state")]
+script = ExtResource("2_t116b")
+start_state = NodePath("Start_State")
+metadata/_custom_type_script = "uid://be3l3gl88kqsy"
+
+[node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("2_wfxxj")]
+z_index = 2
+position = Vector2(706, -559)
+
+[node name="Start_State" parent="Phase" unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_t116b")]
+position = Vector2(1000, 0)
+init = NodePath("init")
+points = [NodePath("point"), NodePath("point2")]
+exits = [NodePath("exit"), NodePath("exit2")]
+human = NodePath("../human")
+
+[node name="init" parent="Phase/Start_State" unique_id=1642130846 instance=ExtResource("4_6ww8d")]
+position = Vector2(-297, -171)
+
+[node name="ColorRect16" type="ColorRect" parent="Phase/Start_State" unique_id=1934583231]
+visible = false
+offset_left = -543.0
+offset_top = -509.0
+offset_right = -43.0
+offset_bottom = -9.0
+color = Color(0.11207495, 0, 0.53412783, 1)
+
+[node name="point" parent="Phase/Start_State" unique_id=1221197503 instance=ExtResource("5_nsumr")]
+position = Vector2(368, -127)
+value = 7
+
+[node name="point2" parent="Phase/Start_State" unique_id=1495490829 instance=ExtResource("5_nsumr")]
+position = Vector2(166, -140)
+value = 3
+
+[node name="exit" parent="Phase/Start_State" unique_id=1504513773 node_paths=PackedStringArray("nextState") instance=ExtResource("6_df44k")]
+position = Vector2(730, -150)
+nextState = NodePath("../../State")
+goal = 10
+
+[node name="exit2" parent="Phase/Start_State" unique_id=999031583 instance=ExtResource("6_df44k")]
+position = Vector2(-40, -160)
+goal = 3
+is_final = true
+
+[node name="platform" parent="Phase/Start_State" unique_id=1120527333 instance=ExtResource("7_p1kg2")]
+position = Vector2(806, -1139)
+
+[node name="block" parent="Phase/Start_State" unique_id=663636396 instance=ExtResource("8_px7wo")]
+position = Vector2(-116, -1651)
+scale = Vector2(8.600001, 1)
+
+[node name="block2" parent="Phase/Start_State" unique_id=1059804668 instance=ExtResource("8_px7wo")]
+position = Vector2(68, -1354)
+scale = Vector2(9.000003, 1)
+
+[node name="block3" parent="Phase/Start_State" unique_id=2066181487 instance=ExtResource("8_px7wo")]
+position = Vector2(-570, -1085)
+scale = Vector2(4.04, 1)
+
+[node name="platform2" parent="Phase/Start_State" unique_id=609250548 instance=ExtResource("7_p1kg2")]
+position = Vector2(228, -1034)
+
+[node name="platform3" parent="Phase/Start_State" unique_id=960628600 instance=ExtResource("7_p1kg2")]
+position = Vector2(720, -762)
+
+[node name="block4" parent="Phase/Start_State" unique_id=568002724 instance=ExtResource("8_px7wo")]
+position = Vector2(95, -979.99994)
+rotation = 1.5739567
+scale = Vector2(3.4804938, 1)
+
+[node name="block5" parent="Phase/Start_State" unique_id=219867149 instance=ExtResource("8_px7wo")]
+position = Vector2(307, -654)
+scale = Vector2(1.9200001, 1)
+
+[node name="block6" parent="Phase/Start_State" unique_id=121272724 instance=ExtResource("8_px7wo")]
+position = Vector2(320, -382)
+scale = Vector2(6.4800014, 1)
+
+[node name="platform4" parent="Phase/Start_State" unique_id=191851224 instance=ExtResource("7_p1kg2")]
+position = Vector2(-883, -145)
+
+[node name="platform5" parent="Phase/Start_State" unique_id=957439229 instance=ExtResource("7_p1kg2")]
+position = Vector2(-880, -286)
+
+[node name="platform6" parent="Phase/Start_State" unique_id=1524416331 instance=ExtResource("7_p1kg2")]
+position = Vector2(-877, -429)
+
+[node name="platform7" parent="Phase/Start_State" unique_id=1123461492 instance=ExtResource("7_p1kg2")]
+position = Vector2(-875, -572)
+
+[node name="platform8" parent="Phase/Start_State" unique_id=75040996 instance=ExtResource("7_p1kg2")]
+position = Vector2(-533, -708)
+
+[node name="platform9" parent="Phase/Start_State" unique_id=1053157405 instance=ExtResource("7_p1kg2")]
+position = Vector2(-533, -860)
+
+[node name="platform10" parent="Phase/Start_State" unique_id=821332190 instance=ExtResource("7_p1kg2")]
+position = Vector2(-856, -864)
+
+[node name="platform11" parent="Phase/Start_State" unique_id=288987608 instance=ExtResource("7_p1kg2")]
+position = Vector2(730, -528)
+
+[node name="platform12" parent="Phase/Start_State" unique_id=1156211714 instance=ExtResource("7_p1kg2")]
+position = Vector2(428, -884)
+
+[node name="platform13" parent="Phase/Start_State" unique_id=658877464 instance=ExtResource("7_p1kg2")]
+position = Vector2(554, -1138)
+
+[node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_t116b")]
+position = Vector2(3670, 0)
+init = NodePath("init2")
+points = [NodePath("point3")]
+exits = [NodePath("exit2")]
+human = NodePath("../human")
+
+[node name="init2" parent="Phase/State" unique_id=975750784 instance=ExtResource("4_6ww8d")]
+position = Vector2(-840, -163)
+
+[node name="point3" parent="Phase/State" unique_id=404380536 instance=ExtResource("5_nsumr")]
+position = Vector2(-330, -160)
+value = 11
+
+[node name="exit2" parent="Phase/State" unique_id=1396614756 node_paths=PackedStringArray("nextState") instance=ExtResource("6_df44k")]
+position = Vector2(-604, -162)
+nextState = NodePath("../../State2")
+goal = 11
+
+[node name="block" parent="Phase/State" unique_id=2114601189 instance=ExtResource("8_px7wo")]
+position = Vector2(-167, -371)
+scale = Vector2(8.2, 1)
+
+[node name="block2" parent="Phase/State" unique_id=968943029 instance=ExtResource("8_px7wo")]
+position = Vector2(173, -739)
+scale = Vector2(7.95999, 1)
+
+[node name="block3" parent="Phase/State" unique_id=1266803375 instance=ExtResource("8_px7wo")]
+position = Vector2(-53, -1092)
+scale = Vector2(7.9999895, 1)
+
+[node name="block4" parent="Phase/State" unique_id=1303889163 instance=ExtResource("8_px7wo")]
+position = Vector2(164, -1778)
+scale = Vector2(8.04, 1)
+
+[node name="block5" parent="Phase/State" unique_id=2041934029 instance=ExtResource("8_px7wo")]
+position = Vector2(526, -1549)
+rotation = -1.5707964
+scale = Vector2(2.0399976, 1)
+
+[node name="block6" parent="Phase/State" unique_id=1587615559 instance=ExtResource("8_px7wo")]
+position = Vector2(278, -1339)
+rotation = -1.5707964
+scale = Vector2(2.28, 1)
+
+[node name="block7" parent="Phase/State" unique_id=1282287293 instance=ExtResource("8_px7wo")]
+position = Vector2(-3, -1495.9999)
+rotation = -1.5707964
+scale = Vector2(2.5999951, 1)
+
+[node name="block8" parent="Phase/State" unique_id=1502594992 instance=ExtResource("8_px7wo")]
+position = Vector2(-281, -1340)
+rotation = -1.5707964
+scale = Vector2(2.3600023, 1)
+
+[node name="block9" parent="Phase/State" unique_id=282939387 instance=ExtResource("8_px7wo")]
+position = Vector2(-609, -1527)
+rotation = -1.5707964
+scale = Vector2(2.3199975, 1)
+
+[node name="platform" parent="Phase/State" unique_id=2029329865 instance=ExtResource("7_p1kg2")]
+position = Vector2(-631, -522)
+
+[node name="platform2" parent="Phase/State" unique_id=1200905035 instance=ExtResource("7_p1kg2")]
+position = Vector2(-869, -669)
+
+[node name="platform3" parent="Phase/State" unique_id=523640293 instance=ExtResource("7_p1kg2")]
+position = Vector2(761, -870)
+
+[node name="platform4" parent="Phase/State" unique_id=137110422 instance=ExtResource("7_p1kg2")]
+position = Vector2(923, -950)
+scale = Vector2(0.56, 1)
+
+[node name="platform5" parent="Phase/State" unique_id=1738418330 instance=ExtResource("7_p1kg2")]
+position = Vector2(362, -1235)
+scale = Vector2(0.6000049, 1)
+
+[node name="block10" parent="Phase/State" unique_id=899592356 instance=ExtResource("8_px7wo")]
+position = Vector2(724, -1359)
+rotation = -1.5707964
+scale = Vector2(2.44, 1)
+
+[node name="platform6" parent="Phase/State" unique_id=1087301566 instance=ExtResource("7_p1kg2")]
+position = Vector2(807, -1105)
+scale = Vector2(0.52, 1)
+
+[node name="platform7" parent="Phase/State" unique_id=919459332 instance=ExtResource("7_p1kg2")]
+position = Vector2(924, -1256)
+scale = Vector2(0.51998043, 1)
+
+[node name="platform8" parent="Phase/State" unique_id=419459745 instance=ExtResource("7_p1kg2")]
+position = Vector2(807, -1404)
+scale = Vector2(0.56, 1)
+
+[node name="platform9" parent="Phase/State" unique_id=1505632872 instance=ExtResource("7_p1kg2")]
+position = Vector2(919, -1549)
+scale = Vector2(0.56, 1)
+
+[node name="platform10" parent="Phase/State" unique_id=1667766383 instance=ExtResource("7_p1kg2")]
+position = Vector2(727, -147)
+
+[node name="platform11" parent="Phase/State" unique_id=1277275925 instance=ExtResource("7_p1kg2")]
+position = Vector2(876, -293)
+
+[node name="platform12" parent="Phase/State" unique_id=28572302 instance=ExtResource("7_p1kg2")]
+position = Vector2(444, -1381)
+scale = Vector2(0.6, 1)
+
+[node name="platform13" parent="Phase/State" unique_id=1441900580 instance=ExtResource("7_p1kg2")]
+position = Vector2(443, -1529)
+scale = Vector2(0.6, 1)
+
+[node name="platform14" parent="Phase/State" unique_id=1397557134 instance=ExtResource("7_p1kg2")]
+position = Vector2(-80, -1238)
+scale = Vector2(0.6, 1)
+
+[node name="platform15" parent="Phase/State" unique_id=1534328237 instance=ExtResource("7_p1kg2")]
+position = Vector2(-215, -1379)
+scale = Vector2(0.6, 1)
+
+[node name="platform16" parent="Phase/State" unique_id=850856164 instance=ExtResource("7_p1kg2")]
+position = Vector2(-75.999756, -1524)
+scale = Vector2(0.6, 1)
+
+[node name="platform17" parent="Phase/State" unique_id=1095122595 instance=ExtResource("7_p1kg2")]
+position = Vector2(-910, -1235)
+scale = Vector2(0.6, 1)
+
+[node name="platform18" parent="Phase/State" unique_id=1408928255 instance=ExtResource("7_p1kg2")]
+position = Vector2(-681, -1381)
+scale = Vector2(0.6, 1)
+
+[node name="platform19" parent="Phase/State" unique_id=928150713 instance=ExtResource("7_p1kg2")]
+position = Vector2(-922, -1525)
+scale = Vector2(0.6, 1)
+
+[node name="platform20" parent="Phase/State" unique_id=1619381706 instance=ExtResource("7_p1kg2")]
+position = Vector2(-681, -1666)
+scale = Vector2(0.6, 1)
+
+[node name="State2" parent="Phase" unique_id=1827339490 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_t116b")]
+position = Vector2(6577, 0)
+init = NodePath("init")
+points = [NodePath("point"), NodePath("point2"), NodePath("point3")]
+exits = [NodePath("exit"), NodePath("exit2"), NodePath("exit3")]
+human = NodePath("../human")
+
+[node name="point" parent="Phase/State2" unique_id=458086273 instance=ExtResource("5_nsumr")]
+position = Vector2(-326, -76)
+value = 5
+
+[node name="point2" parent="Phase/State2" unique_id=223561440 instance=ExtResource("5_nsumr")]
+position = Vector2(-59, -75)
+value = 5
+
+[node name="point3" parent="Phase/State2" unique_id=1230216074 instance=ExtResource("5_nsumr")]
+position = Vector2(212, -75)
+value = 3
+
+[node name="exit" parent="Phase/State2" unique_id=1210684717 node_paths=PackedStringArray("nextState") instance=ExtResource("6_df44k")]
+position = Vector2(564, -126)
+nextState = NodePath("../../Start_State")
+goal = 10
+
+[node name="exit2" parent="Phase/State2" unique_id=255611467 node_paths=PackedStringArray("nextState") instance=ExtResource("6_df44k")]
+position = Vector2(849, -125)
+nextState = NodePath("../../State")
+goal = 8
+
+[node name="init" parent="Phase/State2" unique_id=2074669800 instance=ExtResource("4_6ww8d")]
+position = Vector2(-543, -282)
+
+[node name="exit3" parent="Phase/State2" unique_id=1339828326 instance=ExtResource("6_df44k")]
+position = Vector2(-816, -128)
+goal = 3
+is_final = true
+
+[node name="ruler" parent="Phase" unique_id=276425642 instance=ExtResource("9_4o6ff")]
+position = Vector2(2776, -2692)
+
+[node name="testValue" type="Label" parent="Phase" unique_id=2003271680]
+offset_left = 531.0
+offset_top = -14.0
+offset_right = 638.0
+offset_bottom = 9.0
+text = "teste de texto"
