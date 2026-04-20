@@ -17,7 +17,7 @@ func _ready() -> void:
 	color_rect.color =  color_closed
 	label.text = "0/"+str(goal)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 func reset_exit():
 	label.text = "0.0/"+str(goal)
@@ -39,9 +39,9 @@ func update_opened(current_value) -> void:
 		print("current_value != goal")
 	PlayerHudControl.update_exit(self)
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
 	PlayerHudControl.add_exit(self)
 	
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	inside_area = false

@@ -5,6 +5,7 @@ extends Node2D
 @export var init:Init
 @export var points:Array[Point]
 @export var exits:Array[Exit]
+@export var doors:Array[Door]
 @export var human: Human
 
 var initPos:Vector2; 
@@ -13,18 +14,26 @@ var this_is_current_state:bool = false
 func _ready() -> void:
 	initPos = init.position;
 	#print("init: " + str(initPos))
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#print(human.get_node("Camera2D").global_position)
 	
 	if Input.is_action_just_pressed("attack") and this_is_current_state:
 		print("a")
+		check_doors()
 		check_exits()
 		update_points()
 		
-
+func check_doors():
+	print("c")
+	for d in doors:
+		var filtered_buttons:Array[DoorButton] = d.buttons.filter((func(b): return b.inside_area == true))
+		if filtered_buttons.size() > 0:
+			print("d")
+			filtered_buttons[0].pressed()
+			d.verify_buttons()
+	pass
 
 func update_points()->void:
-	print("b")
 	var filtered_points:Array[Point] = points.filter((func(p): return p.inside_area == true))
 	if filtered_points.size() > 0:
 		filtered_points[0].pressed()
@@ -32,7 +41,6 @@ func update_points()->void:
 			current_value += filtered_points[0].value
 		else:
 			current_value -= filtered_points[0].value
-		print("value: " + str(current_value))
 		update_exits()
 
 func update_exits()->void:
@@ -58,7 +66,7 @@ func transition_next_state(exit:Exit)->void:
 		DataSystem.DATA_OBJECT["test_value"] += 1
 		DataSystem._save()
 		
-		get_tree().change_scene_to_file("res://scenes/congratulations.tscn")
+		get_tree().change_scene_to_file("res://scenes/menus/congratulations.tscn")
 	if exit.nextState == null:
 		return
 	print("goal == current_value")
@@ -66,7 +74,7 @@ func transition_next_state(exit:Exit)->void:
 		p.reset_button()
 	for e in exits:
 		e.reset_exit()
-	current_value = 0.0
+	current_value = 0
 	var pos:Vector2 = exit.nextState.initPos + exit.nextState.position;
 	this_is_current_state = false
 	exit.nextState.this_is_current_state = true
@@ -82,7 +90,6 @@ func transition_next_state(exit:Exit)->void:
 	
 	var pp1 = self.global_position + Vector2(0,-1000)
 	var pp2 = exit.nextState.global_position+Vector2(0,-1000)
-	var pp3 = human.global_position
 	
 	tween.tween_property(transition_camera,"global_position",pp1,1)
 	tween.parallel().tween_property(transition_camera,"zoom",Vector2(0.3,0.3),1)

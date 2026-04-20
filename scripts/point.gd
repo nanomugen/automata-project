@@ -23,13 +23,10 @@ func reset_button():
 	color_rect.color = color_unpressed
 	is_pressed = false
 	
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	#color_rect.color = color_unpressed
-	print("entered")
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
 	PlayerHudControl.add_point(self)
 	
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	#color_rect.color = color_unpressed
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	print("exited")
 	inside_area = false

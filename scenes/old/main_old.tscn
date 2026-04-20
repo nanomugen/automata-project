@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://cvlmjy5jiflli" path="res://scripts/main_old.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/point.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/init.tscn" id="4_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/exit.tscn" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/ruler.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/platform.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://8uoi20lcij0y" path="res://scenes/block.tscn" id="8_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/objects/exit.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/objects/ruler.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://8uoi20lcij0y" path="res://scenes/objects/block.tscn" id="8_85g3d"]
 
 [node name="phase01" type="Node2D" unique_id=448904820]
 script = ExtResource("1_tbgi4")
