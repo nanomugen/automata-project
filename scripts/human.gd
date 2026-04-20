@@ -8,7 +8,9 @@ extends CharacterBody2D
 @export var jump_time_to_peak: float = 0.4
 @export var jump_time_to_descent: float = 0.3
 
-@onready var test_rect: ColorRect = $test_rect
+@onready var coyote_time_rect: ColorRect = $coyote_time_rect
+@onready var on_wall: ColorRect = $on_wall
+
 
 @onready var jump_velocity:float = (2.0 * jump_height)/jump_time_to_peak * -1.0
 @onready var jump_gravity:float = (-2.0 * jump_height)/(jump_time_to_peak * jump_time_to_peak) * -1.0
@@ -19,7 +21,6 @@ extends CharacterBody2D
 @onready var timer_dash_cooldown: Timer = $timer_dash_cooldown
 @onready var time_idle_wait: Timer = $time_idle_wait
 @onready var timer_coyote_jump: Timer = $timer_coyote_jump
-
 
 var dashing: bool = false
 var can_dash: bool = true
@@ -36,24 +37,49 @@ var idle_wait:bool = false
 var play_breath:bool =true
 var random:RandomNumberGenerator = RandomNumberGenerator.new()
 
+const FLOOR_NORMAL = Vector2.UP
+const SNAP_DIRECTION = Vector2.DOWN
+const SNAP_LENGTH = 32.0
+const FLOOR_MAX_ANGLE = deg_to_rad(46)
+
 func _ready() -> void:
 	random.randomize()
+	floor_max_angle = FLOOR_MAX_ANGLE
+	floor_snap_length = SNAP_LENGTH
+	if DataSystem.DATA_OBJECT["debug_mode"]:
+		coyote_time_rect.visible = true
+		on_wall.visible = true
+	else:
+		coyote_time_rect.visible = false
+		on_wall.visible = false
 	
 func _physics_process(delta: float) -> void:
 	if freeze:
 		return
+	if is_on_wall_only():
+		on_wall.color = Color(1,0.5,0.2)
+		on_wall.get_child(0).text = "is_on_wall_only"
+	elif is_on_wall():
+		on_wall.color = Color(0.1,0.5,0.3)
+		on_wall.get_child(0).text = "is_on_wall"
+	else:
+		on_wall.color = Color(0.3,0.2,1)
+		on_wall.get_child(0).text = "is_not_on_wall"
 	if not is_on_floor():
-		test_rect.color = Color(1,1,0)
+		
 		if !jump_pressed and !coyote_jump:
 			coyote_jump = true
-			#test_rect.color = Color(0,1,0)
+			coyote_time_rect.color = Color(0.0, 0.578, 0.0, 1.0)
 			timer_coyote_jump.start()
 			print("started")
+		
+		if !coyote_jump:
+				coyote_time_rect.color = Color(0.542, 0.011, 0.476, 1.0)
 		if !cancel_gravity:
 			velocity.y += get_gravity2() * delta
 			velocity.y = clamp(velocity.y,velocity.y,1500)
 	else:
-		test_rect.color = Color(0,0,1)
+		coyote_time_rect.color = Color(0,0,1)
 		timer_coyote_jump.stop()
 		#test_rect.color = Color(1,0,0)
 		coyote_jump = false
@@ -179,6 +205,6 @@ func _on_time_idle_wait_timeout() -> void:
 func _on_timer_coyote_jump_timeout() -> void:
 	timer_coyote_jump.stop()
 	coyote_jump = false
-	#test_rect.color = Color(1,0,0)
+	#coyote_time_rect.color = Color(1,0,0)
 	jump_pressed = true
 	print("finished")

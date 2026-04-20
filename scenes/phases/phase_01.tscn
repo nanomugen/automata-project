@@ -18,7 +18,7 @@ script = ExtResource("1_2cipb")
 
 [node name="Phase" type="Node2D" parent="." unique_id=462732468 node_paths=PackedStringArray("start_state")]
 script = ExtResource("2_xnm77")
-start_state = NodePath("State2")
+start_state = NodePath("Start_State")
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
@@ -278,7 +278,7 @@ doors = [NodePath("../door")]
 human = NodePath("../human")
 
 [node name="init" parent="Phase/State2" unique_id=2074669800 instance=ExtResource("5_1qxw2")]
-position = Vector2(-199, -199)
+position = Vector2(812, -1059)
 
 [node name="exits" type="Node2D" parent="Phase/State2" unique_id=100921124]
 
@@ -320,6 +320,21 @@ scale = Vector2(8.04001, 1)
 [node name="block2" parent="Phase/State2/objects" unique_id=1279228122 instance=ExtResource("9_7g6mc")]
 position = Vector2(455, -369)
 rotation = -1.5707964
+
+[node name="block16" parent="Phase/State2/objects" unique_id=160874304 instance=ExtResource("9_7g6mc")]
+position = Vector2(359, -899.00006)
+rotation = 0.24879201
+
+[node name="block17" parent="Phase/State2/objects" unique_id=109343301 instance=ExtResource("9_7g6mc")]
+position = Vector2(178, -972)
+rotation = 0.51929057
+
+[node name="block18" parent="Phase/State2/objects" unique_id=1948390964 instance=ExtResource("9_7g6mc")]
+position = Vector2(24, -1087)
+rotation = 0.77633256
+
+[node name="block19" parent="Phase/State2/objects" unique_id=233481555 instance=ExtResource("9_7g6mc")]
+position = Vector2(-131, -1150)
 
 [node name="block11" parent="Phase/State2/objects" unique_id=1899261411 instance=ExtResource("9_7g6mc")]
 position = Vector2(-129, -549)
@@ -403,7 +418,7 @@ position = Vector2(-872, -1168)
 position = Vector2(-156, -1396)
 
 [node name="platform8" parent="Phase/State2/objects" unique_id=1637224150 instance=ExtResource("8_yqti6")]
-position = Vector2(-152, -1171)
+position = Vector2(-407, -1262)
 
 [node name="platform9" parent="Phase/State2/objects" unique_id=978252453 instance=ExtResource("8_yqti6")]
 position = Vector2(-717, -1020)

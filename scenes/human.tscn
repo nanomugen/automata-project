@@ -538,6 +538,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7jhf"]
 size = Vector2(39, 114)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7jhf"]
+radius = 15.0
+height = 120.0
+
 [node name="human" type="CharacterBody2D" unique_id=1506472261]
 collision_layer = 2
 script = ExtResource("1_swaxu")
@@ -563,13 +567,17 @@ wait_time = 2.659
 [node name="collision_shape" type="CollisionShape2D" parent="." unique_id=2013214042]
 position = Vector2(0.5, -57)
 shape = SubResource("RectangleShape2D_c7jhf")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890674657]
+position = Vector2(0, -61)
+shape = SubResource("CapsuleShape2D_c7jhf")
 
 [node name="timer_coyote_jump" type="Timer" parent="." unique_id=356697782]
-wait_time = 0.1
+wait_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118880137]
 limit_enabled = false
-position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_vertical_offset = -1.0
 drag_left_margin = 0.4
@@ -578,8 +586,7 @@ drag_bottom_margin = 0.5
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="test_rect" type="ColorRect" parent="." unique_id=1701136980]
-visible = false
+[node name="coyote_time_rect" type="ColorRect" parent="." unique_id=1701136980]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -592,6 +599,38 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="coyote_time_rect" unique_id=713663650]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 51.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 8
+text = "coyote"
+
+[node name="on_wall" type="ColorRect" parent="." unique_id=1748851675]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = 13.0
+offset_right = 5.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="on_wall" unique_id=1616324337]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 54.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 8
+text = "on wall"
 
 [connection signal="input_event" from="." to="." method="_on_input_event_attack"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
