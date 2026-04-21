@@ -6,9 +6,13 @@ extends Node
 ####################################################################################################
 TODO
 ####################################################################################################
+FAZER OS STATES REDONDOS AGORA QUE FOI RESOLVIDO AS RAMPAS?
 
+FAZER MENU DAS FASES
 
-FAZER BOTÕES E PORTAS INTERMEDIÁRIOS PARA ABRIR E FECHAR PASSAGENS
+REFATORAR A LÓGICA DO HUMAN PARA PODER SEPARAR AS HABILIDADES PARA PODER NERFAR O PERSONAGEM
+
+SOUND EFFECTS E MUSICA
 
 HUD PARA BOTÕES (TUTORIAL)
 
@@ -87,14 +91,20 @@ DONE
 ####################################################################################################
 DESACOPLAR O INIT DOS STATES PARA PODER MUDAR DE LUGAR
 
+FAZER BOTÕES E PORTAS INTERMEDIÁRIOS PARA ABRIR E FECHAR PASSAGENS
+
+
 saidas
 //talvez os valores devessem ser associados as saídas, já que podem ter mais de uma
 devem mudar de cor quando forem habilitadas
 os nexts também devem ser associados as saídas
 
+
 MUDAR O PULO, DE FORMA QUE SE SOLTAR O BOTÃO DE PULO PARA DE PULAR
 
+
 TRANSIÇÃO (BLOQUEAR MOVIMENTOS ENTRE STATES)
+
 
 COYOTE TIME
 

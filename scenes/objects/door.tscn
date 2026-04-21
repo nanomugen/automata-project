@@ -107,7 +107,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -40.0
-offset_right = 150.0
+offset_right = 200.0
 grow_vertical = 0
 color = Color(0.50140655, 0.5014065, 0.5014065, 1)
 
@@ -134,7 +134,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -40.0
-offset_right = 150.0
+offset_right = 200.0
 grow_vertical = 0
 rotation = 1.5707964
 pivot_offset = Vector2(0, 40)
