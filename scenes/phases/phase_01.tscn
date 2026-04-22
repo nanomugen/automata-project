@@ -35,7 +35,7 @@ doors = [NodePath("doors/door_set_2/door2"), NodePath("doors/door_set_5/door5"),
 human = NodePath("../human")
 
 [node name="init" parent="Phase/Start_State" unique_id=1642130846 instance=ExtResource("5_1qxw2")]
-position = Vector2(-629, -659)
+position = Vector2(-603, -699)
 
 [node name="points" type="Node2D" parent="Phase/Start_State" unique_id=751447996]
 
@@ -59,7 +59,7 @@ nextState = NodePath("../../../State")
 goal = 10
 
 [node name="exit2" parent="Phase/Start_State/exits" unique_id=999031583 instance=ExtResource("7_y802i")]
-position = Vector2(1081, -2361)
+position = Vector2(670, -2373)
 goal = 3
 is_final = true
 
@@ -131,6 +131,10 @@ scale = Vector2(3.8400033, 1)
 [node name="block7" parent="Phase/Start_State/blocks" unique_id=1715065383 instance=ExtResource("10_nb0tq")]
 position = Vector2(166.00002, -1608)
 scale = Vector2(3.5529401, 1)
+
+[node name="block26" parent="Phase/Start_State/blocks" unique_id=1828396958 instance=ExtResource("10_nb0tq")]
+position = Vector2(566, -2274)
+scale = Vector2(1.3129303, 1)
 
 [node name="block19" parent="Phase/Start_State/blocks" unique_id=1978527487 instance=ExtResource("10_nb0tq")]
 position = Vector2(305, -1375)
@@ -230,6 +234,12 @@ position = Vector2(1121, -649)
 [node name="platform9" parent="Phase/Start_State" unique_id=531799827 instance=ExtResource("8_yqti6")]
 position = Vector2(1119, -1690)
 
+[node name="platform12" parent="Phase/Start_State" unique_id=8834770 instance=ExtResource("8_yqti6")]
+position = Vector2(901, -1987)
+
+[node name="platform21" parent="Phase/Start_State" unique_id=798220833 instance=ExtResource("8_yqti6")]
+position = Vector2(897, -2174)
+
 [node name="platform10" parent="Phase/Start_State" unique_id=587176327 instance=ExtResource("8_yqti6")]
 position = Vector2(1201, -1542)
 
@@ -244,7 +254,7 @@ scale = Vector2(0.7, 1)
 position = Vector2(107, -611)
 
 [node name="platform18" parent="Phase/Start_State" unique_id=906846293 instance=ExtResource("8_yqti6")]
-position = Vector2(-1152, -879)
+position = Vector2(-1170, -752)
 
 [node name="platform19" parent="Phase/Start_State" unique_id=1628346361 instance=ExtResource("8_yqti6")]
 position = Vector2(301, -753)
