@@ -1,0 +1,5623 @@
+[gd_scene format=3 uid="uid://tphompd1symd"]
+
+[ext_resource type="Script" uid="uid://cangodxs74nii" path="res://scripts/state.gd" id="1_8uhb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihbxb"]
+size = Vector2(600, 50)
+
+[node name="State" type="Node2D" unique_id=143421711]
+visibility_layer = 2
+script = ExtResource("1_8uhb4")
+
+[node name="background" type="Node2D" parent="." unique_id=179257615]
+position = Vector2(0, -26)
+
+[node name="ColorRect" type="ColorRect" parent="background" unique_id=42565891]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -150.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect2" type="ColorRect" parent="background" unique_id=1500043065]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -300.0
+offset_right = -75.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect3" type="ColorRect" parent="background" unique_id=515620149]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -300.0
+offset_right = 225.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect4" type="ColorRect" parent="background" unique_id=1202525302]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -450.0
+offset_right = 75.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect5" type="ColorRect" parent="background" unique_id=341621808]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -600.0
+offset_right = -75.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect6" type="ColorRect" parent="background" unique_id=1303494245]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -600.0
+offset_right = 225.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect7" type="ColorRect" parent="background" unique_id=1993271582]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -750.0
+offset_right = 75.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect8" type="ColorRect" parent="background" unique_id=104093951]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -900.0
+offset_right = -75.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect9" type="ColorRect" parent="background" unique_id=1353450569]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -900.0
+offset_right = 225.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect10" type="ColorRect" parent="background" unique_id=1012018850]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -1050.0
+offset_right = 75.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect11" type="ColorRect" parent="background" unique_id=1920603391]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -1200.0
+offset_right = -75.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect12" type="ColorRect" parent="background" unique_id=1703532367]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -1200.0
+offset_right = 225.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect13" type="ColorRect" parent="background" unique_id=2085667155]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -1350.0
+offset_right = 75.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect14" type="ColorRect" parent="background" unique_id=1185063412]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -1500.0
+offset_right = -75.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect15" type="ColorRect" parent="background" unique_id=581927133]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -1500.0
+offset_right = 225.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect16" type="ColorRect" parent="background" unique_id=288387803]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -1650.0
+offset_right = 75.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect17" type="ColorRect" parent="background" unique_id=1040050058]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -1800.0
+offset_right = -75.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect18" type="ColorRect" parent="background" unique_id=781451288]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -1800.0
+offset_right = 225.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect19" type="ColorRect" parent="background" unique_id=2078130076]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -1950.0
+offset_right = 75.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect20" type="ColorRect" parent="background" unique_id=1768128619]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -2100.0
+offset_right = -75.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect21" type="ColorRect" parent="background" unique_id=2025777167]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -2100.0
+offset_right = 225.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect22" type="ColorRect" parent="background" unique_id=2088502305]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -2250.0
+offset_right = 75.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect23" type="ColorRect" parent="background" unique_id=1130770800]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -2400.0
+offset_right = -75.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect24" type="ColorRect" parent="background" unique_id=1070258921]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -2400.0
+offset_right = 225.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect25" type="ColorRect" parent="background" unique_id=1135959838]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -2550.0
+offset_right = 75.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect26" type="ColorRect" parent="background" unique_id=1135970419]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -2700.0
+offset_right = -75.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect27" type="ColorRect" parent="background" unique_id=1626856738]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -2700.0
+offset_right = 225.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect28" type="ColorRect" parent="background" unique_id=1358645553]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -2850.0
+offset_right = 75.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect29" type="ColorRect" parent="background" unique_id=1016379758]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -3000.0
+offset_right = -75.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect30" type="ColorRect" parent="background" unique_id=1752648958]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -3000.0
+offset_right = 225.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect31" type="ColorRect" parent="background" unique_id=1526863763]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -3150.0
+offset_right = 75.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect32" type="ColorRect" parent="background" unique_id=873219803]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -3300.0
+offset_right = -75.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect33" type="ColorRect" parent="background" unique_id=515487224]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -3300.0
+offset_right = 225.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect34" type="ColorRect" parent="background" unique_id=1175783142]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -3450.0
+offset_right = 75.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect35" type="ColorRect" parent="background" unique_id=1254110312]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -3600.0
+offset_right = -75.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect36" type="ColorRect" parent="background" unique_id=1372423463]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -3600.0
+offset_right = 225.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect37" type="ColorRect" parent="background" unique_id=164514589]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -3750.0
+offset_right = 75.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect38" type="ColorRect" parent="background" unique_id=475021465]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -3900.0
+offset_right = -75.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect39" type="ColorRect" parent="background" unique_id=1541272256]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -3900.0
+offset_right = 225.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect40" type="ColorRect" parent="background" unique_id=644329042]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -4050.0
+offset_right = 75.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect41" type="ColorRect" parent="background" unique_id=514862649]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -4200.0
+offset_right = -75.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect42" type="ColorRect" parent="background" unique_id=1757449405]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -4200.0
+offset_right = 225.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect43" type="ColorRect" parent="background" unique_id=2041351679]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -4350.0
+offset_right = 75.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect44" type="ColorRect" parent="background" unique_id=1082936135]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -4465.0
+offset_right = -75.0
+offset_bottom = -4350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect45" type="ColorRect" parent="background" unique_id=1122435024]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -4468.0
+offset_right = 225.0
+offset_bottom = -4350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect47" type="ColorRect" parent="background" unique_id=105781986]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -150.0
+offset_right = 375.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect48" type="ColorRect" parent="background" unique_id=1164864841]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -150.0
+offset_right = 675.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect49" type="ColorRect" parent="background" unique_id=1382919504]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -300.0
+offset_right = 525.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect50" type="ColorRect" parent="background" unique_id=588488209]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -450.0
+offset_right = 375.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect51" type="ColorRect" parent="background" unique_id=21540114]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -450.0
+offset_right = 675.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect52" type="ColorRect" parent="background" unique_id=1590717022]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -600.0
+offset_right = 525.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect53" type="ColorRect" parent="background" unique_id=1695939319]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -750.0
+offset_right = 375.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect54" type="ColorRect" parent="background" unique_id=2106741261]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -750.0
+offset_right = 675.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect55" type="ColorRect" parent="background" unique_id=2119678642]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -900.0
+offset_right = 525.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect56" type="ColorRect" parent="background" unique_id=1316231220]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -1050.0
+offset_right = 375.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect57" type="ColorRect" parent="background" unique_id=816579953]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -1050.0
+offset_right = 675.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect58" type="ColorRect" parent="background" unique_id=2001351843]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -1200.0
+offset_right = 525.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect59" type="ColorRect" parent="background" unique_id=2124367379]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -1350.0
+offset_right = 375.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect60" type="ColorRect" parent="background" unique_id=2114275988]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -1350.0
+offset_right = 675.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect61" type="ColorRect" parent="background" unique_id=161710968]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -1500.0
+offset_right = 525.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect62" type="ColorRect" parent="background" unique_id=155844325]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -1650.0
+offset_right = 375.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect63" type="ColorRect" parent="background" unique_id=1130558356]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -1650.0
+offset_right = 675.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect64" type="ColorRect" parent="background" unique_id=183108088]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -1800.0
+offset_right = 525.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect65" type="ColorRect" parent="background" unique_id=1347263531]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -1950.0
+offset_right = 375.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect66" type="ColorRect" parent="background" unique_id=700931671]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -1950.0
+offset_right = 675.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect67" type="ColorRect" parent="background" unique_id=1840068286]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -2100.0
+offset_right = 525.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect68" type="ColorRect" parent="background" unique_id=711565299]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -2250.0
+offset_right = 375.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect69" type="ColorRect" parent="background" unique_id=1386953765]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -2250.0
+offset_right = 675.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect70" type="ColorRect" parent="background" unique_id=230412661]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -2400.0
+offset_right = 525.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect71" type="ColorRect" parent="background" unique_id=173528352]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -2550.0
+offset_right = 375.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect72" type="ColorRect" parent="background" unique_id=498238721]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -2550.0
+offset_right = 675.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect73" type="ColorRect" parent="background" unique_id=1906722396]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -2700.0
+offset_right = 525.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect74" type="ColorRect" parent="background" unique_id=766263777]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -2850.0
+offset_right = 375.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect75" type="ColorRect" parent="background" unique_id=1749885358]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -2850.0
+offset_right = 675.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect76" type="ColorRect" parent="background" unique_id=718579088]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -3000.0
+offset_right = 525.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect77" type="ColorRect" parent="background" unique_id=66223392]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -3150.0
+offset_right = 375.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect78" type="ColorRect" parent="background" unique_id=753302866]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -3150.0
+offset_right = 675.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect79" type="ColorRect" parent="background" unique_id=778107482]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -3300.0
+offset_right = 525.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect80" type="ColorRect" parent="background" unique_id=1701436485]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -3450.0
+offset_right = 375.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect81" type="ColorRect" parent="background" unique_id=546287077]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -3450.0
+offset_right = 675.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect82" type="ColorRect" parent="background" unique_id=2129510686]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -3600.0
+offset_right = 525.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect83" type="ColorRect" parent="background" unique_id=750819934]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -3750.0
+offset_right = 375.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect84" type="ColorRect" parent="background" unique_id=1748548500]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -3750.0
+offset_right = 675.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect85" type="ColorRect" parent="background" unique_id=1732668094]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -3900.0
+offset_right = 525.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect86" type="ColorRect" parent="background" unique_id=751716657]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -4050.0
+offset_right = 375.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect87" type="ColorRect" parent="background" unique_id=1480757716]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -4050.0
+offset_right = 675.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect88" type="ColorRect" parent="background" unique_id=1891973452]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -4200.0
+offset_right = 525.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect89" type="ColorRect" parent="background" unique_id=1415317578]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 225.0
+offset_top = -4350.0
+offset_right = 375.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect90" type="ColorRect" parent="background" unique_id=506314577]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -4350.0
+offset_right = 675.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect91" type="ColorRect" parent="background" unique_id=906037991]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -150.0
+offset_right = 875.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect92" type="ColorRect" parent="background" unique_id=1201061427]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -300.0
+offset_right = 825.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect93" type="ColorRect" parent="background" unique_id=892682001]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -300.0
+offset_right = 1125.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect94" type="ColorRect" parent="background" unique_id=1668761570]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -450.0
+offset_right = 975.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect95" type="ColorRect" parent="background" unique_id=1552859140]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -600.0
+offset_right = 825.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect96" type="ColorRect" parent="background" unique_id=1192537050]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -600.0
+offset_right = 1125.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect97" type="ColorRect" parent="background" unique_id=1914947005]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -750.0
+offset_right = 975.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect98" type="ColorRect" parent="background" unique_id=538492535]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -900.0
+offset_right = 825.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect99" type="ColorRect" parent="background" unique_id=1367310118]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -900.0
+offset_right = 1125.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect100" type="ColorRect" parent="background" unique_id=1061586192]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -1050.0
+offset_right = 975.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect101" type="ColorRect" parent="background" unique_id=626358165]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -1200.0
+offset_right = 825.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect102" type="ColorRect" parent="background" unique_id=1609967665]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -1200.0
+offset_right = 1125.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect103" type="ColorRect" parent="background" unique_id=1816792128]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -1350.0
+offset_right = 975.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect104" type="ColorRect" parent="background" unique_id=1524672656]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -1500.0
+offset_right = 825.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect105" type="ColorRect" parent="background" unique_id=622427085]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -1500.0
+offset_right = 1125.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect106" type="ColorRect" parent="background" unique_id=1799465048]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -1650.0
+offset_right = 975.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect107" type="ColorRect" parent="background" unique_id=780126122]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -1800.0
+offset_right = 825.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect108" type="ColorRect" parent="background" unique_id=566096442]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -1800.0
+offset_right = 1125.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect109" type="ColorRect" parent="background" unique_id=1389990183]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -1950.0
+offset_right = 975.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect110" type="ColorRect" parent="background" unique_id=1661336221]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -2100.0
+offset_right = 825.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect111" type="ColorRect" parent="background" unique_id=470289340]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -2100.0
+offset_right = 1125.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect112" type="ColorRect" parent="background" unique_id=133853026]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -2250.0
+offset_right = 975.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect113" type="ColorRect" parent="background" unique_id=1846730011]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -2400.0
+offset_right = 825.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect114" type="ColorRect" parent="background" unique_id=2023220640]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -2400.0
+offset_right = 1125.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect115" type="ColorRect" parent="background" unique_id=891461672]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -2550.0
+offset_right = 975.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect116" type="ColorRect" parent="background" unique_id=527337073]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -2700.0
+offset_right = 825.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect117" type="ColorRect" parent="background" unique_id=2139045804]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -2700.0
+offset_right = 1125.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect118" type="ColorRect" parent="background" unique_id=1203468559]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -2850.0
+offset_right = 975.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect119" type="ColorRect" parent="background" unique_id=983809817]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -3000.0
+offset_right = 825.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect120" type="ColorRect" parent="background" unique_id=417283091]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -3000.0
+offset_right = 1125.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect121" type="ColorRect" parent="background" unique_id=1978559576]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -3150.0
+offset_right = 975.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect122" type="ColorRect" parent="background" unique_id=2114206695]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -3300.0
+offset_right = 825.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect123" type="ColorRect" parent="background" unique_id=1101931769]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -3300.0
+offset_right = 1125.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect124" type="ColorRect" parent="background" unique_id=468005066]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -3450.0
+offset_right = 975.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect125" type="ColorRect" parent="background" unique_id=1699825132]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -3600.0
+offset_right = 825.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect126" type="ColorRect" parent="background" unique_id=1747448769]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -3600.0
+offset_right = 1125.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect127" type="ColorRect" parent="background" unique_id=1238904348]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -3750.0
+offset_right = 975.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect128" type="ColorRect" parent="background" unique_id=424834229]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -3900.0
+offset_right = 825.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect129" type="ColorRect" parent="background" unique_id=45084440]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -3900.0
+offset_right = 1125.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect130" type="ColorRect" parent="background" unique_id=1804856855]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -4050.0
+offset_right = 975.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect131" type="ColorRect" parent="background" unique_id=1558311505]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 675.0
+offset_top = -4200.0
+offset_right = 825.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect132" type="ColorRect" parent="background" unique_id=1233706558]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -4200.0
+offset_right = 1125.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect133" type="ColorRect" parent="background" unique_id=1713350126]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = -4317.0
+offset_right = 975.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect134" type="ColorRect" parent="background" unique_id=1336622354]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = -4438.0
+offset_right = 525.0
+offset_bottom = -4350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect140" type="ColorRect" parent="background" unique_id=957203326]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -450.0
+offset_right = 1275.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect142" type="ColorRect" parent="background" unique_id=1945745400]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -600.0
+offset_right = 1425.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect143" type="ColorRect" parent="background" unique_id=1234158799]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -750.0
+offset_right = 1275.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect144" type="ColorRect" parent="background" unique_id=1032648164]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -750.0
+offset_right = 1575.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect145" type="ColorRect" parent="background" unique_id=1889543216]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -900.0
+offset_right = 1425.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect146" type="ColorRect" parent="background" unique_id=802563136]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -1050.0
+offset_right = 1275.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect147" type="ColorRect" parent="background" unique_id=311678814]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -1050.0
+offset_right = 1575.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect148" type="ColorRect" parent="background" unique_id=158894065]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -1200.0
+offset_right = 1425.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect149" type="ColorRect" parent="background" unique_id=216745551]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -1350.0
+offset_right = 1275.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect150" type="ColorRect" parent="background" unique_id=989970908]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -1350.0
+offset_right = 1575.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect151" type="ColorRect" parent="background" unique_id=662119447]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -1500.0
+offset_right = 1425.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect152" type="ColorRect" parent="background" unique_id=239285843]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -1650.0
+offset_right = 1275.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect153" type="ColorRect" parent="background" unique_id=2674473]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -1650.0
+offset_right = 1575.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect154" type="ColorRect" parent="background" unique_id=72496653]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -1800.0
+offset_right = 1425.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect155" type="ColorRect" parent="background" unique_id=978668081]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -1950.0
+offset_right = 1275.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect156" type="ColorRect" parent="background" unique_id=1043941934]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -1950.0
+offset_right = 1575.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect157" type="ColorRect" parent="background" unique_id=135154138]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -2100.0
+offset_right = 1425.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect158" type="ColorRect" parent="background" unique_id=1496441425]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -2250.0
+offset_right = 1275.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect159" type="ColorRect" parent="background" unique_id=104520113]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -2250.0
+offset_right = 1575.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect160" type="ColorRect" parent="background" unique_id=1611839040]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -2400.0
+offset_right = 1425.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect161" type="ColorRect" parent="background" unique_id=2074764387]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -2550.0
+offset_right = 1275.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect162" type="ColorRect" parent="background" unique_id=1799904345]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -2550.0
+offset_right = 1575.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect163" type="ColorRect" parent="background" unique_id=762512401]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -2700.0
+offset_right = 1425.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect164" type="ColorRect" parent="background" unique_id=1068582716]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -2850.0
+offset_right = 1275.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect165" type="ColorRect" parent="background" unique_id=1469257562]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -2850.0
+offset_right = 1575.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect166" type="ColorRect" parent="background" unique_id=1033732198]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -3000.0
+offset_right = 1425.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect167" type="ColorRect" parent="background" unique_id=1573398742]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -3150.0
+offset_right = 1275.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect168" type="ColorRect" parent="background" unique_id=1546273877]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -3150.0
+offset_right = 1575.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect169" type="ColorRect" parent="background" unique_id=1090294337]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -3300.0
+offset_right = 1425.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect170" type="ColorRect" parent="background" unique_id=1617674004]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -3450.0
+offset_right = 1275.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect171" type="ColorRect" parent="background" unique_id=1027913367]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -3450.0
+offset_right = 1575.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect172" type="ColorRect" parent="background" unique_id=867899580]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -3600.0
+offset_right = 1425.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect173" type="ColorRect" parent="background" unique_id=244061421]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -3750.0
+offset_right = 1275.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect174" type="ColorRect" parent="background" unique_id=318521795]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -3750.0
+offset_right = 1575.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect175" type="ColorRect" parent="background" unique_id=2043184161]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1275.0
+offset_top = -3900.0
+offset_right = 1425.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect176" type="ColorRect" parent="background" unique_id=167120720]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1125.0
+offset_top = -4050.0
+offset_right = 1275.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect177" type="ColorRect" parent="background" unique_id=495156841]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1425.0
+offset_top = -3955.0
+offset_right = 1481.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect188" type="ColorRect" parent="background" unique_id=1983421915]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -900.0
+offset_right = 1725.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect190" type="ColorRect" parent="background" unique_id=495598949]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -1050.0
+offset_right = 1875.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect191" type="ColorRect" parent="background" unique_id=2107795457]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -1200.0
+offset_right = 1725.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect192" type="ColorRect" parent="background" unique_id=1117510243]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -1200.0
+offset_right = 2025.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect193" type="ColorRect" parent="background" unique_id=1924045521]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -1350.0
+offset_right = 1875.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect194" type="ColorRect" parent="background" unique_id=215453184]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -1500.0
+offset_right = 1725.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect195" type="ColorRect" parent="background" unique_id=413844896]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -1500.0
+offset_right = 2025.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect196" type="ColorRect" parent="background" unique_id=1416079953]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -1650.0
+offset_right = 1875.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect197" type="ColorRect" parent="background" unique_id=1554006500]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -1800.0
+offset_right = 1725.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect198" type="ColorRect" parent="background" unique_id=1840111006]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -1800.0
+offset_right = 2025.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect199" type="ColorRect" parent="background" unique_id=323899892]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -1950.0
+offset_right = 1875.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect200" type="ColorRect" parent="background" unique_id=1860119793]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -2100.0
+offset_right = 1725.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect201" type="ColorRect" parent="background" unique_id=872933159]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -2100.0
+offset_right = 2025.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect202" type="ColorRect" parent="background" unique_id=805958978]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -2250.0
+offset_right = 1875.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect203" type="ColorRect" parent="background" unique_id=1820060083]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -2400.0
+offset_right = 1725.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect204" type="ColorRect" parent="background" unique_id=2049226342]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -2400.0
+offset_right = 2025.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect205" type="ColorRect" parent="background" unique_id=908620468]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -2550.0
+offset_right = 1875.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect206" type="ColorRect" parent="background" unique_id=1123475691]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -2700.0
+offset_right = 1725.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect207" type="ColorRect" parent="background" unique_id=316371042]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -2700.0
+offset_right = 2025.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect208" type="ColorRect" parent="background" unique_id=1965457965]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -2850.0
+offset_right = 1875.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect209" type="ColorRect" parent="background" unique_id=839561172]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -3000.0
+offset_right = 1725.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect210" type="ColorRect" parent="background" unique_id=1382027519]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -3000.0
+offset_right = 2025.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect211" type="ColorRect" parent="background" unique_id=1377534255]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -3150.0
+offset_right = 1875.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect212" type="ColorRect" parent="background" unique_id=898531521]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -3300.0
+offset_right = 1725.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect213" type="ColorRect" parent="background" unique_id=1590012243]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1875.0
+offset_top = -3300.0
+offset_right = 2025.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect214" type="ColorRect" parent="background" unique_id=592109459]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -3450.0
+offset_right = 1875.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect215" type="ColorRect" parent="background" unique_id=1801634434]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -3600.0
+offset_right = 1725.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect217" type="ColorRect" parent="background" unique_id=2042334001]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1725.0
+offset_top = -3655.0
+offset_right = 1780.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect218" type="ColorRect" parent="background" unique_id=211927251]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1575.0
+offset_top = -3807.0
+offset_right = 1631.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect239" type="ColorRect" parent="background" unique_id=876153350]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -1350.0
+offset_right = 2075.0
+offset_bottom = -1263.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect242" type="ColorRect" parent="background" unique_id=2103227888]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -1650.0
+offset_right = 2159.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect244" type="ColorRect" parent="background" unique_id=1180195246]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2175.0
+offset_top = -1800.0
+offset_right = 2201.0
+offset_bottom = -1714.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect245" type="ColorRect" parent="background" unique_id=672903531]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -1950.0
+offset_right = 2175.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect247" type="ColorRect" parent="background" unique_id=610421901]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2175.0
+offset_top = -2100.0
+offset_right = 2241.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect248" type="ColorRect" parent="background" unique_id=1005234475]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -2250.0
+offset_right = 2175.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect250" type="ColorRect" parent="background" unique_id=248752635]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2175.0
+offset_top = -2400.0
+offset_right = 2240.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect251" type="ColorRect" parent="background" unique_id=1305172765]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -2550.0
+offset_right = 2175.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect253" type="ColorRect" parent="background" unique_id=1825901039]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2175.0
+offset_top = -2700.0
+offset_right = 2221.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect254" type="ColorRect" parent="background" unique_id=15445765]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -2850.0
+offset_right = 2175.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect257" type="ColorRect" parent="background" unique_id=630832587]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2025.0
+offset_top = -3150.0
+offset_right = 2091.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect330" type="ColorRect" parent="background" unique_id=78180947]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2065.0
+offset_top = -1350.0
+offset_right = -2025.0
+offset_bottom = -1280.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect333" type="ColorRect" parent="background" unique_id=1073512556]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2155.0
+offset_top = -1650.0
+offset_right = -2025.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect334" type="ColorRect" parent="background" unique_id=1720020879]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2194.0
+offset_top = -1800.0
+offset_right = -2175.0
+offset_bottom = -1713.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect336" type="ColorRect" parent="background" unique_id=855731358]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2175.0
+offset_top = -1950.0
+offset_right = -2025.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect337" type="ColorRect" parent="background" unique_id=1522446454]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2229.0
+offset_top = -2100.0
+offset_right = -2175.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect339" type="ColorRect" parent="background" unique_id=1073708327]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2175.0
+offset_top = -2250.0
+offset_right = -2025.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect340" type="ColorRect" parent="background" unique_id=1580150113]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2235.0
+offset_top = -2400.0
+offset_right = -2175.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect342" type="ColorRect" parent="background" unique_id=680152757]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2175.0
+offset_top = -2550.0
+offset_right = -2025.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect343" type="ColorRect" parent="background" unique_id=739082338]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2222.0
+offset_top = -2700.0
+offset_right = -2175.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect345" type="ColorRect" parent="background" unique_id=436831832]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2175.0
+offset_top = -2850.0
+offset_right = -2025.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect348" type="ColorRect" parent="background" unique_id=1621627740]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2101.0
+offset_top = -3150.0
+offset_right = -2025.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect369" type="ColorRect" parent="background" unique_id=1958896946]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -900.0
+offset_right = -1575.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect370" type="ColorRect" parent="background" unique_id=1079837110]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -1050.0
+offset_right = -1725.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect371" type="ColorRect" parent="background" unique_id=644906841]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1984.0
+offset_top = -1200.0
+offset_right = -1875.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect372" type="ColorRect" parent="background" unique_id=155003268]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -1200.0
+offset_right = -1575.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect373" type="ColorRect" parent="background" unique_id=410453647]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -1350.0
+offset_right = -1725.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect374" type="ColorRect" parent="background" unique_id=1998309293]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -1500.0
+offset_right = -1875.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect375" type="ColorRect" parent="background" unique_id=980876007]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -1500.0
+offset_right = -1575.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect376" type="ColorRect" parent="background" unique_id=907605994]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -1650.0
+offset_right = -1725.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect377" type="ColorRect" parent="background" unique_id=743639857]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -1800.0
+offset_right = -1875.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect378" type="ColorRect" parent="background" unique_id=368918815]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -1800.0
+offset_right = -1575.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect379" type="ColorRect" parent="background" unique_id=823763536]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -1950.0
+offset_right = -1725.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect380" type="ColorRect" parent="background" unique_id=2105393912]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -2100.0
+offset_right = -1875.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect381" type="ColorRect" parent="background" unique_id=278433432]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -2100.0
+offset_right = -1575.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect382" type="ColorRect" parent="background" unique_id=16402765]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -2250.0
+offset_right = -1725.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect383" type="ColorRect" parent="background" unique_id=919117208]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -2400.0
+offset_right = -1875.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect384" type="ColorRect" parent="background" unique_id=1044757337]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -2400.0
+offset_right = -1575.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect385" type="ColorRect" parent="background" unique_id=7424206]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -2550.0
+offset_right = -1725.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect386" type="ColorRect" parent="background" unique_id=1261209199]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -2700.0
+offset_right = -1875.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect387" type="ColorRect" parent="background" unique_id=311533473]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -2700.0
+offset_right = -1575.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect388" type="ColorRect" parent="background" unique_id=280577012]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -2850.0
+offset_right = -1725.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect389" type="ColorRect" parent="background" unique_id=136615904]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -3000.0
+offset_right = -1875.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect390" type="ColorRect" parent="background" unique_id=157957844]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -3000.0
+offset_right = -1575.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect391" type="ColorRect" parent="background" unique_id=1043947006]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -3150.0
+offset_right = -1725.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect392" type="ColorRect" parent="background" unique_id=530293707]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2025.0
+offset_top = -3300.0
+offset_right = -1875.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect393" type="ColorRect" parent="background" unique_id=379220305]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -3300.0
+offset_right = -1575.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect394" type="ColorRect" parent="background" unique_id=761458437]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1875.0
+offset_top = -3450.0
+offset_right = -1725.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect396" type="ColorRect" parent="background" unique_id=1625314124]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1725.0
+offset_top = -3600.0
+offset_right = -1575.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect411" type="ColorRect" parent="background" unique_id=894973810]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -450.0
+offset_right = -1125.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect412" type="ColorRect" parent="background" unique_id=985442646]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -600.0
+offset_right = -1275.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect413" type="ColorRect" parent="background" unique_id=2129715362]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -750.0
+offset_right = -1425.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect414" type="ColorRect" parent="background" unique_id=63820111]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -750.0
+offset_right = -1125.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect415" type="ColorRect" parent="background" unique_id=1496536308]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -900.0
+offset_right = -1275.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect416" type="ColorRect" parent="background" unique_id=615255253]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -1050.0
+offset_right = -1425.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect417" type="ColorRect" parent="background" unique_id=347248403]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -1050.0
+offset_right = -1125.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect418" type="ColorRect" parent="background" unique_id=627276085]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -1200.0
+offset_right = -1275.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect419" type="ColorRect" parent="background" unique_id=87873939]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -1350.0
+offset_right = -1425.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect420" type="ColorRect" parent="background" unique_id=1024765836]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -1350.0
+offset_right = -1125.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect421" type="ColorRect" parent="background" unique_id=1807868847]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -1500.0
+offset_right = -1275.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect422" type="ColorRect" parent="background" unique_id=1892938964]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -1650.0
+offset_right = -1425.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect423" type="ColorRect" parent="background" unique_id=10895383]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -1650.0
+offset_right = -1125.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect424" type="ColorRect" parent="background" unique_id=1278785136]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -1800.0
+offset_right = -1275.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect425" type="ColorRect" parent="background" unique_id=1632602469]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -1950.0
+offset_right = -1425.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect426" type="ColorRect" parent="background" unique_id=1163881248]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -1950.0
+offset_right = -1125.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect427" type="ColorRect" parent="background" unique_id=1714073300]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -2100.0
+offset_right = -1275.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect428" type="ColorRect" parent="background" unique_id=152055887]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -2250.0
+offset_right = -1425.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect429" type="ColorRect" parent="background" unique_id=1371269839]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -2250.0
+offset_right = -1125.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect430" type="ColorRect" parent="background" unique_id=2093246664]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -2400.0
+offset_right = -1275.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect431" type="ColorRect" parent="background" unique_id=423872133]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -2550.0
+offset_right = -1425.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect432" type="ColorRect" parent="background" unique_id=832957924]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -2550.0
+offset_right = -1125.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect433" type="ColorRect" parent="background" unique_id=224414789]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -2700.0
+offset_right = -1275.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect434" type="ColorRect" parent="background" unique_id=444951962]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -2850.0
+offset_right = -1425.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect435" type="ColorRect" parent="background" unique_id=732648652]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -2850.0
+offset_right = -1125.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect436" type="ColorRect" parent="background" unique_id=175848610]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -3000.0
+offset_right = -1275.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect437" type="ColorRect" parent="background" unique_id=1990917811]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -3150.0
+offset_right = -1425.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect438" type="ColorRect" parent="background" unique_id=553695632]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -3150.0
+offset_right = -1125.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect439" type="ColorRect" parent="background" unique_id=1158397853]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -3300.0
+offset_right = -1275.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect440" type="ColorRect" parent="background" unique_id=547946115]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -3450.0
+offset_right = -1425.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect441" type="ColorRect" parent="background" unique_id=881708022]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -3450.0
+offset_right = -1125.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect442" type="ColorRect" parent="background" unique_id=79955244]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -3600.0
+offset_right = -1275.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect443" type="ColorRect" parent="background" unique_id=1354393045]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1575.0
+offset_top = -3750.0
+offset_right = -1425.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect444" type="ColorRect" parent="background" unique_id=86607787]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -3750.0
+offset_right = -1125.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect445" type="ColorRect" parent="background" unique_id=1156584046]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1425.0
+offset_top = -3900.0
+offset_right = -1275.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect447" type="ColorRect" parent="background" unique_id=526118175]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -4050.0
+offset_right = -1125.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect446" type="ColorRect" parent="background" unique_id=1546103547]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1632.0
+offset_top = -3810.0
+offset_right = -1575.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect448" type="ColorRect" parent="background" unique_id=1137561460]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1483.0
+offset_top = -3959.0
+offset_right = -1425.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect449" type="ColorRect" parent="background" unique_id=577485230]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1303.0
+offset_top = -4067.0
+offset_right = -1275.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect451" type="ColorRect" parent="background" unique_id=1716605065]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -862.0
+offset_top = -150.0
+offset_right = -825.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect452" type="ColorRect" parent="background" unique_id=993775030]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1120.0
+offset_top = -300.0
+offset_right = -975.0
+offset_bottom = -217.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect453" type="ColorRect" parent="background" unique_id=225270471]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -300.0
+offset_right = -675.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect454" type="ColorRect" parent="background" unique_id=634395729]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -450.0
+offset_right = -825.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect455" type="ColorRect" parent="background" unique_id=784592130]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -600.0
+offset_right = -975.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect456" type="ColorRect" parent="background" unique_id=198203404]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -600.0
+offset_right = -675.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect457" type="ColorRect" parent="background" unique_id=523083546]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -750.0
+offset_right = -825.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect458" type="ColorRect" parent="background" unique_id=1855962800]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -900.0
+offset_right = -975.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect459" type="ColorRect" parent="background" unique_id=1737686367]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -900.0
+offset_right = -675.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect460" type="ColorRect" parent="background" unique_id=586093200]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -1050.0
+offset_right = -825.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect461" type="ColorRect" parent="background" unique_id=1190484835]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -1200.0
+offset_right = -975.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect462" type="ColorRect" parent="background" unique_id=1631056076]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -1200.0
+offset_right = -675.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect463" type="ColorRect" parent="background" unique_id=331990400]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -1350.0
+offset_right = -825.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect464" type="ColorRect" parent="background" unique_id=598051140]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -1500.0
+offset_right = -975.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect465" type="ColorRect" parent="background" unique_id=746957243]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -1500.0
+offset_right = -675.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect466" type="ColorRect" parent="background" unique_id=265733815]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -1650.0
+offset_right = -825.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect467" type="ColorRect" parent="background" unique_id=162260923]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -1800.0
+offset_right = -975.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect468" type="ColorRect" parent="background" unique_id=292797598]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -1800.0
+offset_right = -675.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect469" type="ColorRect" parent="background" unique_id=1907061319]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -1950.0
+offset_right = -825.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect470" type="ColorRect" parent="background" unique_id=650399005]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -2100.0
+offset_right = -975.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect471" type="ColorRect" parent="background" unique_id=1406630041]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -2100.0
+offset_right = -675.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect472" type="ColorRect" parent="background" unique_id=2036608799]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -2250.0
+offset_right = -825.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect473" type="ColorRect" parent="background" unique_id=552094029]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -2400.0
+offset_right = -975.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect474" type="ColorRect" parent="background" unique_id=1942488216]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -2400.0
+offset_right = -675.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect475" type="ColorRect" parent="background" unique_id=16643936]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -2550.0
+offset_right = -825.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect476" type="ColorRect" parent="background" unique_id=2084107393]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -2700.0
+offset_right = -975.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect477" type="ColorRect" parent="background" unique_id=1235468797]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -2700.0
+offset_right = -675.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect478" type="ColorRect" parent="background" unique_id=1591286401]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -2850.0
+offset_right = -825.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect479" type="ColorRect" parent="background" unique_id=824940917]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -3000.0
+offset_right = -975.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect480" type="ColorRect" parent="background" unique_id=610078031]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -3000.0
+offset_right = -675.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect481" type="ColorRect" parent="background" unique_id=114716476]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -3150.0
+offset_right = -825.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect482" type="ColorRect" parent="background" unique_id=426636185]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -3300.0
+offset_right = -975.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect483" type="ColorRect" parent="background" unique_id=1861789586]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -3300.0
+offset_right = -675.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect484" type="ColorRect" parent="background" unique_id=1433416445]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -3450.0
+offset_right = -825.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect485" type="ColorRect" parent="background" unique_id=1935982335]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -3600.0
+offset_right = -975.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect486" type="ColorRect" parent="background" unique_id=373091982]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -3600.0
+offset_right = -675.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect487" type="ColorRect" parent="background" unique_id=1647060354]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -3750.0
+offset_right = -825.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect488" type="ColorRect" parent="background" unique_id=1762710548]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -3900.0
+offset_right = -975.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect489" type="ColorRect" parent="background" unique_id=1399147857]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -3900.0
+offset_right = -675.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect490" type="ColorRect" parent="background" unique_id=1655664053]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -4050.0
+offset_right = -825.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect491" type="ColorRect" parent="background" unique_id=1221579147]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1125.0
+offset_top = -4200.0
+offset_right = -975.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect492" type="ColorRect" parent="background" unique_id=1149906974]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -825.0
+offset_top = -4200.0
+offset_right = -675.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect493" type="ColorRect" parent="background" unique_id=382286331]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = -4317.0
+offset_right = -825.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect495" type="ColorRect" parent="background" unique_id=135237608]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -4437.0
+offset_right = -375.0
+offset_bottom = -4350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect497" type="ColorRect" parent="background" unique_id=185601678]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -150.0
+offset_right = -525.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect498" type="ColorRect" parent="background" unique_id=1634125896]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -150.0
+offset_right = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect499" type="ColorRect" parent="background" unique_id=1487446728]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -300.0
+offset_right = -375.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect500" type="ColorRect" parent="background" unique_id=1408696374]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -450.0
+offset_right = -525.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect501" type="ColorRect" parent="background" unique_id=2005654449]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -450.0
+offset_right = -225.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect502" type="ColorRect" parent="background" unique_id=108445794]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -600.0
+offset_right = -375.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect503" type="ColorRect" parent="background" unique_id=514230]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -750.0
+offset_right = -525.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect504" type="ColorRect" parent="background" unique_id=1946400695]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -750.0
+offset_right = -225.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect505" type="ColorRect" parent="background" unique_id=1151945353]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -900.0
+offset_right = -375.0
+offset_bottom = -750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect506" type="ColorRect" parent="background" unique_id=630008428]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -1050.0
+offset_right = -525.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect507" type="ColorRect" parent="background" unique_id=690638590]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -1050.0
+offset_right = -225.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect508" type="ColorRect" parent="background" unique_id=1128980345]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -1200.0
+offset_right = -375.0
+offset_bottom = -1050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect509" type="ColorRect" parent="background" unique_id=594206036]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -1350.0
+offset_right = -525.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect510" type="ColorRect" parent="background" unique_id=580546604]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -1350.0
+offset_right = -225.0
+offset_bottom = -1200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect511" type="ColorRect" parent="background" unique_id=2007533035]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -1500.0
+offset_right = -375.0
+offset_bottom = -1350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect512" type="ColorRect" parent="background" unique_id=13531361]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -1650.0
+offset_right = -525.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect513" type="ColorRect" parent="background" unique_id=927621959]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -1650.0
+offset_right = -225.0
+offset_bottom = -1500.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect514" type="ColorRect" parent="background" unique_id=1188908547]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -1800.0
+offset_right = -375.0
+offset_bottom = -1650.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect515" type="ColorRect" parent="background" unique_id=206446841]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -1950.0
+offset_right = -525.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect516" type="ColorRect" parent="background" unique_id=1474340277]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -1950.0
+offset_right = -225.0
+offset_bottom = -1800.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect517" type="ColorRect" parent="background" unique_id=352955104]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -2100.0
+offset_right = -375.0
+offset_bottom = -1950.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect518" type="ColorRect" parent="background" unique_id=1528242408]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -2250.0
+offset_right = -525.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect519" type="ColorRect" parent="background" unique_id=1769691942]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -2250.0
+offset_right = -225.0
+offset_bottom = -2100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect520" type="ColorRect" parent="background" unique_id=1340584395]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -2400.0
+offset_right = -375.0
+offset_bottom = -2250.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect521" type="ColorRect" parent="background" unique_id=1524208071]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -2550.0
+offset_right = -525.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect522" type="ColorRect" parent="background" unique_id=416969844]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -2550.0
+offset_right = -225.0
+offset_bottom = -2400.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect523" type="ColorRect" parent="background" unique_id=1669458054]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -2700.0
+offset_right = -375.0
+offset_bottom = -2550.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect524" type="ColorRect" parent="background" unique_id=2140995878]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -2850.0
+offset_right = -525.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect525" type="ColorRect" parent="background" unique_id=562067583]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -2850.0
+offset_right = -225.0
+offset_bottom = -2700.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect526" type="ColorRect" parent="background" unique_id=653444705]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -3000.0
+offset_right = -375.0
+offset_bottom = -2850.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect527" type="ColorRect" parent="background" unique_id=1184308300]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -3150.0
+offset_right = -525.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect528" type="ColorRect" parent="background" unique_id=891515419]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -3150.0
+offset_right = -225.0
+offset_bottom = -3000.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect529" type="ColorRect" parent="background" unique_id=1994062737]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -3300.0
+offset_right = -375.0
+offset_bottom = -3150.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect530" type="ColorRect" parent="background" unique_id=83886264]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -3450.0
+offset_right = -525.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect531" type="ColorRect" parent="background" unique_id=200731448]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -3450.0
+offset_right = -225.0
+offset_bottom = -3300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect532" type="ColorRect" parent="background" unique_id=1598493372]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -3600.0
+offset_right = -375.0
+offset_bottom = -3450.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect533" type="ColorRect" parent="background" unique_id=1071003423]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -3750.0
+offset_right = -525.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect534" type="ColorRect" parent="background" unique_id=1240797640]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -3750.0
+offset_right = -225.0
+offset_bottom = -3600.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect535" type="ColorRect" parent="background" unique_id=951540716]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -3900.0
+offset_right = -375.0
+offset_bottom = -3750.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect536" type="ColorRect" parent="background" unique_id=1111988194]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -4050.0
+offset_right = -525.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect537" type="ColorRect" parent="background" unique_id=295541005]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -4050.0
+offset_right = -225.0
+offset_bottom = -3900.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect538" type="ColorRect" parent="background" unique_id=1600818111]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -525.0
+offset_top = -4200.0
+offset_right = -375.0
+offset_bottom = -4050.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect539" type="ColorRect" parent="background" unique_id=1266155320]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -4350.0
+offset_right = -525.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect541" type="ColorRect" parent="background" unique_id=1234686831]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -704.0
+offset_top = -4362.0
+offset_right = -675.0
+offset_bottom = -4350.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="ColorRect540" type="ColorRect" parent="background" unique_id=1508002499]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -4350.0
+offset_right = -225.0
+offset_bottom = -4200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="SQUARE" type="Node2D" parent="." unique_id=741480457]
+
+[node name="FLOOR" type="StaticBody2D" parent="SQUARE" unique_id=633117980]
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR" unique_id=102265634]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR" unique_id=929256426]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR2" type="StaticBody2D" parent="SQUARE" unique_id=1958934059]
+position = Vector2(-583, -76.99999)
+rotation = 0.2617994
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR2" unique_id=1028732203]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR2" unique_id=185591568]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR3" type="StaticBody2D" parent="SQUARE" unique_id=273029272]
+position = Vector2(-1126, -302)
+rotation = 0.5235988
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR3" unique_id=1805959994]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR3" unique_id=1920140200]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR4" type="StaticBody2D" parent="SQUARE" unique_id=992388980]
+position = Vector2(-1592.0001, -660.0001)
+rotation = 0.7853982
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR4" unique_id=1484550166]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR4" unique_id=1551293435]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR5" type="StaticBody2D" parent="SQUARE" unique_id=1429731182]
+position = Vector2(-1950.0001, -1127.0002)
+rotation = 1.0471976
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR5" unique_id=2112527107]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR5" unique_id=1761444761]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR6" type="StaticBody2D" parent="SQUARE" unique_id=1505976495]
+position = Vector2(-2176, -1671.0001)
+rotation = 1.3089969
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR6" unique_id=1207165354]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR6" unique_id=936258451]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR7" type="StaticBody2D" parent="SQUARE" unique_id=1854588869]
+position = Vector2(2251.9653, -2255)
+rotation = -1.5717311
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR7" unique_id=773602484]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR7" unique_id=1442867093]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR8" type="StaticBody2D" parent="SQUARE" unique_id=631686814]
+position = Vector2(2175.5103, -1671.928)
+rotation = -1.3099316
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR8" unique_id=1652795146]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR8" unique_id=1033804092]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR9" type="StaticBody2D" parent="SQUARE" unique_id=1934103879]
+position = Vector2(1951.0177, -1128.7181)
+rotation = -1.0481323
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR9" unique_id=1954690806]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR9" unique_id=2122219902]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR10" type="StaticBody2D" parent="SQUARE" unique_id=2043590649]
+position = Vector2(1593.4534, -662.38354)
+rotation = -0.7863329
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR10" unique_id=1740390287]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR10" unique_id=1448133196]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR11" type="StaticBody2D" parent="SQUARE" unique_id=692510146]
+position = Vector2(1126.7882, -303.9473)
+rotation = -0.5245335
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR11" unique_id=1586757988]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR11" unique_id=851783871]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR12" type="StaticBody2D" parent="SQUARE" unique_id=1550436735]
+position = Vector2(583, -77.43921)
+rotation = -0.2627342
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR12" unique_id=882222171]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR12" unique_id=2060560431]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR13" type="StaticBody2D" parent="SQUARE" unique_id=1386761287]
+position = Vector2(0, -4510)
+rotation = -3.1411288
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR13" unique_id=687641943]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR13" unique_id=663418917]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR14" type="StaticBody2D" parent="SQUARE" unique_id=359857769]
+position = Vector2(582.9644, -4432.7295)
+rotation = -2.8793294
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR14" unique_id=1943946663]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR14" unique_id=123706786]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR15" type="StaticBody2D" parent="SQUARE" unique_id=812335452]
+position = Vector2(1125.8599, -4207.478)
+rotation = -2.61753
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR15" unique_id=50880408]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR15" unique_id=194001472]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR16" type="StaticBody2D" parent="SQUARE" unique_id=975605540]
+position = Vector2(1591.6938, -3849.2615)
+rotation = -2.3557305
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR16" unique_id=2076516980]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR16" unique_id=1102147528]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR17" type="StaticBody2D" parent="SQUARE" unique_id=841762053]
+position = Vector2(1949.477, -3382.0947)
+rotation = -2.0939312
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR17" unique_id=2145580118]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR17" unique_id=1541375733]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR18" type="StaticBody2D" parent="SQUARE" unique_id=847547534]
+position = Vector2(2175.2239, -2837.991)
+rotation = -1.832132
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR18" unique_id=312328005]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR18" unique_id=6117886]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR19" type="StaticBody2D" parent="SQUARE" unique_id=2114057517]
+position = Vector2(-2254, -2257.1797)
+rotation = -4.7122817
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR19" unique_id=1637611962]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR19" unique_id=2049361690]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR20" type="StaticBody2D" parent="SQUARE" unique_id=2028932253]
+position = Vector2(-2176.937, -2840.1729)
+rotation = -4.450482
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR20" unique_id=1920612971]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR20" unique_id=1421639063]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR21" type="StaticBody2D" parent="SQUARE" unique_id=1245666258]
+position = Vector2(-1951.8792, -3383.1472)
+rotation = -4.188683
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR21" unique_id=208935196]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR21" unique_id=1343997026]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR22" type="StaticBody2D" parent="SQUARE" unique_id=1751018440]
+position = Vector2(-1593.8292, -3849.1094)
+rotation = -3.9268835
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR22" unique_id=362714100]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR22" unique_id=82265932]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR23" type="StaticBody2D" parent="SQUARE" unique_id=1658689673]
+position = Vector2(-1126.7902, -4207.059)
+rotation = -3.6650841
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR23" unique_id=1518102886]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR23" unique_id=715745064]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR24" type="StaticBody2D" parent="SQUARE" unique_id=522408032]
+position = Vector2(-582.7666, -4433)
+rotation = -3.4032848
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR24" unique_id=835513650]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR24" unique_id=1545091199]
+offset_left = -300.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)
+
+[node name="FLOOR-OLD" type="StaticBody2D" parent="SQUARE" unique_id=895876536]
+visible = false
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="SQUARE/FLOOR-OLD" unique_id=503514618]
+shape = SubResource("RectangleShape2D_ihbxb")
+
+[node name="ColorRect" type="ColorRect" parent="SQUARE/FLOOR-OLD" unique_id=1705762321]
+offset_left = -1000.0
+offset_top = -25.0
+offset_right = 1000.0
+offset_bottom = 25.0
+color = Color(0, 0, 0, 1)

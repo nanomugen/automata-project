@@ -13,25 +13,30 @@ var current_value:int = 0
 var this_is_current_state:bool = false
 func _ready() -> void:
 	initPos = init.position;
-	#print("init: " + str(initPos))
 func _process(_delta: float) -> void:
-	#print(human.get_node("Camera2D").global_position)
 	
 	if Input.is_action_just_pressed("attack") and this_is_current_state:
-		print("a")
 		check_doors()
 		check_exits()
 		update_points()
 		
 func check_doors():
-	print("c")
+	var door_to_verify:Array[Door]
+	var button_to_press:DoorButton
 	for d in doors:
 		var filtered_buttons:Array[DoorButton] = d.buttons.filter((func(b): return b.inside_area == true))
 		if filtered_buttons.size() > 0:
+			door_to_verify.append(d)
+			button_to_press = filtered_buttons[0]
 			print("d")
-			filtered_buttons[0].pressed()
-			d.verify_buttons()
-	pass
+			#filtered_buttons[0].pressed()
+			#d.verify_buttons()
+	if door_to_verify.size() > 0:
+		print(door_to_verify.size())
+		button_to_press.pressed()
+		for d2 in door_to_verify:
+			d2.verify_buttons()
+	
 
 func update_points()->void:
 	var filtered_points:Array[Point] = points.filter((func(p): return p.inside_area == true))
@@ -48,12 +53,9 @@ func update_exits()->void:
 		e.update_opened(current_value)
 
 func check_inside_area(exit:Exit):
-	print("exit.inside_area: " +str(exit.inside_area))
 	return exit.inside_area == true
 func check_exits()->void:
-	print("check_exits")
 	var filtered_exits:Array[Exit] = exits.filter(check_inside_area) 
-	print("size filtered exits: " + str(filtered_exits.size()))
 	if filtered_exits.size() > 0:
 		#if filtered_exits[0].goal == current_value:
 		if filtered_exits[0].opened:
@@ -61,7 +63,6 @@ func check_exits()->void:
 
 func transition_next_state(exit:Exit)->void:
 	PlayerHudControl.clear_hud()
-	print(exit.is_final)
 	if exit.is_final :
 		DataSystem.DATA_OBJECT["test_value"] += 1
 		DataSystem._save()
@@ -69,7 +70,6 @@ func transition_next_state(exit:Exit)->void:
 		get_tree().change_scene_to_file("res://scenes/menus/congratulations.tscn")
 	if exit.nextState == null:
 		return
-	print("goal == current_value")
 	for p in points:
 		p.reset_button()
 	for e in exits:

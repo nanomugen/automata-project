@@ -25,10 +25,8 @@ func _process(_delta: float) -> void:
 
 
 func add_exit(exit:Exit):
-	print("adding exit: " + str(exit))
 	exits[exit] = {"goal":exit.goal,"opened":exit.opened,"color_opened":exit.color_opened,"color_closed":exit.color_closed}
 	update_hud()
-	print(exits)
 
 func update_exit(exit:Exit):
 	if exits.has(exit):

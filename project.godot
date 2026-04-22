@@ -24,6 +24,11 @@ config/icon="res://icon.svg"
 DataSystem="*uid://g8nw5uc88ylv"
 PlayerHudControl="*uid://dosv2jc52cjor"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [input]
 
 move_left={

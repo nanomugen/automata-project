@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ckvoiq47w75yr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
+size = Vector2(200, 50)
+
+[node name="block" type="Node2D" unique_id=663636396]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1285590486]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49790084, 0.29756764, 0.0964976, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect" unique_id=1306643404]
+show_behind_parent = true
+position = Vector2(100, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D" unique_id=533660394]
+shape = SubResource("RectangleShape2D_3gtdk")
