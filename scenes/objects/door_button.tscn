@@ -3,7 +3,92 @@
 [ext_resource type="Script" uid="uid://du5potyrr2jjv" path="res://scripts/door_button.gd" id="1_bnpq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nhyi"]
-size = Vector2(50, 50)
+size = Vector2(120, 100)
+
+[sub_resource type="Animation" id="Animation_bnpq4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/button_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/button_body:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Polygon2D2:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_8v8ox"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/button_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, -2), Vector2(5, 5), Vector2(-2, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/button_body:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2), PackedVector2Array(5, 45, 10, 50, 50, 50, 50, 10, 45, 5), PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/Polygon2D2:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25833336, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2), PackedVector2Array(5, 45, 10, 50, 50, 50, 50, 10, 45, 5), PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2o73"]
+_data = {
+&"RESET": SubResource("Animation_bnpq4"),
+&"press": SubResource("Animation_8v8ox")
+}
 
 [node name="door_button" type="Node2D" unique_id=1126250766]
 script = ExtResource("1_bnpq4")
@@ -14,33 +99,51 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.33660764, 0.3366076, 0.3366076, 1)
 
-[node name="button_rect" type="ColorRect" parent="ColorRect" unique_id=934422812]
+[node name="button_body" type="Polygon2D" parent="ColorRect" unique_id=1957624171]
+color = Color(0.23921569, 0.5058824, 0.40392157, 1)
+polygon = PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)
+
+[node name="Polygon2D2" type="Polygon2D" parent="ColorRect" unique_id=1779426603]
+color = Color(0, 0, 0, 0.54800004)
+polygon = PackedVector2Array(-2, 38, 10, 50, 50, 50, 50, 10, 38, -2)
+
+[node name="button_rect" type="ColorRect" parent="ColorRect" unique_id=2108698615]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.24033406, 0.50670344, 0.4049087, 1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="ColorRect" unique_id=26185164]
+color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+polygon = PackedVector2Array(60, 0, 65, 5, 65, 65, 5, 65, 0, 60, 60, 60)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1275674861]
+show_behind_parent = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1451832775]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_2nhyi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2063363035]
+libraries/ = SubResource("AnimationLibrary_u2o73")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -7,6 +7,7 @@ var DATA_OBJECT: Dictionary = {
 	"test_value 2": 0,
 	"version": 0.1,
 	"debug_mode": false,
+	"tutorial_mode": true,
 	"show_tutorial": true,
 	"player_abillities":{
 		"dash":true,

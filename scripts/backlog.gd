@@ -6,6 +6,14 @@ extends Node
 ####################################################################################################
 TODO
 ####################################################################################################
+REMODELAR OS OBJETOS PARA FICAR MAIS INTUITIVO
+
+COLOCAR NO DATASYSTEM O MODO TUTORIAL
+
+CRIAR OBJETOS PARA DEMONSTRAR AS AÇOES
+
+REFAZER OS BOTÕES DE TECLADO
+
 MEXER NO SISTEMA DE MOSTRAR OS POINTS E EXITS, PERGUNTAR SE AQUELE ITEM JA ESTA ADICIONADO 
 E NÃO DESTRUIR TUDO SE NÃO TEVE MUDANÇA
 

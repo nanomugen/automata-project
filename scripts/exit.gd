@@ -2,7 +2,7 @@ class_name Exit
 extends Node2D
 
 @onready var color_rect: ColorRect = $Area2D/ColorRect
-@onready var label: Label = $Label
+@onready var label: Label = $Area2D/Label
 
 
 @export var nextState: State
@@ -20,7 +20,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 func reset_exit():
-	label.text = "0.0/"+str(goal)
+	label.text = "0/"+str(goal)
 	color_rect.color = color_closed
 	inside_area = false
 	opened = false

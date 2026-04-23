@@ -5,10 +5,17 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var door_indicator: ColorRect = $StaticBody2D/ColorRect/door_indicator
 
+@export var color_unpressed = Color(1,0,1,0.7)
+@export var color_pressed = Color(0,1,1,0.7)
+
 var opened:bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	door_indicator.color = buttons[0].color_unpressed
+	door_indicator.color = color_unpressed
+	for b in buttons:
+		if b != null:
+			b.color_pressed = color_pressed
+			b.color_unpressed = color_unpressed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,10 +31,10 @@ func verify_buttons():
 			
 		if all_pressed and !opened:
 			opened = true
-			door_indicator.color = buttons[0].color_pressed
+			door_indicator.color = color_pressed
 			animation_player.play("open")
 		else:
 			if opened:
 				opened = false
-				door_indicator.color = buttons[0].color_unpressed
+				door_indicator.color = color_unpressed
 				animation_player.play("close")

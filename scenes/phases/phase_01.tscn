@@ -13,6 +13,25 @@
 [ext_resource type="PackedScene" uid="uid://ckvoiq47w75yr" path="res://scenes/objects/block-2.tscn" id="10_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://cvynbjxtqwupf" path="res://scenes/objects/door_button.tscn" id="11_xnm77"]
 [ext_resource type="PackedScene" uid="uid://ckv2580uld7gj" path="res://scenes/objects/door.tscn" id="11_yrmt0"]
+[ext_resource type="Script" uid="uid://duirb1u1llto2" path="res://scripts/tutorial_generic.gd" id="12_1qxw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mam57"]
+size = Vector2(200, 239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qxw2"]
+size = Vector2(183, 202)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8kjp"]
+size = Vector2(177.5, 195.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y802i"]
+size = Vector2(188, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqti6"]
+size = Vector2(264.5, 165.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g6mc"]
+size = Vector2(200, 36.5)
 
 [node name="phase01" type="Node2D" unique_id=448904820]
 script = ExtResource("1_2cipb")
@@ -24,7 +43,7 @@ metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
 z_index = 2
-position = Vector2(706, -559)
+position = Vector2(1572, -35)
 
 [node name="Start_State" parent="Phase" unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(1287, 0)
@@ -35,7 +54,7 @@ doors = [NodePath("doors/door_set_2/door2"), NodePath("doors/door_set_5/door5"),
 human = NodePath("../human")
 
 [node name="init" parent="Phase/Start_State" unique_id=1642130846 instance=ExtResource("5_1qxw2")]
-position = Vector2(-603, -699)
+position = Vector2(-1138, -667)
 
 [node name="points" type="Node2D" parent="Phase/Start_State" unique_id=751447996]
 
@@ -84,7 +103,7 @@ buttons = [NodePath("../door_button")]
 position = Vector2(1375, -960)
 
 [node name="door2" parent="Phase/Start_State/doors/door_set_2" unique_id=725820579 node_paths=PackedStringArray("buttons") instance=ExtResource("11_yrmt0")]
-position = Vector2(-491, 731)
+position = Vector2(-491, 735)
 rotation = 1.5707964
 buttons = [NodePath("../door_button3"), NodePath("../door_button2")]
 
@@ -101,9 +120,11 @@ position = Vector2(458, -76)
 position = Vector2(137, -397)
 rotation = 1.5707964
 buttons = [NodePath("../door_button")]
+color_unpressed = Color(0.8783944, 0.5126306, 0.36268649, 0.7019608)
+color_pressed = Color(0.92948794, 0.9091746, 0.10320946, 0.7019608)
 
 [node name="door_button" parent="Phase/Start_State/doors/door_set_6" unique_id=1559720547 instance=ExtResource("11_xnm77")]
-position = Vector2(3, -38)
+position = Vector2(-164, -26)
 
 [node name="blocks" type="Node2D" parent="Phase/Start_State" unique_id=539380945]
 
@@ -253,9 +274,6 @@ scale = Vector2(0.7, 1)
 [node name="platform16" parent="Phase/Start_State" unique_id=2009977084 instance=ExtResource("8_yqti6")]
 position = Vector2(107, -611)
 
-[node name="platform18" parent="Phase/Start_State" unique_id=906846293 instance=ExtResource("8_yqti6")]
-position = Vector2(-1170, -752)
-
 [node name="platform19" parent="Phase/Start_State" unique_id=1628346361 instance=ExtResource("8_yqti6")]
 position = Vector2(301, -753)
 
@@ -281,6 +299,181 @@ position = Vector2(-520, -299)
 [node name="platform2" parent="Phase/Start_State" unique_id=1538053802 instance=ExtResource("8_yqti6")]
 position = Vector2(110, -1517)
 scale = Vector2(0.7, 1)
+
+[node name="tutorial_plataforma" type="Node2D" parent="Phase/Start_State" unique_id=1339971707]
+position = Vector2(-64, -801)
+script = ExtResource("12_1qxw2")
+tip_text = "Plataforma"
+text = "Esta é uma plataforma, é possível subir e pisar nela, é possível acessá-la de baixo para cima, nem todas as plataformas estão acessíveis a altura que é possível pular, pense bem na sua estratégia."
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_plataforma" unique_id=940953632]
+position = Vector2(96, 281)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_plataforma/Area2D" unique_id=2116700118]
+position = Vector2(-200, -79)
+shape = SubResource("RectangleShape2D_mam57")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_plataforma" unique_id=161939022]
+offset_left = -114.0
+offset_top = 28.0
+offset_right = 497.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_plataforma" unique_id=334163266]
+offset_left = 23.0
+offset_top = 223.0
+offset_right = 110.0
+offset_bottom = 246.0
+text = "Plataforma"
+
+[node name="tutorial_porta" type="Node2D" parent="Phase/Start_State" unique_id=1552029534]
+position = Vector2(386, -704)
+script = ExtResource("12_1qxw2")
+tip_text = "porta"
+text = "As portas abrem quando os respectivos botões são acionados, ao acionar todos os botões a porta se abrirá e sua luz indicativa mudará de cor"
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_porta" unique_id=1918989456]
+position = Vector2(49, 243)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_porta/Area2D" unique_id=161668810]
+position = Vector2(65, 87)
+shape = SubResource("RectangleShape2D_1qxw2")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_porta" unique_id=1167610008]
+offset_left = 3.0
+offset_top = -43.0
+offset_right = 665.0
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_porta" unique_id=386154176]
+offset_left = 21.0
+offset_top = 237.0
+offset_right = 61.0
+offset_bottom = 260.0
+text = "tip"
+
+[node name="tutorial_botão" type="Node2D" parent="Phase/Start_State" unique_id=1445109976]
+position = Vector2(219, -179)
+script = ExtResource("12_1qxw2")
+tip_text = "Botão"
+text = "Botões abrem portas relacionadas a eles, uma porta pode necessitar de um ou mais botões, um botão pode abrir uma ou mais portas."
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_botão" unique_id=1855346569]
+position = Vector2(-73, 8)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_botão/Area2D" unique_id=1885393108]
+position = Vector2(72.25, 36)
+shape = SubResource("RectangleShape2D_e8kjp")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_botão" unique_id=66085259]
+offset_left = -511.0
+offset_top = -73.0
+offset_right = -97.0
+offset_bottom = -28.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_botão" unique_id=436054739]
+offset_left = -256.0
+offset_top = 3.0
+offset_right = -216.0
+offset_bottom = 26.0
+text = "tip"
+
+[node name="tutorial_saída" type="Node2D" parent="Phase/Start_State" unique_id=861663691]
+position = Vector2(926, -219)
+script = ExtResource("12_1qxw2")
+tip_text = "Saída"
+text = "Saídas são ativadas quando a soma dos pontos acionados é igual ao seu valor de saída, ao acionar um botão que atingiu a soma de uma porta, ela se abrirálore ipsum"
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_saída" unique_id=1650424027]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_saída/Area2D" unique_id=178908988]
+position = Vector2(-136, 95.5)
+shape = SubResource("RectangleShape2D_y802i")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_saída" unique_id=696267901]
+offset_left = -40.0
+offset_top = -49.0
+offset_right = 404.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_saída" unique_id=4308451]
+offset_left = -196.0
+offset_top = 58.0
+offset_right = -156.0
+offset_bottom = 81.0
+text = "tip"
+
+[node name="tutorial_ponto" type="Node2D" parent="Phase/Start_State" unique_id=1060420463]
+position = Vector2(-1242, -214)
+script = ExtResource("12_1qxw2")
+tip_text = "Ponto"
+text = "O ponto pode ser ativado e desativado pelo botão de ação, ao acioná-lo ele somará o seu valor a pontuação atual, todos os pontos encontrados serão visíveis no canto superior esquerdo da tela, é preciso combinar um ou mais pontos para para somar o valor de uma saída e abri-la."
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_ponto" unique_id=827281140]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_ponto/Area2D" unique_id=1942861271]
+position = Vector2(317, -198)
+shape = SubResource("RectangleShape2D_yqti6")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_ponto" unique_id=559900781]
+offset_right = 736.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_ponto" unique_id=923210345]
+offset_left = 159.0
+offset_top = -254.0
+offset_right = 199.0
+offset_bottom = -231.0
+text = "tip"
+
+[node name="tutorial_inicio" type="Node2D" parent="Phase/Start_State" unique_id=1801691776]
+position = Vector2(-806, -1016)
+script = ExtResource("12_1qxw2")
+tip_text = "Inicio"
+text = "Esta marca é o ponto de início de cada estado da fase, uma fase tem um ou mais estados onde podem ser acessados através das saídas, ache as saídas para transitar entre os estados até encontrar uma saída que define o fim da fase para completa-la."
+
+[node name="Area2D" type="Area2D" parent="Phase/Start_State/tutorial_inicio" unique_id=1585444638]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase/Start_State/tutorial_inicio/Area2D" unique_id=2061211540]
+position = Vector2(-41, 436)
+shape = SubResource("RectangleShape2D_7g6mc")
+
+[node name="Label" type="Label" parent="Phase/Start_State/tutorial_inicio" unique_id=1468210154]
+offset_left = -333.0
+offset_top = 18.0
+offset_right = 522.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="tip" type="Label" parent="Phase/Start_State/tutorial_inicio" unique_id=1970498771]
+offset_left = -109.0
+offset_top = 208.0
+offset_right = -69.0
+offset_bottom = 231.0
+text = "tip"
 
 [node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(3936, 0)
@@ -741,3 +934,10 @@ offset_right = 638.0
 offset_bottom = 9.0
 text = "teste de texto"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Phase/Start_State/tutorial_plataforma/Area2D" to="Phase/Start_State/tutorial_plataforma" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Phase/Start_State/tutorial_porta/Area2D" to="Phase/Start_State/tutorial_porta" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Phase/Start_State/tutorial_botão/Area2D" to="Phase/Start_State/tutorial_botão" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Phase/Start_State/tutorial_saída/Area2D" to="Phase/Start_State/tutorial_saída" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Phase/Start_State/tutorial_ponto/Area2D" to="Phase/Start_State/tutorial_ponto" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Phase/Start_State/tutorial_inicio/Area2D" to="Phase/Start_State/tutorial_inicio" method="_on_area_2d_body_entered"]
