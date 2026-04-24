@@ -40,6 +40,9 @@ func go_to_main():
 func go_to_options():
 	get_tree().change_scene_to_file("res://scenes/menus/main_options.tscn")
 
+func go_to_tutorial():
+	get_tree().change_scene_to_file("res://scenes/phases/phase_tutorial.tscn")
+
 func go_to_debug():
 	DataSystem.DATA_OBJECT["debug_mode"] = true
 	get_tree().change_scene_to_file("res://scenes/phases/phase_debug.tscn")
@@ -60,3 +63,8 @@ func fade_out():
 	fade_trasition.color = Color(0,0,0,1)
 	tween.tween_property(fade_trasition,"color",Color(0,0,0,0),0.3)
 	tween.tween_property(fade_trasition,"visible",false,0.2)
+
+
+func _on_tutorial_pressed() -> void:
+	fade_in()
+	tween.tween_callback(go_to_tutorial)

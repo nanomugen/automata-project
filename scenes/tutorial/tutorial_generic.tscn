@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://duirb1u1llto2" path="res://scripts/tutorial_generic.gd" id="1_78m6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mam57"]
-size = Vector2(200, 239)
+size = Vector2(200, 119.5)
 
 [node name="tutorial_generic" type="Node2D" unique_id=1339971707]
 script = ExtResource("1_78m6k")
@@ -12,46 +12,95 @@ script = ExtResource("1_78m6k")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2116700118]
+position = Vector2(0, -59.75)
 shape = SubResource("RectangleShape2D_mam57")
 
-[node name="Label" type="Label" parent="." unique_id=161939022]
-offset_right = 444.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
-autowrap_mode = 3
-
-[node name="tip" type="Label" parent="." unique_id=334163266]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "tip"
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=348950322]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = -669.0
+offset_right = 275.0
+offset_bottom = -319.0
+grow_horizontal = 2
 color = Color(0.57700837, 0.5770084, 0.57700837, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1624780443]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.9999947, 0.38819155, 0.52513295, 1)
-
-[node name="Label3" type="Label" parent="ColorRect2" unique_id=1967432331]
-layout_mode = 0
-offset_left = -2.0
-offset_top = 7.0
-offset_right = 40.0
-offset_bottom = 33.0
+[node name="Label" type="Label" parent="ColorRect" unique_id=161939022]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -262.0
+offset_top = 14.0
+offset_right = 262.0
+offset_bottom = 59.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-text = "DICA"
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="Label2" type="Label" parent="ColorRect2" unique_id=1869650913]
-layout_mode = 0
-offset_top = 6.0
-offset_right = 40.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 17
-text = "DICA"
+[node name="tip_sign" type="ColorRect" parent="." unique_id=1401611352]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -99.0
+offset_right = 20.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="tip_sign" unique_id=1056160976]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8863002, 0.8891504, 0.7871024, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="tip_sign" unique_id=822952496]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.47193372, 0.47193372, 0.47193372, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="tip_sign" unique_id=1898400306]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 10.0
+offset_right = 5.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.47193372, 0.47193372, 0.47193372, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1073276208]
+offset = Vector2(0, -140)
+enabled = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
