@@ -8,51 +8,60 @@ script = ExtResource("1_l6cm7")
 
 [node name="button_manager" type="Control" parent="." unique_id=1980806789]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="start" type="Button" parent="button_manager" unique_id=1861122559]
 layout_mode = 0
-offset_left = 500.0
-offset_top = 100.0
-offset_right = 800.0
-offset_bottom = 150.0
+offset_left = 1150.0
+offset_top = 200.0
+offset_right = 1450.0
+offset_bottom = 250.0
 text = "START"
 
 [node name="option" type="Button" parent="button_manager" unique_id=105065290]
 layout_mode = 0
-offset_left = 650.0
-offset_top = 175.0
-offset_right = 950.0
-offset_bottom = 225.0
+offset_left = 1378.0
+offset_top = 350.0
+offset_right = 1678.0
+offset_bottom = 400.0
 text = "OPTIONS"
 
 [node name="tutorial" type="Button" parent="button_manager" unique_id=63648754]
 layout_mode = 0
-offset_left = 653.0
-offset_top = 361.0
-offset_right = 953.0
-offset_bottom = 411.0
+offset_left = 1151.0
+offset_top = 87.0
+offset_right = 1451.0
+offset_bottom = 137.0
 text = "TUTORIAL"
 
 [node name="debug" type="Button" parent="button_manager" unique_id=986678583]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 250.0
-offset_right = 1100.0
-offset_bottom = 300.0
+offset_left = 1589.0
+offset_top = 514.0
+offset_right = 1889.0
+offset_bottom = 564.0
 text = "DEBUG"
 
 [node name="quit" type="Button" parent="button_manager" unique_id=955194155]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 550.0
-offset_right = 1100.0
-offset_bottom = 600.0
+offset_left = 1581.0
+offset_top = 997.0
+offset_right = 1881.0
+offset_bottom = 1047.0
 text = "EXIT"
 
 [node name="fade_trasition" parent="." unique_id=1907557553 instance=ExtResource("2_ekxnf")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="button_manager/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="button_manager/option" to="." method="_on_option_pressed"]

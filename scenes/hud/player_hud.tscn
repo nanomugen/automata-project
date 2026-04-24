@@ -11,6 +11,17 @@ process_mode = 3
 layer = 2
 script = ExtResource("1_7em14")
 
+[node name="fade_transition" type="ColorRect" parent="." unique_id=1277966013]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.00012207031
+offset_right = 0.00012207031
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1527799035]
 visible = false
 offset_left = 1554.0
@@ -33,7 +44,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -497.0
 offset_right = 211.0
-offset_bottom = 532.0
+offset_bottom = 725.71423
 grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 
@@ -116,6 +127,21 @@ theme_override_colors/font_color = Color(0.27492478, 0.5839723, 0.53651965, 1)
 theme_override_font_sizes/font_size = 48
 text = "JUMP"
 
+[node name="back_to_menu_button" type="Button" parent="buttons_tutorial" unique_id=1856211902]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.42863
+offset_top = -98.57141
+offset_right = 174.57135
+offset_bottom = -18.571411
+grow_horizontal = 2
+grow_vertical = 0
+text = "MAIN MENU"
+
 [node name="help_button" type="Control" parent="." unique_id=1627558260]
 layout_mode = 3
 anchors_preset = 1
@@ -164,3 +190,5 @@ theme_override_colors/font_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
 text = "ESC"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="buttons_tutorial/back_to_menu_button" to="." method="_on_back_to_menu_button_pressed"]

@@ -26,7 +26,10 @@ PlayerHudControl="*uid://dosv2jc52cjor"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/resizable=false
+window/stretch/mode="viewport"
 
 [input]
 

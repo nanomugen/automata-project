@@ -5,7 +5,8 @@ extends CanvasLayer
 @onready var buttons_tutorial: Control = $buttons_tutorial
 @onready var help_button: Control = $help_button
 
-
+@onready var fade_transition: ColorRect = $fade_transition
+var tween:Tween
 
 var exit_item_preload = preload("res://scenes/hud/exit_item_hud.tscn")
 
@@ -14,7 +15,8 @@ var points: Dictionary = {}
 var ingame_menu_visibility = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	fade_transition.visible = false
+	buttons_tutorial.visible = false
 
 func _process(_delta: float) -> void:
 	
@@ -65,3 +67,27 @@ func update_hud():
 		point_item.position = Vector2(70,10+25*(j))
 		point_item.value.add_theme_color_override("font_color",point_item.enabled.color)
 		j +=1
+
+
+func _on_back_to_menu_button_pressed() -> void:
+	buttons_tutorial.visible = false
+	ingame_menu_visibility = false
+	fade_in()
+	tween.tween_callback(go_to_main_menu)
+	fade_out()
+	
+func go_to_main_menu():
+	print("go_to_main_menu")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	
+func fade_in():
+	fade_transition.color = Color(0,0,0,0)
+	fade_transition.show()
+	tween = create_tween()
+	tween.tween_property(fade_transition,"color",Color(0,0,0,1),0.3)
+
+func fade_out():
+	fade_transition.color = Color(0,0,0,1)
+	tween.tween_property(fade_transition,"color",Color(0,0,0,0),0.3)
+	tween.tween_property(fade_transition,"visible",false,0.2)
+	

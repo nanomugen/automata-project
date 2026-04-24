@@ -51,14 +51,11 @@ func _on_quit_pressed() -> void:
 	get_tree().quit();
 
 func fade_in():
-	print("inside fade_in")
 	fade_trasition.color = Color(0,0,0,0)
 	fade_trasition.show()
 	tween = create_tween()
 	tween.tween_property(fade_trasition,"color",Color(0,0,0,1),0.3)
-	print("end of fade_in")
-	
-	
+
 func fade_out():
 	fade_trasition.color = Color(0,0,0,1)
 	tween.tween_property(fade_trasition,"color",Color(0,0,0,0),0.3)
