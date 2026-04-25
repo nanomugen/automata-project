@@ -27,6 +27,8 @@ func _process(_delta: float) -> void:
 
 
 func add_exit(exit:Exit):
+	if exits.has(exit) and exits[exit]["opened"] == exit.opened:
+		return
 	exits[exit] = {"goal":exit.goal,"opened":exit.opened,"color_opened":exit.color_opened,"color_closed":exit.color_closed}
 	update_hud()
 
@@ -36,6 +38,8 @@ func update_exit(exit:Exit):
 		update_hud()
 	
 func add_point(point:Point):
+	if points.has(point) and points[point]["pressed"] == point.is_pressed:
+		return
 	points[point] = {"value":point.value,"pressed":point.is_pressed,"color_pressed":point.color_pressed,"color_unpressed":point.color_unpressed}
 	update_hud()
 
@@ -72,6 +76,7 @@ func update_hud():
 func _on_back_to_menu_button_pressed() -> void:
 	buttons_tutorial.visible = false
 	ingame_menu_visibility = false
+	clear_hud()
 	fade_in()
 	tween.tween_callback(go_to_main_menu)
 	fade_out()
