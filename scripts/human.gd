@@ -173,6 +173,9 @@ func jump() -> void:
 func interrupt_jump():
 	if velocity.y < 0:
 		velocity.y = 0
+		
+func damage(damage:int):
+	pass
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation.begins_with("attack"):
@@ -191,8 +194,6 @@ func _on_timer_dash_timeout() -> void:
 func _on_timer_dash_cooldown_timeout() -> void:
 	timer_dash_cooldown.stop()
 	can_dash = true
-	
-
 
 func _on_time_idle_wait_timeout() -> void:
 	#print("_on_time_idle_wait_timeout()")
@@ -208,3 +209,4 @@ func _on_timer_coyote_jump_timeout() -> void:
 	#coyote_time_rect.color = Color(1,0,0)
 	jump_pressed = true
 	print("finished")
+	

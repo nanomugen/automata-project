@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drynjb8bn6nrq"]
 
-[ext_resource type="Script" path="res://scripts/main_old.gd" id="1_gmwqm"]
+[ext_resource type="Script" uid="uid://cvlmjy5jiflli" path="res://scripts/main_old.gd" id="1_gmwqm"]
 [ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="2_j4tx2"]
 [ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human.tscn" id="3_3bf2v"]
 [ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="4_c3vjc"]
@@ -123,10 +123,10 @@ position = Vector2(6, -200)
 
 [node name="exits" type="Node2D" parent="Phase/State2" unique_id=100921124]
 
-[node name="exit2" parent="Phase/State2/exits" unique_id=255611467 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
+[node name="exit2" parent="Phase/State2/exits" unique_id=255611467 instance=ExtResource("7_k4kw4")]
 position = Vector2(928, -200)
-nextState = NodePath("../../../State")
 goal = 8
+is_final = true
 
 [node name="exit" parent="Phase/State2/exits" unique_id=1210684717 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
 position = Vector2(-1052, -200)
