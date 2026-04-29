@@ -174,8 +174,7 @@ func interrupt_jump():
 	if velocity.y < 0:
 		velocity.y = 0
 		
-func damage(_damage_code:int):
-	pass
+
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation.begins_with("attack"):
@@ -210,3 +209,8 @@ func _on_timer_coyote_jump_timeout() -> void:
 	jump_pressed = true
 	print("finished")
 	
+#========================================
+#DAMAGE
+#========================================
+func hit_damage(damage:Damage,respawn:Node2D):
+	pass

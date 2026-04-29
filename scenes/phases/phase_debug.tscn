@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/objects/exit.tscn" id="7_etlu3"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="8_3cfsq"]
 [ext_resource type="PackedScene" uid="uid://8uoi20lcij0y" path="res://scenes/objects/block.tscn" id="9_xb2ge"]
+[ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="10_87u43"]
 [ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/objects/ruler.tscn" id="10_c15y4"]
 [ext_resource type="PackedScene" uid="uid://ckv2580uld7gj" path="res://scenes/objects/door.tscn" id="11_7h3wj"]
 [ext_resource type="PackedScene" uid="uid://cvynbjxtqwupf" path="res://scenes/objects/door_button.tscn" id="12_4kx8g"]
@@ -123,6 +124,12 @@ scale = Vector2(1.9200001, 1)
 [node name="block6" parent="Phase/Start_State/objects" unique_id=121272724 instance=ExtResource("9_xb2ge")]
 position = Vector2(320, -382)
 scale = Vector2(6.4800014, 1)
+
+[node name="spikes" parent="Phase/Start_State" unique_id=705382697 instance=ExtResource("10_87u43")]
+position = Vector2(-49, -24)
+
+[node name="Node2D" type="Node2D" parent="Phase/Start_State/spikes" unique_id=940432697]
+position = Vector2(-111, -28)
 
 [node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("4_8tlsu")]
 position = Vector2(3670, 0)
