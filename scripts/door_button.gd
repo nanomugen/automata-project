@@ -14,7 +14,7 @@ func _ready() -> void:
 	button_rect.color = color_unpressed
 	button_body.color = color_unpressed
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func pressed() -> void:
@@ -33,9 +33,14 @@ func reset_button():
 	is_pressed = false
 
 
+#VERIFICAR SE É O HUMAN
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is not Human:
+		return
 	inside_area = true
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is not Human:
+		return
 	inside_area = false

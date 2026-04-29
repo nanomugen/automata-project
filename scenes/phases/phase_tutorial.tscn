@@ -33,7 +33,7 @@ exits = [NodePath("exits/exit")]
 human = NodePath("../human")
 
 [node name="init" parent="Phase/Start_State" unique_id=1642130846 instance=ExtResource("5_17ixv")]
-position = Vector2(-3, -143)
+position = Vector2(-125, -138)
 
 [node name="points" type="Node2D" parent="Phase/Start_State" unique_id=751447996]
 
@@ -62,6 +62,10 @@ text = "Este é um ponto, pontos são acionados ao apertar o botão de ação, o
 [node name="exit_tutorial" parent="Phase/Start_State/tutorials" unique_id=864717428 instance=ExtResource("9_gmwqm")]
 position = Vector2(1835, -100)
 text = "Esta é uma saída, ela tem um valor associado a ela, quando o seu valor associado for igual ao valor que o jogador acumulou durante o estado atual, ela será aberta. uma saída pode levar a algum outro estado dentro da mesma fase ou, caso seja uma saída final, a saída leva ao fim da fase, que é o objetivo."
+
+[node name="tutorial_generic" parent="Phase/Start_State" unique_id=1312081596 instance=ExtResource("9_gmwqm")]
+position = Vector2(-118, -99)
+text = "Este é o início da fase, toda fase tem um ou mais estados, ao transitar para outro estado, o jogador é posicionado no ponto de partida daquele estado, o objetivo é chegar a uma saída final da fase. Para informações dos controles, aperte ESC para abrir o menu lateral."
 
 [node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_c3vjc")]
 position = Vector2(3936, 0)

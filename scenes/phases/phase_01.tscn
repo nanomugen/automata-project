@@ -20,6 +20,7 @@ script = ExtResource("1_2cipb")
 [node name="Phase" type="Node2D" parent="." unique_id=462732468 node_paths=PackedStringArray("start_state")]
 script = ExtResource("2_xnm77")
 start_state = NodePath("Start_State")
+phase_name = "phase_01"
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
@@ -59,7 +60,7 @@ nextState = NodePath("../../../State")
 goal = 10
 
 [node name="exit2" parent="Phase/Start_State/exits" unique_id=999031583 instance=ExtResource("7_y802i")]
-position = Vector2(670, -2373)
+position = Vector2(693, -2375)
 goal = 3
 is_final = true
 
@@ -71,6 +72,8 @@ position = Vector2(-479, -1075)
 [node name="door5" parent="Phase/Start_State/doors/door_set_5" unique_id=587156041 node_paths=PackedStringArray("buttons") instance=ExtResource("11_yrmt0")]
 position = Vector2(-50, 48)
 buttons = [NodePath("../door_button")]
+color_unpressed = Color(1, 0.88235295, 0.09803922, 1)
+color_pressed = Color(0.5686275, 0.11764706, 0.7058824, 1)
 
 [node name="door_button" parent="Phase/Start_State/doors/door_set_5" unique_id=1126250766 instance=ExtResource("11_xnm77")]
 position = Vector2(1101, -840)
@@ -79,6 +82,8 @@ position = Vector2(1101, -840)
 position = Vector2(241, 196)
 rotation = -1.5707964
 buttons = [NodePath("../door_button")]
+color_unpressed = Color(1, 0.88235295, 0.09803922, 1)
+color_pressed = Color(0.5686275, 0.11764706, 0.7058824, 1)
 
 [node name="door_set_2" type="Node2D" parent="Phase/Start_State/doors" unique_id=2000612220]
 position = Vector2(1375, -960)
@@ -87,8 +92,8 @@ position = Vector2(1375, -960)
 position = Vector2(-491, 684)
 rotation = 1.5707964
 buttons = [NodePath("../door_button3"), NodePath("../door_button2")]
-color_unpressed = Color(0.44741815, 0.14822248, 0.3435867, 0.7019608)
-color_pressed = Color(0.16537565, 0.5123624, 0.68581164, 0.7019608)
+color_unpressed = Color(0.23529412, 0.7058824, 0.29411766, 1)
+color_pressed = Color(0.9607843, 0.50980395, 0.1882353, 1)
 
 [node name="door_button3" parent="Phase/Start_State/doors/door_set_2" unique_id=1840373967 instance=ExtResource("11_xnm77")]
 position = Vector2(-917, -690)
@@ -103,8 +108,8 @@ position = Vector2(458, -76)
 position = Vector2(137, -503)
 rotation = 1.5707964
 buttons = [NodePath("../door_button")]
-color_unpressed = Color(0.8783944, 0.5126306, 0.36268649, 0.7019608)
-color_pressed = Color(0.92948794, 0.9091746, 0.10320946, 0.7019608)
+color_unpressed = Color(0.9019608, 0.09803922, 0.29411766, 1)
+color_pressed = Color(0, 0.50980395, 0.78431374, 1)
 
 [node name="door_button" parent="Phase/Start_State/doors/door_set_6" unique_id=1559720547 instance=ExtResource("11_xnm77")]
 position = Vector2(-164, -26)
@@ -486,11 +491,11 @@ scale = Vector2(7.2452784, 1)
 position = Vector2(44, 0)
 
 [node name="door" parent="Phase/State/doors/door_set_3" unique_id=1602113240 node_paths=PackedStringArray("buttons") instance=ExtResource("11_yrmt0")]
-position = Vector2(-1493, -1857)
+position = Vector2(-1490, -1863)
 rotation = -3.1415927
 buttons = [NodePath("../door_button")]
-color_unpressed = Color(0.5706712, 0.3106635, 0.54305035, 0.7019608)
-color_pressed = Color(0.40584272, 0.88134474, 0.17558163, 0.702)
+color_unpressed = Color(0.27450982, 0.9411765, 0.9411765, 1)
+color_pressed = Color(0.6666667, 0.43137255, 0.15686275, 1)
 
 [node name="door_button" parent="Phase/State/doors/door_set_3" unique_id=1035277124 instance=ExtResource("11_xnm77")]
 z_index = 1
@@ -654,6 +659,8 @@ position = Vector2(-926, -622)
 position = Vector2(54, -44)
 rotation = 1.5707964
 buttons = [NodePath("../door_button"), NodePath("../door_button2")]
+color_unpressed = Color(0.9411765, 0.19607843, 0.9019608, 1)
+color_pressed = Color(0.27450982, 0.27450982, 0.27450982, 1)
 
 [node name="door_button" parent="Phase/State2/objects/door_set" unique_id=2077938559 instance=ExtResource("11_xnm77")]
 position = Vector2(427, 107)

@@ -1,10 +1,12 @@
 extends Node2D
 
-@onready var fade_trasition: ColorRect = $fade_trasition
+@onready var fade_trasition: ColorRect = $options_control/fade_trasition
+
 
 var tween:Tween
 
 func _ready() -> void:
+	print("ready do options")
 	tween = create_tween()
 	fade_out()
 
@@ -16,12 +18,10 @@ func go_to_main_menu():
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func fade_in():
-	print("inside fade_in")
 	fade_trasition.color = Color(0,0,0,0)
 	fade_trasition.show()
 	tween = create_tween()
 	tween.tween_property(fade_trasition,"color",Color(0,0,0,1),0.3)
-	print("end of fade_in")
 	
 	
 func fade_out():

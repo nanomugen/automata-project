@@ -58,7 +58,7 @@ func update_hud():
 		discovery.add_child(exit_item)
 		exit_item.value.text = str(exits[i]["goal"])
 		exit_item.enabled.color = exits[i]["color_opened"] if exits[i]["opened"] else exits[i]["color_closed"]
-		exit_item.position = Vector2(10,10+25*(j))
+		exit_item.position = Vector2(20,20+45*(j))
 		exit_item.value.add_theme_color_override("font_color",exit_item.enabled.color)
 		j +=1
 	
@@ -68,7 +68,7 @@ func update_hud():
 		discovery.add_child(point_item)
 		point_item.value.text = str(points[i]["value"])
 		point_item.enabled.color = points[i]["color_pressed"] if points[i]["pressed"] else points[i]["color_unpressed"]
-		point_item.position = Vector2(70,10+25*(j))
+		point_item.position = Vector2(120,20+45*(j))
 		point_item.value.add_theme_color_override("font_color",point_item.enabled.color)
 		j +=1
 

@@ -13,8 +13,25 @@ var DATA_OBJECT: Dictionary = {
 		"dash":true,
 		"double_jump":false,
 		"wall_jump":false
+	},
+	"phases":{
+		"phase_01":{
+			"name":"Fase 01",
+			"path": "res://scenes/phases/phase_01.tscn",
+			"unlocked":true,
+			"completed":false,
+			"secret_completed":false
+		},
+		"phase_02":{
+			"name":"Fase 02",
+			"path":null,
+			"unlocked":false,
+			"completed":false,
+			"secret_completed":false
+		},
 	}
 }
+
 
 func _ready() -> void:
 	_load()

@@ -7,9 +7,10 @@ extends Node2D
 
 @export var nextState: State
 @export var goal:int
-@export var color_closed:Color = Color(0.7,0.7,0.1,0.7)
-@export var color_opened:Color = Color(0.1,0.1,0.7,0.7)
+@export var color_closed:Color = Color(0.7,0.7,0.1,0.8)
+@export var color_opened:Color = Color(0.1,0.1,0.7,0.8)
 @export var is_final:bool = false
+@export var is_secret:bool = false
 
 var inside_area:bool = false
 var opened:bool = false

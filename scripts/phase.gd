@@ -4,6 +4,9 @@ extends Node2D
 @export var start_state: State;
 @onready var test_value: Label = $testValue
 
+@export var phase_name:String
+
+
 func _ready() -> void:
 	PlayerHudControl.ingame_menu_visibility = true
 	PlayerHudControl.help_button.visible = true
@@ -14,3 +17,12 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	pass
+
+func _on_conclude_phase(conclusion_code:String):
+	if phase_name == "" or phase_name == null:
+		return
+	if conclusion_code in ["completed","secret_completed"]:
+		DataSystem.DATA_OBJECT["phases"][phase_name][conclusion_code] = true
+	else:
+		return
+	DataSystem._save()

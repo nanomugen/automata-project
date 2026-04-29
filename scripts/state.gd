@@ -64,9 +64,11 @@ func check_exits()->void:
 func transition_next_state(exit:Exit)->void:
 	PlayerHudControl.clear_hud()
 	if exit.is_final :
-		DataSystem.DATA_OBJECT["test_value"] += 1
-		DataSystem._save()
-		
+		var completion_code =  "secret_completed" if exit.is_secret else "completed"
+		var parent_phase:Phase = get_parent()
+		parent_phase._on_conclude_phase(completion_code) 
+		#####################
+		#isso ta errado, precisa consertar essa lógica, call down, signal up
 		get_tree().change_scene_to_file("res://scenes/menus/congratulations.tscn")
 	if exit.nextState == null:
 		return

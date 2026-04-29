@@ -29,8 +29,9 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if !already_showing and DataSystem.DATA_OBJECT["tutorial_mode"]:
-		print("entrou no tutorial")
+	if body is not Human:
+		return
+	if !already_showing:
 		self.visible = true
 		color_rect.visible = true
 		#label.text = ""

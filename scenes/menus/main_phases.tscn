@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://doe8myykret6s"]
+
+[ext_resource type="Script" uid="uid://d24wou6hknjbc" path="res://scripts/main_phases.gd" id="1_myo6f"]
+[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_cjixh"]
+
+[node name="main_phases" type="Node2D" unique_id=634228196]
+script = ExtResource("1_myo6f")
+
+[node name="options_control" type="Control" parent="." unique_id=1266434734]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="options_control" unique_id=548042373]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 628.0
+offset_top = 38.0
+offset_right = 1230.0
+offset_bottom = 166.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "FASES"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back_button" type="Button" parent="options_control" unique_id=1397900642]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1586.0
+offset_top = 955.0
+offset_right = 1846.0
+offset_bottom = 1025.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK TO MAIN MENU"
+
+[node name="reset_phases_button" type="Button" parent="options_control" unique_id=1718962814]
+visible = false
+layout_mode = 0
+offset_left = 1235.0
+offset_top = 954.0
+offset_right = 1495.0
+offset_bottom = 1024.0
+text = "RESET PHASES"
+
+[node name="fade_trasition" parent="." unique_id=1907557553 instance=ExtResource("2_cjixh")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="options_control/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="options_control/reset_phases_button" to="." method="_on_reset_phases_button_pressed"]

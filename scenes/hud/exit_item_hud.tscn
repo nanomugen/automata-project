@@ -9,13 +9,13 @@ script = ExtResource("1_0t176")
 
 [node name="enabled" type="ColorRect" parent="." unique_id=54726654]
 layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="value" type="Label" parent="." unique_id=288160180]
 layout_mode = 0
-offset_left = 25.0
-offset_right = 65.0
-offset_bottom = 20.0
+offset_left = 45.0
+offset_right = 99.0
+offset_bottom = 40.0
 theme_override_colors/font_color = Color(0, 0.45411357, 0.45411357, 1)
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 26

@@ -174,7 +174,7 @@ func interrupt_jump():
 	if velocity.y < 0:
 		velocity.y = 0
 		
-func damage(damage:int):
+func damage(_damage_code:int):
 	pass
 	
 func _on_animated_sprite_2d_animation_finished() -> void:

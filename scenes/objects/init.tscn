@@ -25,4 +25,15 @@ offset_right = 100.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.58824646, 0.5370987, 0.70000005)
+color = Color(0, 0.58824646, 0.5370987, 0.8)
+
+[node name="Label" type="Label" parent="." unique_id=1789990096]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = -100.0
+offset_right = 57.0
+offset_bottom = -47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 38
+text = "START"
