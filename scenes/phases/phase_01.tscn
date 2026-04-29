@@ -87,6 +87,8 @@ position = Vector2(1375, -960)
 position = Vector2(-491, 684)
 rotation = 1.5707964
 buttons = [NodePath("../door_button3"), NodePath("../door_button2")]
+color_unpressed = Color(0.44741815, 0.14822248, 0.3435867, 0.7019608)
+color_pressed = Color(0.16537565, 0.5123624, 0.68581164, 0.7019608)
 
 [node name="door_button3" parent="Phase/Start_State/doors/door_set_2" unique_id=1840373967 instance=ExtResource("11_xnm77")]
 position = Vector2(-917, -690)
@@ -487,6 +489,8 @@ position = Vector2(44, 0)
 position = Vector2(-1493, -1857)
 rotation = -3.1415927
 buttons = [NodePath("../door_button")]
+color_unpressed = Color(0.5706712, 0.3106635, 0.54305035, 0.7019608)
+color_pressed = Color(0.40584272, 0.88134474, 0.17558163, 0.702)
 
 [node name="door_button" parent="Phase/State/doors/door_set_3" unique_id=1035277124 instance=ExtResource("11_xnm77")]
 z_index = 1
