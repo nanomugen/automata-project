@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
 z_index = 2
 position = Vector2(1572, -35)
+SPEED = 320.0
 
 [node name="Start_State" parent="Phase" unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(1287, 0)

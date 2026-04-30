@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://dhj6d2lkq0d40" path="res://scripts/spikes.gd" id="1_bxa7l"]
 [ext_resource type="PackedScene" uid="uid://lctpvmll6uu4" path="res://scenes/logic/damage.tscn" id="2_tkv1w"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkv1w"]
+size = Vector2(180, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a2x"]
+size = Vector2(172, 21)
+
 [node name="spikes" type="Node2D" unique_id=705382697]
 script = ExtResource("1_bxa7l")
 
@@ -29,12 +35,22 @@ polygon = PackedVector2Array(0, 0, 30, -52, 60, 0)
 color = Color(0.52912915, 0.52912915, 0.52912915, 0.29500002)
 polygon = PackedVector2Array(28, -45, 10, -13, 27, -6)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1015259083]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=2146155405]
-polygon = PackedVector2Array(0, 0, 30, -52, 60, 0, 90, -52, 120, 0, 150, -52, 180, 0)
-
 [node name="damage" parent="." unique_id=1500415403 instance=ExtResource("2_tkv1w")]
+position = Vector2(88, 0)
 have_respawn = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=874172094]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1700275326]
+position = Vector2(90, -13)
+shape = SubResource("RectangleShape2D_tkv1w")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1512523936]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1917225963]
+position = Vector2(90, -38.5)
+shape = SubResource("RectangleShape2D_y7a2x")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

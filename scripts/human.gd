@@ -2,7 +2,7 @@ class_name Human
 extends CharacterBody2D
 
 #ver se da pra colocar uma curva nesses parametros para acelerar da forma correta esses movimentos
-@export var SPEED = 400.0
+@export var SPEED = 320.0
 @export var DASH_SPEED = 700.0
 @export var jump_height: float = 150.0
 @export var jump_time_to_peak: float = 0.4
@@ -17,10 +17,18 @@ extends CharacterBody2D
 @onready var fall_gravity:float = (-2.0 * jump_height)/(jump_time_to_descent * jump_time_to_descent) * -1.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $collision_shape
+
+
 @onready var timer_dash: Timer = $timer_dash
 @onready var timer_dash_cooldown: Timer = $timer_dash_cooldown
 @onready var time_idle_wait: Timer = $time_idle_wait
 @onready var timer_coyote_jump: Timer = $timer_coyote_jump
+@onready var timer_invincible: Timer = $timer_invincible
+@onready var timer_hitted: Timer = $timer_hitted
+@onready var timer_hitted_freeze: Timer = $timer_hitted/timer_hitted_freeze
+
+
 
 var dashing: bool = false
 var can_dash: bool = true
@@ -32,6 +40,8 @@ var cancel_control:bool = false
 var freeze:bool = false
 var coyote_jump:bool = true
 var jump_pressed:bool = true
+var invincible_frames:bool = false
+var hitted:bool = false
 
 var idle_wait:bool = false
 var play_breath:bool =true
@@ -89,7 +99,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		move_and_slide()
 		return	
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_jump) and !jump_pressed:
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_jump) and !jump_pressed and !hitted:
 		
 		jump()
 		if dashing:
@@ -104,7 +114,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction == 1 or direction == -1:
 		orientation = direction
-	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once:
+	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once and !hitted:
 		cancel_gravity = true
 		dashing = true
 		timer_dash.start()
@@ -156,7 +166,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 	
 	#apply movement
-	if !dashing:
+	if !dashing and !hitted:
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -169,6 +179,7 @@ func get_gravity2() -> float:
 func jump() -> void:
 	jump_pressed = true
 	velocity.y = jump_velocity
+	print("jump velocity: "+str(jump_velocity))
 	
 func interrupt_jump():
 	if velocity.y < 0:
@@ -212,5 +223,52 @@ func _on_timer_coyote_jump_timeout() -> void:
 #========================================
 #DAMAGE
 #========================================
-func hit_damage(damage:Damage,respawn:Node2D):
+func hit_damage(damage:Damage,respawn:RespawnSpot):
+	print("hit damage")
+	if damage.have_respawn and respawn == null:
+		print("respawn == null")
+		return
+	if damage.have_respawn and respawn.position == null:
+		print("respawn.position == null")
+	
+	if invincible_frames:
+		return
+	invincible_frames = true
+	hitted = true
+	
+	if damage.hit_value > 0:
+		pass
+	if damage.have_respawn:
+		print("have_respawn")
+		timer_hitted.timeout.connect(func (): _hitted_with_respawn(respawn))
+	else:
+		print("not have_respawn")
+		timer_hitted.timeout.connect(hitted_without_respawn)
+	timer_hitted.start()
+	timer_invincible.start()
+	var hit_force = 400
+	var direction:Vector2 = (global_position - damage.global_position).normalized()
+	#velocity = hit_force * direction
+	velocity = hit_force * Vector2(direction.x,-1.6)
+	print("direction: "+str(direction))
+	print("velocity: "+ str(hit_force*direction))
+
+func _hitted_with_respawn(respawn:RespawnSpot):
+	print("hitted_with_respawn")
+	
+	timer_hitted.stop()
+	timer_hitted_freeze.start()
+	#hitted = false
+	global_position = respawn.global_position + 10*Vector2.UP
+	velocity = Vector2.ZERO
+func hitted_without_respawn() -> void:
+	#timer_hitted_freeze.start()
 	pass
+
+func _on_timer_invincible_timeout() -> void:
+	invincible_frames = false
+
+
+func _on_timer_hitted_freeze_timeout() -> void:
+	hitted = false
+	#TEM QUE MELHORAR ISSO AQUI

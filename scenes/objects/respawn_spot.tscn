@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bvbnikpydmild"]
+
+[ext_resource type="Script" uid="uid://dkjwrvrc5pd8g" path="res://scripts/respawn_spot.gd" id="1_88d0g"]
+
+[node name="respawn_spot" type="Node2D" unique_id=1108253298]
+script = ExtResource("1_88d0g")
