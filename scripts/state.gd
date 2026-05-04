@@ -62,7 +62,7 @@ func check_exits()->void:
 			transition_next_state(filtered_exits[0])
 
 func transition_next_state(exit:Exit)->void:
-	PlayerHudControl.clear_hud()
+	GlobalHud.clear_hud()
 	if exit.is_final :
 		var completion_code =  "secret_completed" if exit.is_secret else "completed"
 		var parent_phase:Phase = get_parent()

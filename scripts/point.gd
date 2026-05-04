@@ -23,7 +23,7 @@ func pressed() -> void:
 	else:
 		color_rect.color = color_pressed
 	is_pressed = !is_pressed
-	PlayerHudControl.add_point(self)
+	GlobalHud.add_point(self)
 	
 func reset_button():
 	color_rect.color = color_unpressed
@@ -31,7 +31,7 @@ func reset_button():
 	
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
-	PlayerHudControl.add_point(self)
+	GlobalHud.add_point(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	print("exited")

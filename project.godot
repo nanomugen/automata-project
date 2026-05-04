@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DataSystem="*uid://g8nw5uc88ylv"
-PlayerHudControl="*uid://dosv2jc52cjor"
+GlobalHud="*uid://dosv2jc52cjor"
 
 [display]
 

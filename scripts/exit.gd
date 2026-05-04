@@ -38,11 +38,11 @@ func update_opened(current_value) -> void:
 		opened = false
 		color_rect.color = color_closed
 		print("current_value != goal")
-	PlayerHudControl.update_exit(self)
+	GlobalHud.update_exit(self)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
-	PlayerHudControl.add_exit(self)
+	GlobalHud.add_exit(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	inside_area = false

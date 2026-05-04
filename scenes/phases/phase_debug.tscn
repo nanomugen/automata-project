@@ -64,7 +64,7 @@ is_final = true
 [node name="objects" type="Node2D" parent="Phase/Start_State" unique_id=575244179]
 
 [node name="platform4" parent="Phase/Start_State/objects" unique_id=191851224 instance=ExtResource("8_3cfsq")]
-position = Vector2(-883, -145)
+position = Vector2(-443, -53)
 
 [node name="platform5" parent="Phase/Start_State/objects" unique_id=957439229 instance=ExtResource("8_3cfsq")]
 position = Vector2(-880, -286)
@@ -128,11 +128,12 @@ position = Vector2(320, -382)
 scale = Vector2(6.4800014, 1)
 
 [node name="spikes" parent="Phase/Start_State" unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("10_87u43")]
-position = Vector2(-49, -24)
+position = Vector2(-7, -24)
 respawn = NodePath("respawn_spot")
 
 [node name="spikes2" parent="Phase/Start_State/spikes" unique_id=1105155496 node_paths=PackedStringArray("respawn") instance=ExtResource("10_87u43")]
-position = Vector2(182, -1)
+position = Vector2(-89, -332)
+rotation = 3.1415927
 respawn = NodePath("../respawn_spot")
 
 [node name="respawn_spot" parent="Phase/Start_State/spikes" unique_id=1108253298 instance=ExtResource("11_045sg")]

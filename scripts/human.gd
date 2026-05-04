@@ -18,6 +18,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $collision_shape
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 @onready var timer_dash: Timer = $timer_dash
@@ -28,7 +29,8 @@ extends CharacterBody2D
 @onready var timer_hitted: Timer = $timer_hitted
 @onready var timer_hitted_freeze: Timer = $timer_hitted/timer_hitted_freeze
 
-
+signal on_respawn_transition
+var temp_respawn_position:Vector2
 
 var dashing: bool = false
 var can_dash: bool = true
@@ -53,6 +55,7 @@ const SNAP_LENGTH = 32.0
 const FLOOR_MAX_ANGLE = deg_to_rad(46)
 
 func _ready() -> void:
+	on_respawn_transition.connect(respawn_signal_await)
 	random.randomize()
 	floor_max_angle = FLOOR_MAX_ANGLE
 	floor_snap_length = SNAP_LENGTH
@@ -240,35 +243,47 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 		pass
 	if damage.have_respawn:
 		print("have_respawn")
-		timer_hitted.timeout.connect(func (): _hitted_with_respawn(respawn))
+		
+		timer_hitted.timeout.connect(_hitted_with_respawn.bind(respawn))
 	else:
 		print("not have_respawn")
 		timer_hitted.timeout.connect(hitted_without_respawn)
 	timer_hitted.start()
 	timer_invincible.start()
-	var hit_force = 400
+	var hit_force = 300
 	var direction:Vector2 = (global_position - damage.global_position).normalized()
-	#velocity = hit_force * direction
 	velocity = hit_force * Vector2(direction.x,-1.6)
+	camera_2d.apply_shake()
 	print("direction: "+str(direction))
 	print("velocity: "+ str(hit_force*direction))
 
 func _hitted_with_respawn(respawn:RespawnSpot):
 	print("hitted_with_respawn")
-	
+	freeze = true
 	timer_hitted.stop()
+	timer_hitted_freeze.stop()
+	collision_shape.disabled = true
 	timer_hitted_freeze.start()
-	#hitted = false
-	global_position = respawn.global_position + 10*Vector2.UP
+	temp_respawn_position = respawn.global_position
+	GlobalHud.fade_in_out(1,on_respawn_transition)
 	velocity = Vector2.ZERO
+	
 func hitted_without_respawn() -> void:
-	#timer_hitted_freeze.start()
+	
 	pass
 
+func respawn_signal_await():
+	print("test")
+	global_position = temp_respawn_position
+	collision_shape.disabled = false
+	freeze = false
+	#temp_respawn_position = Vector2.ZERO
+	
 func _on_timer_invincible_timeout() -> void:
 	invincible_frames = false
 
 
 func _on_timer_hitted_freeze_timeout() -> void:
 	hitted = false
+	camera_2d.reset_shake()
 	#TEM QUE MELHORAR ISSO AQUI

@@ -8,8 +8,8 @@ extends Node2D
 
 
 func _ready() -> void:
-	PlayerHudControl.ingame_menu_visibility = true
-	PlayerHudControl.help_button.visible = true
+	GlobalHud.ingame_menu_visibility = true
+	GlobalHud.help_button.visible = true
 	var pos:Vector2 = start_state.initPos + start_state.position;
 	start_state.this_is_current_state = true
 	human.position = pos;

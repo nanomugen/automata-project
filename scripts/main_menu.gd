@@ -10,8 +10,8 @@ func _ready():
 	print(fade_trasition.get_child(0))
 	
 	fade_out()
-	PlayerHudControl.ingame_menu_visibility = false
-	PlayerHudControl.help_button.visible = false
+	GlobalHud.ingame_menu_visibility = false
+	GlobalHud.help_button.visible = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("dash") and Input.is_action_pressed("attack"):
@@ -33,8 +33,9 @@ func _on_start_pressed() -> void:
 	
 func _on_option_pressed() -> void:
 	print("on_option_pressed antes do fade in")
-	fade_in()
+	#fade_in()
 	print("on_option_pressed depois do fade in")
+	
 	tween = create_tween()
 	tween.tween_callback(go_to_options)
 
