@@ -22,6 +22,7 @@ script = ExtResource("1_6cimn")
 [node name="Phase" type="Node2D" parent="." unique_id=462732468 node_paths=PackedStringArray("start_state")]
 script = ExtResource("2_li2ar")
 start_state = NodePath("Start_State")
+phase_name = "phase_debug"
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_dicvu")]

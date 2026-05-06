@@ -24,8 +24,8 @@ var DATA_OBJECT: Dictionary = {
 		},
 		"phase_02":{
 			"name":"Fase 02",
-			"path":null,
-			"unlocked":false,
+			"path":"res://scenes/phases/phase_02.tscn",
+			"unlocked":true,
 			"completed":false,
 			"secret_completed":false
 		},

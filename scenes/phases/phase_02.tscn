@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dtlxmmntgd2qi"]
+
+[ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human.tscn" id="1_50gct"]
+[ext_resource type="PackedScene" uid="uid://d4bntx5n7fu7c" path="res://scenes/phase.tscn" id="1_nj0ib"]
+[ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="3_xv3b0"]
+[ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="4_5ljec"]
+[ext_resource type="PackedScene" uid="uid://dhik4eoryng3g" path="res://scenes/exit.tscn" id="5_ynfqv"]
+[ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="6_q0ukw"]
+[ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="7_5ljec"]
+[ext_resource type="PackedScene" uid="uid://bvbnikpydmild" path="res://scenes/objects/respawn_spot.tscn" id="8_ynfqv"]
+
+[node name="phase_02" type="Node2D" unique_id=17414887]
+
+[node name="phase" parent="." unique_id=43470455 node_paths=PackedStringArray("start_state") instance=ExtResource("1_nj0ib")]
+position = Vector2(1515, -337)
+start_state = NodePath("start_state")
+phase_name = "phase_02"
+
+[node name="human" parent="phase" unique_id=1506472261 instance=ExtResource("1_50gct")]
+position = Vector2(-52, -926)
+
+[node name="start_state" parent="phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_xv3b0")]
+position = Vector2(-44, 88)
+init = NodePath("init")
+points = [NodePath("point"), NodePath("point2"), NodePath("point3")]
+exits = [NodePath("exit")]
+human = NodePath("../human")
+
+[node name="init" parent="phase/start_state" unique_id=1642130846 instance=ExtResource("4_5ljec")]
+position = Vector2(-862, -361)
+
+[node name="point" parent="phase/start_state" unique_id=404380536 instance=ExtResource("6_q0ukw")]
+position = Vector2(420, -95)
+value = 4
+
+[node name="point2" parent="phase/start_state" unique_id=414406081 instance=ExtResource("6_q0ukw")]
+position = Vector2(677, -101)
+value = 5
+
+[node name="point3" parent="phase/start_state" unique_id=1560365242 instance=ExtResource("6_q0ukw")]
+position = Vector2(150, -97)
+value = 4
+
+[node name="exit" parent="phase/start_state" unique_id=999031583 node_paths=PackedStringArray("nextState") instance=ExtResource("5_ynfqv")]
+position = Vector2(978, -131)
+nextState = NodePath("../../State")
+goal = 8
+
+[node name="spikes" parent="phase/start_state" unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("7_5ljec")]
+position = Vector2(-360, -26)
+respawn = NodePath("respawn_spot")
+
+[node name="respawn_spot" parent="phase/start_state/spikes" unique_id=1108253298 instance=ExtResource("8_ynfqv")]
+position = Vector2(-165, -29)
+
+[node name="State" parent="phase" unique_id=757655170 node_paths=PackedStringArray("points", "exits", "human") instance=ExtResource("3_xv3b0")]
+position = Vector2(2745, -1525)
+points = [NodePath("point"), NodePath("point2")]
+exits = [NodePath("exit")]
+human = NodePath("../human")
+
+[node name="init" parent="phase/State" unique_id=1147973104 instance=ExtResource("4_5ljec")]
+position = Vector2(96, -182)
+
+[node name="point" parent="phase/State" unique_id=1389742927 instance=ExtResource("6_q0ukw")]
+position = Vector2(-362, -130)
+value = 5
+
+[node name="exit" parent="phase/State" unique_id=1248615920 node_paths=PackedStringArray("nextState") instance=ExtResource("5_ynfqv")]
+position = Vector2(-830, -167)
+nextState = NodePath("../../State2")
+goal = 5
+
+[node name="point2" parent="phase/State" unique_id=1201973943 instance=ExtResource("6_q0ukw")]
+position = Vector2(485, -142)
+value = 7
+
+[node name="State2" parent="phase" unique_id=393583681 node_paths=PackedStringArray("points", "exits", "human") instance=ExtResource("3_xv3b0")]
+position = Vector2(37, -2649)
+points = [NodePath("point"), NodePath("point2")]
+exits = [NodePath("exit"), NodePath("exit2")]
+human = NodePath("../human")
+
+[node name="point" parent="phase/State2" unique_id=2051755621 instance=ExtResource("6_q0ukw")]
+position = Vector2(25, -131)
+value = 4
+
+[node name="exit" parent="phase/State2" unique_id=1253287761 instance=ExtResource("5_ynfqv")]
+position = Vector2(893, -182)
+goal = 7
+is_final = true
+is_secret = true
+
+[node name="point2" parent="phase/State2" unique_id=497736712 instance=ExtResource("6_q0ukw")]
+position = Vector2(-214, -140)
+value = 3
+
+[node name="init" parent="phase/State2" unique_id=1949041583 instance=ExtResource("4_5ljec")]
+position = Vector2(-1006, -228)
+
+[node name="exit2" parent="phase/State2" unique_id=586046099 instance=ExtResource("5_ynfqv")]
+position = Vector2(469, -187)
+goal = 3
+is_final = true

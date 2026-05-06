@@ -15,6 +15,7 @@ extends Node2D
 var inside_area:bool = false
 var opened:bool = false
 func _ready() -> void:
+	print(self)
 	color_rect.color =  color_closed
 	label.text = "0/"+str(goal)
 

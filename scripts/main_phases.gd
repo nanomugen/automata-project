@@ -27,7 +27,7 @@ func _ready():
 			add_child(button)
 			button.pressed.connect(_set_button_phase_path.bind(phase["path"]))
 			button.text = phase["name"]
-			button.position = Vector2(200 + x%5,200 + x/5)
+			button.position = Vector2(200 + (200*x%5),200 + (200*x/5))
 			if phase["secret_completed"]:
 				button.modulate = Color.REBECCA_PURPLE
 			elif  phase["completed"]:
