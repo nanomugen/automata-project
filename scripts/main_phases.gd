@@ -13,8 +13,7 @@ func _process(_delta):
 		reset_phases_button.visible = true
 
 func _ready():
-	print(DataSystem.DATA_OBJECT)
-	print("inicio do on ready do main phases")
+	phases = DataSystem.DATA_OBJECT["phases"]
 	tween = create_tween()
 	fade_out()
 	print(phases.size())
@@ -33,7 +32,7 @@ func _ready():
 			elif  phase["completed"]:
 				button.modulate = Color.DARK_GREEN
 		x += 1
-		print(phase)
+		#print(phase)
 
 func _set_button_phase_path(path:String):
 	get_tree().change_scene_to_file(path)
@@ -53,11 +52,13 @@ func fade_out():
 	tween.tween_property(fade_trasition,"visible",false,0.2)
 
 func reset_phases():
-	for phases_key in DataSystem.DATA_OBJECT["phases"]:
-		DataSystem.DATA_OBJECT["phases"][phases_key]["completed"] = false
-		DataSystem.DATA_OBJECT["phases"][phases_key]["secret_completed"] = false
-		if phases_key != "phase_01":
-			DataSystem.DATA_OBJECT["phases"][phases_key]["unlocked"] = false
+	DataSystem.DATA_OBJECT["phases"] = DataSystem.RESET_PHASES
+	#for phases_key in DataSystem.DATA_OBJECT["phases"]:
+	#	DataSystem.DATA_OBJECT["phases"][phases_key]["completed"] = false
+	#	DataSystem.DATA_OBJECT["phases"][phases_key]["secret_completed"] = false
+	#########################
+		#if phases_key != "phase_01":
+		#	DataSystem.DATA_OBJECT["phases"][phases_key]["unlocked"] = false
 	DataSystem._save()
 	_ready()
 func _on_back_button_pressed() -> void:

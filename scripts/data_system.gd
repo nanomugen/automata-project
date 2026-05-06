@@ -31,9 +31,12 @@ var DATA_OBJECT: Dictionary = {
 		},
 	}
 }
+var RESET_PHASES:Dictionary 
+
 
 
 func _ready() -> void:
+	RESET_PHASES = DATA_OBJECT["phases"]
 	_load()
 
 func _save() -> void:

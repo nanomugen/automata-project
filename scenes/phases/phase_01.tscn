@@ -24,7 +24,6 @@ phase_name = "phase_01"
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
 
 [node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
-z_index = 2
 position = Vector2(1572, -35)
 SPEED = 320.0
 
@@ -743,11 +742,3 @@ scale = Vector2(2.08, 1)
 
 [node name="ruler" parent="Phase" unique_id=276425642 instance=ExtResource("10_gysyc")]
 position = Vector2(2776, -2692)
-
-[node name="testValue" type="Label" parent="Phase" unique_id=2003271680]
-offset_left = 531.0
-offset_top = -14.0
-offset_right = 638.0
-offset_bottom = 9.0
-text = "teste de texto"
-metadata/_edit_use_anchors_ = true

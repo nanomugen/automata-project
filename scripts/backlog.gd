@@ -7,6 +7,7 @@ extends Node
 TODO
 ####################################################################################################
 FAZER SPRITES DE HITTED
+SPRITES DE FREZZED NO CHÃO
 
 FAZER UM OBJETO QUE "ACENDE" QUANDO UM BOTÃO É APERTADO, 
 ELE LIGA UMA LINHA PSEUDO ALEATORIA DO BOTÃOA TÉ A PORTA,

@@ -53,8 +53,9 @@ respawn = NodePath("respawn_spot")
 [node name="respawn_spot" parent="phase/start_state/spikes" unique_id=1108253298 instance=ExtResource("8_ynfqv")]
 position = Vector2(-165, -29)
 
-[node name="State" parent="phase" unique_id=757655170 node_paths=PackedStringArray("points", "exits", "human") instance=ExtResource("3_xv3b0")]
+[node name="State" parent="phase" unique_id=757655170 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_xv3b0")]
 position = Vector2(2745, -1525)
+init = NodePath("init")
 points = [NodePath("point"), NodePath("point2")]
 exits = [NodePath("exit")]
 human = NodePath("../human")
@@ -75,8 +76,9 @@ goal = 5
 position = Vector2(485, -142)
 value = 7
 
-[node name="State2" parent="phase" unique_id=393583681 node_paths=PackedStringArray("points", "exits", "human") instance=ExtResource("3_xv3b0")]
+[node name="State2" parent="phase" unique_id=393583681 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_xv3b0")]
 position = Vector2(37, -2649)
+init = NodePath("init")
 points = [NodePath("point"), NodePath("point2")]
 exits = [NodePath("exit"), NodePath("exit2")]
 human = NodePath("../human")

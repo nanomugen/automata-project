@@ -544,6 +544,7 @@ radius = 15.0
 height = 118.0
 
 [node name="human" type="CharacterBody2D" unique_id=1506472261]
+z_index = 2
 collision_layer = 2
 script = ExtResource("1_swaxu")
 SPEED = 350.0
