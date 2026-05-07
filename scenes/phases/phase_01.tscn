@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="4_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="5_1qxw2"]
 [ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="6_e8kjp"]
-[ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/objects/exit.tscn" id="7_y802i"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="8_yqti6"]
 [ext_resource type="PackedScene" uid="uid://8uoi20lcij0y" path="res://scenes/objects/block.tscn" id="9_7g6mc"]
 [ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/objects/ruler.tscn" id="10_gysyc"]
 [ext_resource type="PackedScene" uid="uid://ckvoiq47w75yr" path="res://scenes/objects/block-2.tscn" id="10_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://cvynbjxtqwupf" path="res://scenes/objects/door_button.tscn" id="11_xnm77"]
 [ext_resource type="PackedScene" uid="uid://ckv2580uld7gj" path="res://scenes/objects/door.tscn" id="11_yrmt0"]
+[ext_resource type="PackedScene" uid="uid://dhik4eoryng3g" path="res://scenes/exit.tscn" id="14_1qxw2"]
 
 [node name="phase01" type="Node2D" unique_id=448904820]
 script = ExtResource("1_2cipb")
@@ -31,7 +31,7 @@ SPEED = 320.0
 position = Vector2(1287, 0)
 init = NodePath("init")
 points = [NodePath("points/point"), NodePath("points/point2"), NodePath("points/point3")]
-exits = [NodePath("exits/exit"), NodePath("exits/exit2")]
+exits = [NodePath("exit"), NodePath("exit2")]
 doors = [NodePath("doors/door_set_2/door2"), NodePath("doors/door_set_5/door5"), NodePath("doors/door_set_6/door6"), NodePath("doors/door_set_5/door7")]
 human = NodePath("../human")
 
@@ -53,16 +53,6 @@ position = Vector2(-1167, -1202)
 value = 3
 
 [node name="exits" type="Node2D" parent="Phase/Start_State" unique_id=79155740]
-
-[node name="exit" parent="Phase/Start_State/exits" unique_id=1504513773 node_paths=PackedStringArray("nextState") instance=ExtResource("7_y802i")]
-position = Vector2(1099, -125)
-nextState = NodePath("../../../State")
-goal = 10
-
-[node name="exit2" parent="Phase/Start_State/exits" unique_id=999031583 instance=ExtResource("7_y802i")]
-position = Vector2(693, -2375)
-goal = 3
-is_final = true
 
 [node name="doors" type="Node2D" parent="Phase/Start_State" unique_id=575244179]
 
@@ -288,11 +278,23 @@ position = Vector2(-520, -299)
 position = Vector2(110, -1517)
 scale = Vector2(0.7, 1)
 
+[node name="exit" parent="Phase/Start_State" unique_id=758217736 instance=ExtResource("14_1qxw2")]
+z_index = 1
+position = Vector2(704, -2376)
+goal = 3
+is_final = true
+
+[node name="exit2" parent="Phase/Start_State" unique_id=906548567 node_paths=PackedStringArray("nextState") instance=ExtResource("14_1qxw2")]
+z_index = 1
+position = Vector2(1085, -139)
+nextState = NodePath("../../State")
+goal = 10
+
 [node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(3936, 0)
 init = NodePath("init2")
 points = [NodePath("points/point3")]
-exits = [NodePath("exits/exit2")]
+exits = [NodePath("exit3")]
 doors = [NodePath("doors/door_set_3/door")]
 human = NodePath("../human")
 
@@ -300,11 +302,6 @@ human = NodePath("../human")
 position = Vector2(46, -510)
 
 [node name="exits" type="Node2D" parent="Phase/State" unique_id=436879237]
-
-[node name="exit2" parent="Phase/State/exits" unique_id=1396614756 node_paths=PackedStringArray("nextState") instance=ExtResource("7_y802i")]
-position = Vector2(-1081, -176)
-nextState = NodePath("../../../State2")
-goal = 11
 
 [node name="points" type="Node2D" parent="Phase/State" unique_id=598647539]
 
@@ -501,11 +498,17 @@ color_pressed = Color(0.6666667, 0.43137255, 0.15686275, 1)
 z_index = 1
 position = Vector2(-1259, -1637)
 
+[node name="exit3" parent="Phase/State" unique_id=483225347 node_paths=PackedStringArray("nextState") instance=ExtResource("14_1qxw2")]
+z_index = 1
+position = Vector2(-1091, -162)
+nextState = NodePath("../../State2")
+goal = 11
+
 [node name="State2" parent="Phase" unique_id=1827339490 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(6537, 0)
 init = NodePath("init")
 points = [NodePath("points/point"), NodePath("points/point2"), NodePath("points/point3")]
-exits = [NodePath("exits/exit"), NodePath("exits/exit2")]
+exits = [NodePath("exit4"), NodePath("exit5")]
 doors = [NodePath("objects/door_set/door")]
 human = NodePath("../human")
 
@@ -513,16 +516,6 @@ human = NodePath("../human")
 position = Vector2(1050, -1056)
 
 [node name="exits" type="Node2D" parent="Phase/State2" unique_id=100921124]
-
-[node name="exit2" parent="Phase/State2/exits" unique_id=255611467 node_paths=PackedStringArray("nextState") instance=ExtResource("7_y802i")]
-position = Vector2(1056, -719)
-nextState = NodePath("../../../State")
-goal = 8
-
-[node name="exit" parent="Phase/State2/exits" unique_id=1210684717 node_paths=PackedStringArray("nextState") instance=ExtResource("7_y802i")]
-position = Vector2(-1147, -570)
-nextState = NodePath("../../../Start_State")
-goal = 10
 
 [node name="points" type="Node2D" parent="Phase/State2" unique_id=53144639]
 
@@ -739,6 +732,18 @@ scale = Vector2(1.36, 1)
 [node name="block" parent="Phase/State2/objects" unique_id=1772919172 instance=ExtResource("10_nb0tq")]
 position = Vector2(-1250, -417)
 scale = Vector2(2.08, 1)
+
+[node name="exit4" parent="Phase/State2" unique_id=378245678 node_paths=PackedStringArray("nextState") instance=ExtResource("14_1qxw2")]
+z_index = 1
+position = Vector2(-1107, -528)
+nextState = NodePath("../../Start_State")
+goal = 10
+
+[node name="exit5" parent="Phase/State2" unique_id=1908056488 node_paths=PackedStringArray("nextState") instance=ExtResource("14_1qxw2")]
+z_index = 1
+position = Vector2(1042, -741)
+nextState = NodePath("../../State")
+goal = 8
 
 [node name="ruler" parent="Phase" unique_id=276425642 instance=ExtResource("10_gysyc")]
 position = Vector2(2776, -2692)
