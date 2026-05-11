@@ -6,6 +6,21 @@ extends Node
 ####################################################################################################
 TODO
 ####################################################################################################
+
+REFAZER STATES MAIS GROSSOS (EM ANDAMENTO)
+
+ANIMATABLE BODY2D PARA MOVING PLATFORMS
+
+REFAZER O TUTORIAL, ADICIONAR MAIS UM ESTADO PARA APRESENTAR O UNIVERSO, AUTOMATA E CONTROLES
+
+REDIMENSIONAR O HUMAN?
+
+REFAZER EM STATE MACHINES?
+
+A ABERTURA DO GAME PODE SER A APRESENTAÇÃO DO LOGO 
+E UMA ANIMAÇÃO DE PERCORRENDO OS ESTADOS DO LOGO 
+E FINALIZANDO NO A
+
 FAZER SPRITES DE HITTED
 SPRITES DE FREZZED NO CHÃO
 

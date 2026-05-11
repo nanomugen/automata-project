@@ -29,6 +29,13 @@ var DATA_OBJECT: Dictionary = {
 			"completed":false,
 			"secret_completed":false
 		},
+		"phase_03":{
+			"name":"Fase 03",
+			"path":"res://scenes/phases/phase_03.tscn",
+			"unlocked":true,
+			"completed":false,
+			"secret_completed":false
+		},
 	}
 }
 var RESET_PHASES:Dictionary 

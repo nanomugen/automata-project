@@ -254,6 +254,7 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 	var direction:Vector2 = (global_position - damage.global_position).normalized()
 	velocity = hit_force * Vector2(direction.x,-1.6)
 	camera_2d.apply_shake()
+	Input.start_joy_vibration(0,0.7,0.7,0.5)
 	print("direction: "+str(direction))
 	print("velocity: "+ str(hit_force*direction))
 
