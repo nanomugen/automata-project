@@ -152,14 +152,19 @@ func _physics_process(delta: float) -> void:
 						idle_wait = true
 						time_idle_wait.start()
 				else:
-					animated_sprite.play("walk")
+					if !animated_sprite.animation.begins_with("walk"):
+						animated_sprite.play("walk-start")
+					
 					if idle_wait and !time_idle_wait.is_stopped():
 						time_idle_wait.stop()
 						idle_wait = false
 						play_breath = true
 						
 			else:
-				animated_sprite.play("jump-up")
+				if velocity.y > 0:
+					animated_sprite.play("jump-down")
+				elif !animated_sprite.animation.begins_with("jump-start") and !animated_sprite.animation.begins_with("jump-up"):
+					animated_sprite.play("jump-start")
 				idle_wait = false
 				play_breath = true
 	#flip the sprite
@@ -193,9 +198,15 @@ func interrupt_jump():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation.begins_with("attack"):
 		attack = false
+		return
 	if animated_sprite.animation.begins_with("idle-look") or animated_sprite.animation.begins_with("idle-blink"):
 		idle_wait = false
 		play_breath = true
+		return
+	if animated_sprite.animation.begins_with("walk-start"):
+		animated_sprite.play("walk")
+	if animated_sprite.animation.begins_with("jump-start"):
+		animated_sprite.play("jump-up")
 
 func _on_timer_dash_timeout() -> void:
 	cancel_gravity = false
@@ -208,6 +219,7 @@ func _on_timer_dash_cooldown_timeout() -> void:
 	timer_dash_cooldown.stop()
 	can_dash = true
 
+##idle wait select animation look or blink
 func _on_time_idle_wait_timeout() -> void:
 	#print("_on_time_idle_wait_timeout()")
 	play_breath = false

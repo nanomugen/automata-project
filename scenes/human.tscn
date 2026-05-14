@@ -399,12 +399,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsn2y")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_x7qyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsn2y")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump-start",
-"speed": 5.0
+"speed": 27.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -432,7 +435,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"test-PENGUIN",
-"speed": 12.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -473,7 +476,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hkek5")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_82dsd")
 }, {
 "duration": 1.0,
@@ -553,9 +556,9 @@ SPEED = 350.0
 position = Vector2(0, -64)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_wo28b")
-animation = &"idle-blink"
+animation = &"jump-start"
 autoplay = "idle-breath"
-frame = 10
+frame = 1
 frame_progress = 1.0
 
 [node name="timer_dash" type="Timer" parent="." unique_id=1215342939]

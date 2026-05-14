@@ -1,9 +1,9 @@
-extends Node2D
+extends CanvasLayer
 
 @onready var fade_trasition: ColorRect = $fade_trasition
 
 var tween:Tween 
-@onready var debug: Button = $button_manager/debug
+@onready var debug: Button = $button_manager/VBoxContainer/debug
 
 func _ready():
 	debug.visible = false
