@@ -44,6 +44,7 @@ var coyote_jump:bool = true
 var jump_pressed:bool = true
 var invincible_frames:bool = false
 var hitted:bool = false
+var jump_up_to_apex_transition:bool = false
 
 var idle_wait:bool = false
 var play_breath:bool =true
@@ -103,7 +104,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return	
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_jump) and !jump_pressed and !hitted:
-		
+		animated_sprite.play("jump-start")
 		jump()
 		if dashing:
 			cancel_gravity = false
@@ -128,45 +129,51 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction: -1, 0, 1
 	
 	#ANIMATION
-	if dashing :
-		animated_sprite.play("dash")
-		idle_wait = false
-		play_breath = true
-		#attack = false
-	else:
-		if(attack):
+	if !hitted:
+		if dashing :
+			animated_sprite.play("dash")
 			idle_wait = false
 			play_breath = true
-			if !animated_sprite.animation.begins_with("attack"):
-				if(is_on_floor()):
-					animated_sprite.play("attack-ground")
-				else:
-					animated_sprite.play("attack-air")
-				#attack = false
-		else:		
-			if is_on_floor():
-				if direction == 0:
-					if play_breath:
-						animated_sprite.play("idle-breath")
-					if !idle_wait:
-						idle_wait = true
-						time_idle_wait.start()
-				else:
-					if !animated_sprite.animation.begins_with("walk"):
-						animated_sprite.play("walk-start")
-					
-					if idle_wait and !time_idle_wait.is_stopped():
-						time_idle_wait.stop()
-						idle_wait = false
-						play_breath = true
-						
-			else:
-				if velocity.y > 0:
-					animated_sprite.play("jump-down")
-				elif !animated_sprite.animation.begins_with("jump-start") and !animated_sprite.animation.begins_with("jump-up"):
-					animated_sprite.play("jump-start")
+			#attack = false
+		else:
+			if(attack):
 				idle_wait = false
 				play_breath = true
+				if !animated_sprite.animation.begins_with("attack"):
+					if(is_on_floor()):
+						animated_sprite.play("attack-ground")
+					else:
+						animated_sprite.play("attack-air")
+					#attack = false
+			else:		
+				if is_on_floor():
+					if direction == 0:
+						if play_breath:
+							animated_sprite.play("idle-breath")
+						if !idle_wait:
+							idle_wait = true
+							time_idle_wait.start()
+					else:
+						if !animated_sprite.animation.begins_with("walk"):
+							animated_sprite.play("walk-start")
+						
+						if idle_wait and !time_idle_wait.is_stopped():
+							time_idle_wait.stop()
+							idle_wait = false
+							play_breath = true
+							
+				else:
+					if velocity.y > 0:
+						if jump_up_to_apex_transition:
+							animated_sprite.play("jump-transition")
+						else:
+							animated_sprite.play("jump-down")
+					else:
+						jump_up_to_apex_transition = true
+						animated_sprite.play("jump-up")
+						
+					idle_wait = false
+					play_breath = true
 	#flip the sprite
 	if direction > 0 :
 		animated_sprite.flip_h = false
@@ -205,8 +212,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		return
 	if animated_sprite.animation.begins_with("walk-start"):
 		animated_sprite.play("walk")
-	if animated_sprite.animation.begins_with("jump-start"):
-		animated_sprite.play("jump-up")
+		return
+	if animated_sprite.animation.begins_with("jump-transition"):
+		jump_up_to_apex_transition = false
+		return
+	
 
 func _on_timer_dash_timeout() -> void:
 	cancel_gravity = false
@@ -231,9 +241,7 @@ func _on_time_idle_wait_timeout() -> void:
 func _on_timer_coyote_jump_timeout() -> void:
 	timer_coyote_jump.stop()
 	coyote_jump = false
-	#coyote_time_rect.color = Color(1,0,0)
 	jump_pressed = true
-	print("finished")
 	
 #========================================
 #DAMAGE
@@ -245,6 +253,7 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 		return
 	if damage.have_respawn and respawn.position == null:
 		print("respawn.position == null")
+		return
 	
 	if invincible_frames:
 		return
@@ -252,6 +261,7 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 	hitted = true
 	
 	if damage.hit_value > 0:
+		#CALCULAR O HIT
 		pass
 	if damage.have_respawn:
 		print("have_respawn")
@@ -265,6 +275,7 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 	var hit_force = 300
 	var direction:Vector2 = (global_position - damage.global_position).normalized()
 	velocity = hit_force * Vector2(direction.x,-1.6)
+	animated_sprite.play("hitted")
 	camera_2d.apply_shake()
 	Input.start_joy_vibration(0,0.7,0.7,0.5)
 	print("direction: "+str(direction))
@@ -287,6 +298,7 @@ func hitted_without_respawn() -> void:
 
 func respawn_signal_await():
 	print("test")
+	animated_sprite.play("get-up")
 	global_position = temp_respawn_position
 	collision_shape.disabled = false
 	freeze = false

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx7fl4vgvoqxl" path="res://assets/walk-test33.png" id="3_4otcn"]
 [ext_resource type="Texture2D" uid="uid://cuso65ykjiwsl" path="res://assets/automata-animation-2-2.png" id="3_mayv3"]
 [ext_resource type="Texture2D" uid="uid://jeleojw2aoqt" path="res://assets/penguin-idle.png" id="4_c7jhf"]
+[ext_resource type="Texture2D" uid="uid://dqaf55wbgwj0h" path="res://assets/automata-animation-2-22.png" id="6_oxdja"]
 [ext_resource type="Script" uid="uid://dneuvywr4wp2m" path="res://scripts/game_camera.gd" id="7_u0vvy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwu2t"]
@@ -43,6 +44,30 @@ region = Rect2(1350, 3600, 450, 450)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0ke3"]
 atlas = ExtResource("2_denma")
 region = Rect2(0, 4500, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7yr"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(0, 5850, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lsy6"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(450, 5850, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vchka"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(900, 5850, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdqik"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(0, 4950, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpg8i"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(450, 4950, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7m8c"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(900, 4950, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4otcn"]
 atlas = ExtResource("2_cwf78")
@@ -108,6 +133,10 @@ region = Rect2(0, 2250, 450, 450)
 atlas = ExtResource("2_denma")
 region = Rect2(450, 2250, 450, 450)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcwtp"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(0, 5400, 450, 450)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w5qtx"]
 atlas = ExtResource("2_denma")
 region = Rect2(0, 2700, 450, 450)
@@ -161,20 +190,24 @@ atlas = ExtResource("3_mayv3")
 region = Rect2(3150, 1800, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nvx0"]
-atlas = ExtResource("3_mayv3")
+atlas = ExtResource("6_oxdja")
 region = Rect2(0, 1350, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hcdk"]
-atlas = ExtResource("3_mayv3")
+atlas = ExtResource("6_oxdja")
 region = Rect2(450, 1350, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkek5"]
-atlas = ExtResource("3_mayv3")
+atlas = ExtResource("6_oxdja")
 region = Rect2(900, 1350, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82dsd"]
-atlas = ExtResource("3_mayv3")
+atlas = ExtResource("6_oxdja")
 region = Rect2(1350, 1350, 450, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b86hu"]
+atlas = ExtResource("6_oxdja")
+region = Rect2(1800, 1350, 450, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_peppd"]
 atlas = ExtResource("3_mayv3")
@@ -273,6 +306,37 @@ animations = [{
 "loop": false,
 "name": &"dash",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_sn7yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lsy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vchka")
+}],
+"loop": false,
+"name": &"get-up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdqik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpg8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7m8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpg8i")
+}],
+"loop": false,
+"name": &"hitted",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -411,6 +475,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kcwtp")
+}],
+"loop": false,
+"name": &"jump-transition",
+"speed": 27.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_w5qtx")
 }],
 "loop": false,
@@ -476,18 +548,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hkek5")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_82dsd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hkek5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0hcdk")
+"texture": SubResource("AtlasTexture_b86hu")
 }],
 "loop": false,
 "name": &"walk-start",
-"speed": 20.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -556,9 +625,9 @@ SPEED = 350.0
 position = Vector2(0, -64)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_wo28b")
-animation = &"jump-start"
+animation = &"get-up"
 autoplay = "idle-breath"
-frame = 1
+frame = 2
 frame_progress = 1.0
 
 [node name="timer_dash" type="Timer" parent="." unique_id=1215342939]
