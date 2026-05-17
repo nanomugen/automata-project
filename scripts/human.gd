@@ -114,11 +114,12 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("attack") and !attack:
 		attack = true
-		
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction: int
+	direction = 0 if hitted else Input.get_axis("move_left", "move_right")
 	if direction == 1 or direction == -1:
 		orientation = direction
 	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once and !hitted:
+		print("passou do !hitted no dash")
 		cancel_gravity = true
 		dashing = true
 		timer_dash.start()
@@ -210,7 +211,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		idle_wait = false
 		play_breath = true
 		return
-	if animated_sprite.animation.begins_with("walk-start"):
+	if animated_sprite.animation.begins_with("walk-start") and !hitted:
 		animated_sprite.play("walk")
 		return
 	if animated_sprite.animation.begins_with("jump-transition"):
@@ -247,18 +248,17 @@ func _on_timer_coyote_jump_timeout() -> void:
 #DAMAGE
 #========================================
 func hit_damage(damage:Damage,respawn:RespawnSpot):
-	print("hit damage")
 	if damage.have_respawn and respawn == null:
 		print("respawn == null")
 		return
 	if damage.have_respawn and respawn.position == null:
 		print("respawn.position == null")
 		return
-	
 	if invincible_frames:
 		return
 	invincible_frames = true
 	hitted = true
+	print("hitted = true")
 	
 	if damage.hit_value > 0:
 		#CALCULAR O HIT
@@ -278,12 +278,11 @@ func hit_damage(damage:Damage,respawn:RespawnSpot):
 	animated_sprite.play("hitted")
 	camera_2d.apply_shake()
 	Input.start_joy_vibration(0,0.7,0.7,0.5)
-	print("direction: "+str(direction))
-	print("velocity: "+ str(hit_force*direction))
 
 func _hitted_with_respawn(respawn:RespawnSpot):
 	print("hitted_with_respawn")
 	freeze = true
+	print("freeze = true")
 	timer_hitted.stop()
 	timer_hitted_freeze.stop()
 	collision_shape.disabled = true
@@ -302,6 +301,7 @@ func respawn_signal_await():
 	global_position = temp_respawn_position
 	collision_shape.disabled = false
 	freeze = false
+	print("freeze = false")
 	#temp_respawn_position = Vector2.ZERO
 	
 func _on_timer_invincible_timeout() -> void:

@@ -489,6 +489,11 @@ animations = [{
 "name": &"jump-up",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_folha")
@@ -625,9 +630,9 @@ SPEED = 350.0
 position = Vector2(0, -64)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_wo28b")
-animation = &"get-up"
+animation = &"idle-blink"
 autoplay = "idle-breath"
-frame = 2
+frame = 10
 frame_progress = 1.0
 
 [node name="timer_dash" type="Timer" parent="." unique_id=1215342939]
