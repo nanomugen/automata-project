@@ -1,0 +1,32 @@
+class_name PlayerState extends Node
+
+var human : Human2
+var next_state : PlayerState
+
+#region /// state references
+@onready var state_run: RunState = %state_run
+@onready var state_idle_breath: IdleState = %state_idle_breath
+
+
+#endregion
+
+func init()->void:
+	print("init: ",self)
+	pass
+	
+func enter()->void:
+	print("enter: ",self)
+	pass
+
+func exit()->void:
+	print("exit: ",self)
+	pass
+
+func handle_input(_event:InputEvent)->PlayerState:
+	return next_state
+
+func process(_delta:float)->PlayerState:
+	return next_state
+	
+func physics_process(_delta:float)->PlayerState:
+	return next_state

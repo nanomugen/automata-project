@@ -15,6 +15,7 @@ extends CharacterBody2D
 @onready var jump_velocity:float = (2.0 * jump_height)/jump_time_to_peak * -1.0
 @onready var jump_gravity:float = (-2.0 * jump_height)/(jump_time_to_peak * jump_time_to_peak) * -1.0
 @onready var fall_gravity:float = (-2.0 * jump_height)/(jump_time_to_descent * jump_time_to_descent) * -1.0
+var max_fall_velocity:float = 1500.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $collision_shape
@@ -91,7 +92,7 @@ func _physics_process(delta: float) -> void:
 				coyote_time_rect.color = Color(0.542, 0.011, 0.476, 1.0)
 		if !cancel_gravity:
 			velocity.y += get_gravity2() * delta
-			velocity.y = clamp(velocity.y,velocity.y,1500)
+			velocity.y = clamp(velocity.y,velocity.y,max_fall_velocity)
 	else:
 		coyote_time_rect.color = Color(0,0,1)
 		timer_coyote_jump.stop()
@@ -115,7 +116,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and !attack:
 		attack = true
 	var direction: int
-	direction = 0 if hitted else Input.get_axis("move_left", "move_right")
+	direction = 0 if hitted else Input.get_axis("left", "right")
 	if direction == 1 or direction == -1:
 		orientation = direction
 	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once and !hitted:
