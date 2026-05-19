@@ -7,6 +7,8 @@ extends Node
 TODO
 ####################################################################################################
 
+BOTÃO PARA SAVE & LOAD, PARAR DE SALVAR AUTOMATICO, OU PELO MENOS FAZER SLOTS
+
 REFAZER STATES MAIS GROSSOS (EM ANDAMENTO)
 
 ANIMATABLE BODY2D PARA MOVING PLATFORMS

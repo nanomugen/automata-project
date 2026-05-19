@@ -22,7 +22,8 @@ var MAX_FALL_VELOCITY:float = 1500.0
 
 var is_freezed:bool = false
 var direction:Vector2 = Vector2.ZERO
-var second_jump_unlocked:bool = false
+var second_jump_enabled:bool = false
+var wall_slide_enabled:bool = false
 
 
 
