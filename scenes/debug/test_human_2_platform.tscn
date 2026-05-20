@@ -12,41 +12,49 @@ size = Vector2(800, 100)
 [node name="ColorRect" type="ColorRect" parent="background" unique_id=907697148]
 offset_top = -40.0
 offset_right = 1715.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="background" unique_id=45035394]
 offset_top = -329.0
 offset_right = 1715.0
 offset_bottom = -289.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="background" unique_id=1308352300]
 offset_top = -233.0
 offset_right = 1715.0
 offset_bottom = -193.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="background" unique_id=2092234231]
 offset_top = -135.0
 offset_right = 1715.0
 offset_bottom = -95.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="background" unique_id=2140468920]
 offset_top = -425.0
 offset_right = 1715.0
 offset_bottom = -385.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="background" unique_id=1692079726]
 offset_top = -714.0
 offset_right = 1715.0
 offset_bottom = -674.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="background" unique_id=642805240]
 offset_top = -618.0
 offset_right = 1715.0
 offset_bottom = -578.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="ColorRect8" type="ColorRect" parent="background" unique_id=1206855734]
 offset_top = -520.0
 offset_right = 1715.0
 offset_bottom = -480.0
+color = Color(0.8860804, 0.6074757, 0.5997398, 1)
 
 [node name="human2" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
 position = Vector2(162, -752)
@@ -61,10 +69,52 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1148150678]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.15224874, 0.3334207, 0.21028197, 1)
+color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=192490305]
+position = Vector2(1815, -1625)
+rotation = 1.5707964
+scale = Vector2(2.1599998, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1767424288]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=1408272558]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1061545503]
+position = Vector2(-1991, -1893)
+rotation = 1.5707964
+scale = Vector2(2.1599998, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=241747417]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=614506515]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1934627153]
+position = Vector2(1457, -164)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=1711459541]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=76626624]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.084585615, 0.20661247, 0.12445537, 1)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1225324228]
-position = Vector2(-1813, -178)
+position = Vector2(-2072, -259)
 scale = Vector2(2.1599998, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1784438335]
@@ -74,10 +124,10 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=941366528]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.15224874, 0.3334207, 0.21028197, 1)
+color = Color(0.08627451, 0.20784314, 0.1254902, 1)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=840222998]
-position = Vector2(-85.000244, -178)
+position = Vector2(-343.99997, -258.99997)
 rotation = 0.1525545
 scale = Vector2(2.1599998, 1)
 
@@ -88,4 +138,4 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=292243796]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.15224874, 0.3334207, 0.21028197, 1)
+color = Color(0.08627451, 0.20784314, 0.1254902, 1)

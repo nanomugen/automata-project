@@ -49,14 +49,18 @@ func _process(_delta: float) -> void:
 	if is_freezed:return
 	update_direction()
 	
+	
 	change_state(current_state.process(_delta))
 	
 	
 func _physics_process(_delta: float) -> void:
 	if is_freezed:return
+	
 	var gravity = get_custom_gravity()
-	velocity.y += gravity*_delta
-	velocity.y = clamp(velocity.y ,velocity.y,MAX_FALL_VELOCITY)
+	var new_velocity = velocity.y + gravity * _delta  
+	velocity.y = clamp(new_velocity ,new_velocity,MAX_FALL_VELOCITY)
+	#velocity.y = new_velocity
+	#print(velocity.y)
 	move_and_slide() 
 	change_state(current_state.physics_process(_delta))
 	
@@ -96,6 +100,12 @@ func update_direction() ->void:
 	var x_axis = Input.get_axis("left","right")
 	var y_axis = Input.get_axis("up","down")
 	direction = Vector2(x_axis,y_axis)
+	if direction.x > 0.0:
+		animated_sprite_2d.flip_h = false
+	elif direction.x < 0.0:
+		animated_sprite_2d.flip_h = true
 	
 func get_custom_gravity()->float:
 	return JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY;
+func allow_human_to_move_h():
+	velocity.x = direction.x * SPEED

@@ -6,7 +6,8 @@ var next_state : PlayerState
 #region /// state references
 @onready var state_run: RunState = %state_run
 @onready var state_idle_breath: IdleState = %state_idle_breath
-
+@onready var state_jump_up: JumpUpState = %state_jump_up
+@onready var state_jump_down: JumpDownState = %state_jump_down
 
 #endregion
 

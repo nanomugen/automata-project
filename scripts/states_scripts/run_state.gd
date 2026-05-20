@@ -18,19 +18,15 @@ func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	
+	if _event.is_action_pressed("jump"):
+		return state_jump_up
 	return next_state
 
 func process(_delta:float)->PlayerState:
 	if human.direction.x == 0 :
-		print("run to idle")
 		return state_idle_breath
-	if human.direction.x >0:
-		human.animated_sprite_2d.flip_h = false
-	else:
-		human.animated_sprite_2d.flip_h = true
 	return next_state
 	
 func physics_process(_delta:float)->PlayerState:
-	human.velocity.x = human.direction.x * human.SPEED
+	human.allow_human_to_move_h()
 	return next_state

@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://dneuvywr4wp2m" path="res://scripts/game_camera.gd" id="8_rhhb1"]
 [ext_resource type="Script" uid="uid://ccj8ocxd1clxs" path="res://scripts/states_scripts/idle_state.gd" id="9_67gc1"]
 [ext_resource type="Script" uid="uid://op233ye3ctdu" path="res://scripts/states_scripts/run_state.gd" id="9_nwpxy"]
+[ext_resource type="Script" uid="uid://bwtdv2vhfyu1e" path="res://scripts/states_scripts/jump_up_state.gd" id="11_rml1w"]
+[ext_resource type="Script" uid="uid://d1afmr1wy4yxe" path="res://scripts/states_scripts/jump_down_state.gd" id="12_l2cia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwu2t"]
 atlas = ExtResource("2_67gc1")
@@ -699,6 +701,14 @@ script = ExtResource("9_67gc1")
 [node name="state_run" type="Node" parent="States" unique_id=675824235]
 unique_name_in_owner = true
 script = ExtResource("9_nwpxy")
+
+[node name="state_jump_up" type="Node" parent="States" unique_id=979206124]
+unique_name_in_owner = true
+script = ExtResource("11_rml1w")
+
+[node name="state_jump_down" type="Node" parent="States" unique_id=1719872394]
+unique_name_in_owner = true
+script = ExtResource("12_l2cia")
 
 [node name="StateLabel" type="Label" parent="." unique_id=1049231606]
 anchors_preset = 8

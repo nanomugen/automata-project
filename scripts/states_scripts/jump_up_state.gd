@@ -1,4 +1,4 @@
-class_name IdleState extends PlayerState
+class_name JumpUpState extends PlayerState
 
 
 #region /// state references
@@ -9,26 +9,24 @@ func init()->void:
 	pass
 	
 func enter()->void:
-	human.animated_sprite_2d.play("idle-breath")
-	print("entered: ",name)
+	human.animated_sprite_2d.play("jump-up")
+	human.velocity.y = human.JUMP_VELOCITY 
 	pass
 
 func exit()->void:
-	print("exited: ",name)
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	if _event.is_action_pressed("jump"):
-		return state_jump_up
 	
 	return next_state
 
 func process(_delta:float)->PlayerState:
-	if human.direction.x != 0:
-		print("idle to run")
-		return state_run
 	return next_state
 	
 func physics_process(_delta:float)->PlayerState:
-	human.velocity.x = 0
+	human.allow_human_to_move_h()
+	if human.is_on_floor():
+		return state_idle_breath
+	if human.velocity.y >= 0:
+		return state_jump_down
 	return next_state
