@@ -17,7 +17,9 @@ func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	
+	if _event.is_action_released("jump") and human.velocity.y <0:
+		human.velocity.y = 0
+		return state_jump_down
 	return next_state
 
 func process(_delta:float)->PlayerState:
