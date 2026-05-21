@@ -25,8 +25,9 @@ var direction:Vector2 = Vector2.ZERO
 var second_jump_enabled:bool = false
 var wall_slide_enabled:bool = false
 
-
-
+var coyote_time_started = false
+var coyote_time_ended = false
+@export var coyote_time:float = 0.125
 
 #endregion
 
@@ -109,3 +110,15 @@ func get_custom_gravity()->float:
 	return JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY;
 func allow_human_to_move_h():
 	velocity.x = direction.x * SPEED
+
+func reset_coyote_variables():
+	coyote_time_started = false
+	coyote_time_ended = true
+
+func coyote_time_start():
+	$debug_nodes/coyote_time_rect.color = Color.GREEN
+	coyote_time_started = true
+	coyote_time_ended = false
+	await get_tree().create_timer(coyote_time).timeout
+	coyote_time_ended = true
+	$debug_nodes/coyote_time_rect.color = Color.RED

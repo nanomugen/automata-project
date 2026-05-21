@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2k1u1dnbfrr1"]
 
-[ext_resource type="PackedScene" uid="uid://dnpq8ie25tp8k" path="res://scenes/human2.tscn" id="1_vnmkj"]
+[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human2.tscn" id="1_vnmkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
 size = Vector2(800, 100)
@@ -100,7 +100,7 @@ offset_bottom = 100.0
 color = Color(0.084585615, 0.20661247, 0.12445537, 1)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1934627153]
-position = Vector2(1457, -164)
+position = Vector2(1457.0001, -250)
 rotation = 1.5707964
 scale = Vector2(0.3199998, 2.1199994)
 
@@ -109,6 +109,20 @@ position = Vector2(400, 50)
 shape = SubResource("RectangleShape2D_vnmkj")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=76626624]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=342920546]
+position = Vector2(1059, -163.99998)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1519605498]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D7" unique_id=1978217398]
 offset_right = 800.0
 offset_bottom = 100.0
 color = Color(0.084585615, 0.20661247, 0.12445537, 1)

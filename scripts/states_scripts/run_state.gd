@@ -14,6 +14,7 @@ func enter()->void:
 	pass
 
 func exit()->void:
+	human.reset_coyote_variables()
 	print("exited: ",name)
 	pass
 
@@ -30,5 +31,8 @@ func process(_delta:float)->PlayerState:
 func physics_process(_delta:float)->PlayerState:
 	human.allow_human_to_move_h()
 	if human.is_on_floor() == false and human.velocity.y >= 0:
-		return state_jump_down
+		if human.coyote_time_started == false:
+			human.coyote_time_start()
+		if human.coyote_time_ended == true:
+			return state_jump_down
 	return next_state
