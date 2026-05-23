@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://efgrp2ihel42" path="res://scripts/platform.gd" id="1_dotdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4t87"]
-size = Vector2(160, 10)
+size = Vector2(160, 25)
+
+[sub_resource type="Gradient" id="Gradient_dotdq"]
+offsets = PackedFloat32Array(0.5030366, 1)
+colors = PackedColorArray(0.34611073, 0.28029788, 0.58711326, 1, 0.31918404, 0.1873419, 0.4220398, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8dp8w"]
+gradient = SubResource("Gradient_dotdq")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [node name="platform" type="Node2D" unique_id=1120527333]
 script = ExtResource("1_dotdq")
@@ -22,11 +31,12 @@ grow_horizontal = 2
 color = Color(0.25766784, 0.4661066, 0.5137611, 0.70000005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2042083413]
-position = Vector2(0, -20)
+position = Vector2(0, -12.5)
 shape = SubResource("RectangleShape2D_v4t87")
 one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=204186535]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -41,6 +51,7 @@ grow_vertical = 2
 color = Color(0.5179158, 0.38410568, 0.7528677, 0.8)
 
 [node name="ColorRect2" type="ColorRect" parent="StaticBody2D" unique_id=347285519]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -53,3 +64,8 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4487543, 0.14532694, 0.8106401, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1130862062]
+position = Vector2(-1.4305115e-06, 1.66893e-06)
+scale = Vector2(2.5, 0.78125)
+texture = SubResource("GradientTexture2D_8dp8w")

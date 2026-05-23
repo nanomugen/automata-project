@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2k1u1dnbfrr1"]
 
 [ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human2.tscn" id="1_vnmkj"]
+[ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="2_ygg0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
 size = Vector2(800, 100)
@@ -153,3 +154,6 @@ shape = SubResource("RectangleShape2D_vnmkj")
 offset_right = 800.0
 offset_bottom = 100.0
 color = Color(0.08627451, 0.20784314, 0.1254902, 1)
+
+[node name="platform" parent="." unique_id=1120527333 instance=ExtResource("2_ygg0a")]
+position = Vector2(666, -190)
