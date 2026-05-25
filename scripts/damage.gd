@@ -2,7 +2,7 @@ class_name Damage
 extends Node2D
 
 @export var have_respawn:bool = false
-@export var position_respawn:Node2D
+@export var position_respawn:Marker2D
 @export var hit_value:int = 0
 
 func _ready() -> void:

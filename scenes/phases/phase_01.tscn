@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cvlmjy5jiflli" path="res://scripts/main_old.gd" id="1_2cipb"]
 [ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="2_xnm77"]
-[ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human.tscn" id="3_yrmt0"]
 [ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="4_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="5_1qxw2"]
 [ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="6_e8kjp"]
@@ -12,7 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://ckvoiq47w75yr" path="res://scenes/objects/block-2.tscn" id="10_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://cvynbjxtqwupf" path="res://scenes/objects/door_button.tscn" id="11_xnm77"]
 [ext_resource type="PackedScene" uid="uid://ckv2580uld7gj" path="res://scenes/objects/door.tscn" id="11_yrmt0"]
+[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="13_nb0tq"]
 [ext_resource type="PackedScene" uid="uid://dhik4eoryng3g" path="res://scenes/exit.tscn" id="14_1qxw2"]
+
+[sub_resource type="Gradient" id="Gradient_nb0tq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1qxw2"]
+gradient = SubResource("Gradient_nb0tq")
+fill_to = Vector2(1, 1)
 
 [node name="phase01" type="Node2D" unique_id=448904820]
 script = ExtResource("1_2cipb")
@@ -22,10 +30,6 @@ script = ExtResource("2_xnm77")
 start_state = NodePath("Start_State")
 phase_name = "phase_01"
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
-
-[node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_yrmt0")]
-position = Vector2(1572, -35)
-SPEED = 320.0
 
 [node name="Start_State" parent="Phase" unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_nb0tq")]
 position = Vector2(1287, 0)
@@ -746,4 +750,12 @@ nextState = NodePath("../../State")
 goal = 8
 
 [node name="ruler" parent="Phase" unique_id=276425642 instance=ExtResource("10_gysyc")]
-position = Vector2(2776, -2692)
+z_index = 2
+position = Vector2(1201, -27)
+
+[node name="human" parent="Phase" unique_id=1506472261 instance=ExtResource("13_nb0tq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=71330339]
+position = Vector2(1190, -167)
+scale = Vector2(6.8567753, 4.8034196)
+texture = SubResource("GradientTexture2D_1qxw2")

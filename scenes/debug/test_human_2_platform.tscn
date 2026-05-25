@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2k1u1dnbfrr1"]
 
-[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human2.tscn" id="1_vnmkj"]
+[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="1_vnmkj"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="2_ygg0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
@@ -56,9 +56,6 @@ offset_top = -520.0
 offset_right = 1715.0
 offset_bottom = -480.0
 color = Color(0.8860804, 0.6074757, 0.5997398, 1)
-
-[node name="human2" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
-position = Vector2(162, -752)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1015933855]
 scale = Vector2(2.1599998, 1)
@@ -157,3 +154,6 @@ color = Color(0.08627451, 0.20784314, 0.1254902, 1)
 
 [node name="platform" parent="." unique_id=1120527333 instance=ExtResource("2_ygg0a")]
 position = Vector2(666, -190)
+
+[node name="human" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
+position = Vector2(280, -307)

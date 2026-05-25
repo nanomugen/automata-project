@@ -1,315 +1,143 @@
-class_name Human
-extends CharacterBody2D
+class_name Human extends CharacterBody2D
 
-#ver se da pra colocar uma curva nesses parametros para acelerar da forma correta esses movimentos
+#region ///state machine variables
+var states: Array[PlayerState]
+var current_state:PlayerState:
+	get : return states.front()
+var previous_state:PlayerState:
+	get: return states[1] if states.size() > 1 else null
+#endregion
+
+#region /// standard variables
 @export var SPEED = 320.0
 @export var DASH_SPEED = 700.0
-@export var jump_height: float = 150.0
-@export var jump_time_to_peak: float = 0.4
-@export var jump_time_to_descent: float = 0.3
+@export var JUMP_HEIGHT: float = 150.0
+@export var JUMP_TIME_TO_PEAK: float = 0.4
+@export var JUMP_TIME_TO_DESCEND: float = 0.3
 
-@onready var coyote_time_rect: ColorRect = $coyote_time_rect
-@onready var on_wall: ColorRect = $on_wall
+@onready var JUMP_VELOCITY:float = (2.0 * JUMP_HEIGHT)/JUMP_TIME_TO_PEAK * -1.0
+@onready var JUMP_GRAVITY:float = (-2.0 * JUMP_HEIGHT)/(JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK) * -1.0
+@onready var FALL_GRAVITY:float = (-2.0 * JUMP_HEIGHT)/(JUMP_TIME_TO_DESCEND * JUMP_TIME_TO_DESCEND) * -1.0
+const MAX_FALL_VELOCITY:float = 1500.0
 
+var is_freezed:bool = false
+var direction:Vector2 = Vector2.ZERO
+var second_jump_enabled:bool = false
+var wall_slide_enabled:bool = false
 
-@onready var jump_velocity:float = (2.0 * jump_height)/jump_time_to_peak * -1.0
-@onready var jump_gravity:float = (-2.0 * jump_height)/(jump_time_to_peak * jump_time_to_peak) * -1.0
-@onready var fall_gravity:float = (-2.0 * jump_height)/(jump_time_to_descent * jump_time_to_descent) * -1.0
-var max_fall_velocity:float = 1500.0
+var coyote_time_started = false
+var coyote_time_ended = false
+@export var coyote_time:float = 0.125
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape: CollisionShape2D = $collision_shape
-@onready var camera_2d: Camera2D = $Camera2D
+var cancel_gravity:bool = false
+var is_dashing:bool = false
+var is_jumping_up:bool = false
 
-
-@onready var timer_dash: Timer = $timer_dash
-@onready var timer_dash_cooldown: Timer = $timer_dash_cooldown
-@onready var time_idle_wait: Timer = $time_idle_wait
-@onready var timer_coyote_jump: Timer = $timer_coyote_jump
-@onready var timer_invincible: Timer = $timer_invincible
-@onready var timer_hitted: Timer = $timer_hitted
-@onready var timer_hitted_freeze: Timer = $timer_hitted/timer_hitted_freeze
-
-signal on_respawn_transition
-var temp_respawn_position:Vector2
-
-var dashing: bool = false
-var can_dash: bool = true
-var orientation = 1
-var cancel_gravity = false
-var attack: bool = false
-var dashed_once:bool = false
-var cancel_control:bool = false
-var freeze:bool = false
-var coyote_jump:bool = true
-var jump_pressed:bool = true
-var invincible_frames:bool = false
-var hitted:bool = false
-var jump_up_to_apex_transition:bool = false
-
-var idle_wait:bool = false
-var play_breath:bool =true
-var random:RandomNumberGenerator = RandomNumberGenerator.new()
-
-const FLOOR_NORMAL = Vector2.UP
-const SNAP_DIRECTION = Vector2.DOWN
-const SNAP_LENGTH = 32.0
+const FLOOR_SNAP_LENGTH = 32.0
 const FLOOR_MAX_ANGLE = deg_to_rad(46)
+#endregion
+
+#region ///child nodes inspector
+@onready var state_label: Label = $StateLabel
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+#endregion
+
 
 func _ready() -> void:
-	on_respawn_transition.connect(respawn_signal_await)
-	random.randomize()
+	floor_snap_length = FLOOR_SNAP_LENGTH
 	floor_max_angle = FLOOR_MAX_ANGLE
-	floor_snap_length = SNAP_LENGTH
-	if DataSystem.DATA_OBJECT["debug_mode"]:
-		coyote_time_rect.visible = true
-		on_wall.visible = true
-	else:
-		coyote_time_rect.visible = false
-		on_wall.visible = false
-	
-func _physics_process(delta: float) -> void:
-	if freeze:
-		return
-	if is_on_wall_only():
-		on_wall.color = Color(1,0.5,0.2)
-		on_wall.get_child(0).text = "is_on_wall_only"
-	elif is_on_wall():
-		on_wall.color = Color(0.1,0.5,0.3)
-		on_wall.get_child(0).text = "is_on_wall"
-	else:
-		on_wall.color = Color(0.3,0.2,1)
-		on_wall.get_child(0).text = "is_not_on_wall"
-	if not is_on_floor():
-		
-		if !jump_pressed and !coyote_jump:
-			coyote_jump = true
-			coyote_time_rect.color = Color(0.0, 0.578, 0.0, 1.0)
-			timer_coyote_jump.start()
-			print("started")
-		
-		if !coyote_jump:
-				coyote_time_rect.color = Color(0.542, 0.011, 0.476, 1.0)
-		if !cancel_gravity:
-			velocity.y += get_gravity2() * delta
-			velocity.y = clamp(velocity.y,velocity.y,max_fall_velocity)
-	else:
-		coyote_time_rect.color = Color(0,0,1)
-		timer_coyote_jump.stop()
-		#test_rect.color = Color(1,0,0)
-		coyote_jump = false
-		jump_pressed=false
-		dashed_once = false
-	if cancel_control:
-		velocity.x = 0
-		move_and_slide()
-		return	
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_jump) and !jump_pressed and !hitted:
-		animated_sprite.play("jump-start")
-		jump()
-		if dashing:
-			cancel_gravity = false
-			timer_dash.start()
-	if Input.is_action_just_released("jump"):# and jumping_action:
-		interrupt_jump();
-		
-	if Input.is_action_just_pressed("attack") and !attack:
-		attack = true
-	var direction: int
-	direction = 0 if hitted else Input.get_axis("left", "right")
-	if direction == 1 or direction == -1:
-		orientation = direction
-	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once and !hitted:
-		print("passou do !hitted no dash")
-		cancel_gravity = true
-		dashing = true
-		timer_dash.start()
-		velocity.y = 0
-		velocity.x = orientation * DASH_SPEED
-		can_dash = false
-		dashed_once = true
-	# Get the input direction: -1, 0, 1
-	
-	#ANIMATION
-	if !hitted:
-		if dashing :
-			animated_sprite.play("dash")
-			idle_wait = false
-			play_breath = true
-			#attack = false
-		else:
-			if(attack):
-				idle_wait = false
-				play_breath = true
-				if !animated_sprite.animation.begins_with("attack"):
-					if(is_on_floor()):
-						animated_sprite.play("attack-ground")
-					else:
-						animated_sprite.play("attack-air")
-					#attack = false
-			else:		
-				if is_on_floor():
-					if direction == 0:
-						if play_breath:
-							animated_sprite.play("idle-breath")
-						if !idle_wait:
-							idle_wait = true
-							time_idle_wait.start()
-					else:
-						if !animated_sprite.animation.begins_with("walk"):
-							animated_sprite.play("walk-start")
-						
-						if idle_wait and !time_idle_wait.is_stopped():
-							time_idle_wait.stop()
-							idle_wait = false
-							play_breath = true
-							
-				else:
-					if velocity.y > 0:
-						if jump_up_to_apex_transition:
-							animated_sprite.play("jump-transition")
-						else:
-							animated_sprite.play("jump-down")
-					else:
-						jump_up_to_apex_transition = true
-						animated_sprite.play("jump-up")
-						
-					idle_wait = false
-					play_breath = true
-	#flip the sprite
-	if direction > 0 :
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
-	
-	#apply movement
-	if !dashing and !hitted:
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+	print("human: ",JUMP_VELOCITY," ",JUMP_GRAVITY," ",FALL_GRAVITY)
+	initialize_states()
 
-	move_and_slide()
-	
-func get_gravity2() -> float:
-	return jump_gravity if velocity.y < 0.0 else fall_gravity;
-func jump() -> void:
-	jump_pressed = true
-	velocity.y = jump_velocity
-	print("jump velocity: "+str(jump_velocity))
-	
-func interrupt_jump():
-	if velocity.y < 0:
-		velocity.y = 0
-		
+func _unhandled_input(event: InputEvent) -> void:
+	#print("unhandled input")
+	if is_freezed:return
+	change_state(current_state.handle_input(event))
 
+func _process(_delta: float) -> void:
+	if is_freezed:return
+	update_direction()
+	 
 	
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation.begins_with("attack"):
-		attack = false
-		return
-	if animated_sprite.animation.begins_with("idle-look") or animated_sprite.animation.begins_with("idle-blink"):
-		idle_wait = false
-		play_breath = true
-		return
-	if animated_sprite.animation.begins_with("walk-start") and !hitted:
-		animated_sprite.play("walk")
-		return
-	if animated_sprite.animation.begins_with("jump-transition"):
-		jump_up_to_apex_transition = false
-		return
+	change_state(current_state.process(_delta))
 	
+	
+func _physics_process(_delta: float) -> void:
+	if is_freezed:return
+	if not is_on_floor() and not cancel_gravity:
+		velocity.y += get_custom_gravity() * _delta  
+		velocity.y = clamp(velocity.y ,velocity.y,MAX_FALL_VELOCITY)
+	#velocity.y = new_velocity
+	#print(velocity.y)
+	move_and_slide() 
+	change_state(current_state.physics_process(_delta))
+	
+func initialize_states() -> void:
+	states = []
+	for c in $States.get_children():
+		if c is PlayerState:
+			states.append(c)
+			c.human = self
+			#c.init()
+	if states.size() == 0:
+		return
+	for state in states:
+		state.init()
+	#print(states)
+	#states.append(%state_idle_breath)
+	state_label.text = current_state.name
+	#change_state(current_state)
+	current_state.enter()
+	
+func change_state( new_state:PlayerState)-> PlayerState:
+	if new_state == null:return
+	if new_state == current_state:return
+	
+	if current_state:
+		current_state.exit()
+	states.push_front(new_state)
+	current_state.enter()
+	print(current_state.name)
+	states.resize(3)
+	state_label.text = current_state.name
+ 	
+	return null
 
-func _on_timer_dash_timeout() -> void:
-	cancel_gravity = false
-	dashing = false
-	velocity.x = 0
-	timer_dash.stop()
-	timer_dash_cooldown.start()
-
-func _on_timer_dash_cooldown_timeout() -> void:
-	timer_dash_cooldown.stop()
-	can_dash = true
-
-##idle wait select animation look or blink
-func _on_time_idle_wait_timeout() -> void:
-	#print("_on_time_idle_wait_timeout()")
-	play_breath = false
-	if random.randi()%2 == 0:
-		animated_sprite.play("idle-look") # Replace with function body.
-	else:
-		animated_sprite.play("idle-blink") 
-
-func _on_timer_coyote_jump_timeout() -> void:
-	timer_coyote_jump.stop()
-	coyote_jump = false
-	jump_pressed = true
+func update_direction() ->void:
+	#var _prev_direction = direction
+	var x_axis = Input.get_axis("left","right")
+	var y_axis = Input.get_axis("up","down")
+	direction = Vector2(x_axis,y_axis)
+	if direction.x > 0.0:
+		sprite_2d.flip_h = false
+	elif direction.x < 0.0:
+		sprite_2d.flip_h = true
 	
-#========================================
-#DAMAGE
-#========================================
-func hit_damage(damage:Damage,respawn:RespawnSpot):
-	if damage.have_respawn and respawn == null:
-		print("respawn == null")
-		return
-	if damage.have_respawn and respawn.position == null:
-		print("respawn.position == null")
-		return
-	if invincible_frames:
-		return
-	invincible_frames = true
-	hitted = true
-	print("hitted = true")
+func get_custom_gravity()->float:
+	return JUMP_GRAVITY if velocity.y < 0.0 else FALL_GRAVITY;
 	
-	if damage.hit_value > 0:
-		#CALCULAR O HIT
-		pass
-	if damage.have_respawn:
-		print("have_respawn")
-		
-		timer_hitted.timeout.connect(_hitted_with_respawn.bind(respawn))
-	else:
-		print("not have_respawn")
-		timer_hitted.timeout.connect(hitted_without_respawn)
-	timer_hitted.start()
-	timer_invincible.start()
-	var hit_force = 300
-	var direction:Vector2 = (global_position - damage.global_position).normalized()
-	velocity = hit_force * Vector2(direction.x,-1.6)
-	animated_sprite.play("hitted")
-	camera_2d.apply_shake()
-	Input.start_joy_vibration(0,0.7,0.7,0.5)
+func allow_human_to_move_h():
+	velocity.x = direction.x * SPEED
 
-func _hitted_with_respawn(respawn:RespawnSpot):
-	print("hitted_with_respawn")
-	freeze = true
-	print("freeze = true")
-	timer_hitted.stop()
-	timer_hitted_freeze.stop()
-	collision_shape.disabled = true
-	timer_hitted_freeze.start()
-	temp_respawn_position = respawn.global_position
-	GlobalHud.fade_in_out(1,on_respawn_transition)
-	velocity = Vector2.ZERO
+func reset_coyote_variables():
+	coyote_time_started = false
+	coyote_time_ended = true
+
+func coyote_time_start():
+	$debug_nodes/coyote_time_rect.color = Color.GREEN
+	coyote_time_started = true
+	coyote_time_ended = false
+	await get_tree().create_timer(coyote_time).timeout
+	coyote_time_ended = true
+	$debug_nodes/coyote_time_rect.color = Color.RED
 	
-func hitted_without_respawn() -> void:
-	
+func hit_damage(damage:Damage):
 	pass
-
-func respawn_signal_await():
-	print("test")
-	animated_sprite.play("get-up")
-	global_position = temp_respawn_position
-	collision_shape.disabled = false
-	freeze = false
-	print("freeze = false")
-	#temp_respawn_position = Vector2.ZERO
-	
-func _on_timer_invincible_timeout() -> void:
-	invincible_frames = false
-
-
-func _on_timer_hitted_freeze_timeout() -> void:
-	hitted = false
-	camera_2d.reset_shake()
-	#TEM QUE MELHORAR ISSO AQUI
+func can_jump()->bool:
+	return true
+func can_dash()->bool:
+	if is_dashing: return false
+	return true

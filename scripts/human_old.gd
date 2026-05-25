@@ -1,0 +1,315 @@
+class_name Human_old
+extends CharacterBody2D
+
+#ver se da pra colocar uma curva nesses parametros para acelerar da forma correta esses movimentos
+@export var SPEED = 320.0
+@export var DASH_SPEED = 700.0
+@export var jump_height: float = 150.0
+@export var jump_time_to_peak: float = 0.4
+@export var jump_time_to_descent: float = 0.3
+
+@onready var coyote_time_rect: ColorRect = $coyote_time_rect
+@onready var on_wall: ColorRect = $on_wall
+
+
+@onready var jump_velocity:float = (2.0 * jump_height)/jump_time_to_peak * -1.0
+@onready var jump_gravity:float = (-2.0 * jump_height)/(jump_time_to_peak * jump_time_to_peak) * -1.0
+@onready var fall_gravity:float = (-2.0 * jump_height)/(jump_time_to_descent * jump_time_to_descent) * -1.0
+var max_fall_velocity:float = 1500.0
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $collision_shape
+@onready var camera_2d: Camera2D = $Camera2D
+
+
+@onready var timer_dash: Timer = $timer_dash
+@onready var timer_dash_cooldown: Timer = $timer_dash_cooldown
+@onready var time_idle_wait: Timer = $time_idle_wait
+@onready var timer_coyote_jump: Timer = $timer_coyote_jump
+@onready var timer_invincible: Timer = $timer_invincible
+@onready var timer_hitted: Timer = $timer_hitted
+@onready var timer_hitted_freeze: Timer = $timer_hitted/timer_hitted_freeze
+
+signal on_respawn_transition
+var temp_respawn_position:Vector2
+
+var dashing: bool = false
+var can_dash: bool = true
+var orientation = 1
+var cancel_gravity = false
+var attack: bool = false
+var dashed_once:bool = false
+var cancel_control:bool = false
+var freeze:bool = false
+var coyote_jump:bool = true
+var jump_pressed:bool = true
+var invincible_frames:bool = false
+var hitted:bool = false
+var jump_up_to_apex_transition:bool = false
+
+var idle_wait:bool = false
+var play_breath:bool =true
+var random:RandomNumberGenerator = RandomNumberGenerator.new()
+
+const SNAP_LENGTH = 32.0
+const FLOOR_MAX_ANGLE = deg_to_rad(46)
+
+
+func _ready() -> void:
+	print("human_old: ",jump_velocity," ",jump_gravity," ",fall_gravity)
+	on_respawn_transition.connect(respawn_signal_await)
+	random.randomize()
+	floor_max_angle = FLOOR_MAX_ANGLE
+	floor_snap_length = SNAP_LENGTH
+	if DataSystem.DATA_OBJECT["debug_mode"]:
+		coyote_time_rect.visible = true
+		on_wall.visible = true
+	else:
+		coyote_time_rect.visible = false
+		on_wall.visible = false
+	
+func _physics_process(delta: float) -> void:
+	if freeze:
+		return
+	if is_on_wall_only():
+		on_wall.color = Color(1,0.5,0.2)
+		on_wall.get_child(0).text = "is_on_wall_only"
+	elif is_on_wall():
+		on_wall.color = Color(0.1,0.5,0.3)
+		on_wall.get_child(0).text = "is_on_wall"
+	else:
+		on_wall.color = Color(0.3,0.2,1)
+		on_wall.get_child(0).text = "is_not_on_wall"
+	if not is_on_floor():
+		
+		if !jump_pressed and !coyote_jump:
+			coyote_jump = true
+			coyote_time_rect.color = Color(0.0, 0.578, 0.0, 1.0)
+			timer_coyote_jump.start()
+			print("started")
+		
+		if !coyote_jump:
+				coyote_time_rect.color = Color(0.542, 0.011, 0.476, 1.0)
+		if !cancel_gravity:
+			velocity.y += get_gravity2() * delta
+			velocity.y = clamp(velocity.y,velocity.y,max_fall_velocity)
+	else:
+		coyote_time_rect.color = Color(0,0,1)
+		timer_coyote_jump.stop()
+		#test_rect.color = Color(1,0,0)
+		coyote_jump = false
+		jump_pressed=false
+		dashed_once = false
+	if cancel_control:
+		velocity.x = 0
+		move_and_slide()
+		return	
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or coyote_jump) and !jump_pressed and !hitted:
+		animated_sprite.play("jump-start")
+		jump()
+		if dashing:
+			cancel_gravity = false
+			timer_dash.start()
+	if Input.is_action_just_released("jump"):# and jumping_action:
+		interrupt_jump();
+		
+	if Input.is_action_just_pressed("attack") and !attack:
+		attack = true
+	var direction: int
+	direction = 0 if hitted else Input.get_axis("left", "right")
+	if direction == 1 or direction == -1:
+		orientation = direction
+	if Input.is_action_just_pressed("dash") and !dashing and can_dash and !dashed_once and !hitted:
+		print("passou do !hitted no dash")
+		cancel_gravity = true
+		dashing = true
+		timer_dash.start()
+		velocity.y = 0
+		velocity.x = orientation * DASH_SPEED
+		can_dash = false
+		dashed_once = true
+	# Get the input direction: -1, 0, 1
+	
+	#ANIMATION
+	if !hitted:
+		if dashing :
+			animated_sprite.play("dash")
+			idle_wait = false
+			play_breath = true
+			#attack = false
+		else:
+			if(attack):
+				idle_wait = false
+				play_breath = true
+				if !animated_sprite.animation.begins_with("attack"):
+					if(is_on_floor()):
+						animated_sprite.play("attack-ground")
+					else:
+						animated_sprite.play("attack-air")
+					#attack = false
+			else:		
+				if is_on_floor():
+					if direction == 0:
+						if play_breath:
+							animated_sprite.play("idle-breath")
+						if !idle_wait:
+							idle_wait = true
+							time_idle_wait.start()
+					else:
+						if !animated_sprite.animation.begins_with("walk"):
+							animated_sprite.play("walk-start")
+						
+						if idle_wait and !time_idle_wait.is_stopped():
+							time_idle_wait.stop()
+							idle_wait = false
+							play_breath = true
+							
+				else:
+					if velocity.y > 0:
+						if jump_up_to_apex_transition:
+							animated_sprite.play("jump-transition")
+						else:
+							animated_sprite.play("jump-down")
+					else:
+						jump_up_to_apex_transition = true
+						animated_sprite.play("jump-up")
+						
+					idle_wait = false
+					play_breath = true
+	#flip the sprite
+	if direction > 0 :
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
+	
+	#apply movement
+	if !dashing and !hitted:
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+	
+func get_gravity2() -> float:
+	return jump_gravity if velocity.y < 0.0 else fall_gravity;
+func jump() -> void:
+	jump_pressed = true
+	velocity.y = jump_velocity
+	print("old: jump velocity: ",jump_velocity)
+	
+func interrupt_jump():
+	if velocity.y < 0:
+		velocity.y = 0
+		
+
+	
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation.begins_with("attack"):
+		attack = false
+		return
+	if animated_sprite.animation.begins_with("idle-look") or animated_sprite.animation.begins_with("idle-blink"):
+		idle_wait = false
+		play_breath = true
+		return
+	if animated_sprite.animation.begins_with("walk-start") and !hitted:
+		animated_sprite.play("walk")
+		return
+	if animated_sprite.animation.begins_with("jump-transition"):
+		jump_up_to_apex_transition = false
+		return
+	
+
+func _on_timer_dash_timeout() -> void:
+	cancel_gravity = false
+	dashing = false
+	velocity.x = 0
+	timer_dash.stop()
+	timer_dash_cooldown.start()
+
+func _on_timer_dash_cooldown_timeout() -> void:
+	timer_dash_cooldown.stop()
+	can_dash = true
+
+##idle wait select animation look or blink
+func _on_time_idle_wait_timeout() -> void:
+	#print("_on_time_idle_wait_timeout()")
+	play_breath = false
+	if random.randi()%2 == 0:
+		animated_sprite.play("idle-look") # Replace with function body.
+	else:
+		animated_sprite.play("idle-blink") 
+
+func _on_timer_coyote_jump_timeout() -> void:
+	timer_coyote_jump.stop()
+	coyote_jump = false
+	jump_pressed = true
+	
+#========================================
+#DAMAGE
+#========================================
+func hit_damage(damage:Damage,respawn:RespawnSpot):
+	if damage.have_respawn and respawn == null:
+		print("respawn == null")
+		return
+	if damage.have_respawn and respawn.position == null:
+		print("respawn.position == null")
+		return
+	if invincible_frames:
+		return
+	invincible_frames = true
+	hitted = true
+	print("hitted = true")
+	
+	if damage.hit_value > 0:
+		#CALCULAR O HIT
+		pass
+	if damage.have_respawn:
+		print("have_respawn")
+		
+		timer_hitted.timeout.connect(_hitted_with_respawn.bind(respawn))
+	else:
+		print("not have_respawn")
+		timer_hitted.timeout.connect(hitted_without_respawn)
+	timer_hitted.start()
+	timer_invincible.start()
+	var hit_force = 300
+	var direction:Vector2 = (global_position - damage.global_position).normalized()
+	velocity = hit_force * Vector2(direction.x,-1.6)
+	animated_sprite.play("hitted")
+	camera_2d.apply_shake()
+	Input.start_joy_vibration(0,0.7,0.7,0.5)
+
+func _hitted_with_respawn(respawn:RespawnSpot):
+	print("hitted_with_respawn")
+	freeze = true
+	print("freeze = true")
+	timer_hitted.stop()
+	timer_hitted_freeze.stop()
+	collision_shape.disabled = true
+	timer_hitted_freeze.start()
+	temp_respawn_position = respawn.global_position
+	GlobalHud.fade_in_out(1,on_respawn_transition)
+	velocity = Vector2.ZERO
+	
+func hitted_without_respawn() -> void:
+	
+	pass
+
+func respawn_signal_await():
+	print("test")
+	animated_sprite.play("get-up")
+	global_position = temp_respawn_position
+	collision_shape.disabled = false
+	freeze = false
+	print("freeze = false")
+	#temp_respawn_position = Vector2.ZERO
+	
+func _on_timer_invincible_timeout() -> void:
+	invincible_frames = false
+
+
+func _on_timer_hitted_freeze_timeout() -> void:
+	hitted = false
+	camera_2d.reset_shake()
+	#TEM QUE MELHORAR ISSO AQUI

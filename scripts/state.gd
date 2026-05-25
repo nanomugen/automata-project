@@ -87,7 +87,7 @@ func transition_next_state(exit:Exit)->void:
 	transition_camera.drag_vertical_offset = 0
 	
 	human.position = pos
-	human.freeze = true
+	#human.freeze = true
 	var tween = create_tween()
 	
 	var pp1 = self.global_position + Vector2(0,-1000)
@@ -99,7 +99,7 @@ func transition_next_state(exit:Exit)->void:
 	tween.tween_property(transition_camera,"global_position",human.global_position,1)
 	tween.parallel().tween_property(transition_camera,"zoom",Vector2(1,1),1)
 	tween.tween_callback(transition_camera.reparent.bind(human))
-	tween.tween_property(human,"freeze",false,0)
+#	tween.tween_property(human,"freeze",false,0)
 	tween.tween_property(transition_camera,"drag_vertical_offset",-1.0,0.5)
 	tween.tween_property(transition_camera,"position",Vector2(0,0),1)
 	tween.tween_property(transition_camera,"position_smoothing_enabled",true,0)

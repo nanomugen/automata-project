@@ -4,14 +4,13 @@ class_name JumpUpState extends PlayerState
 #region /// state references
 #reference to all the other states
 #endregion
-
 func init()->void:
 	pass
 	
 func enter()->void:
-	human.animated_sprite_2d.play("jump-up")
+	human.animation_player.play("jump-up")
 	human.velocity.y = human.JUMP_VELOCITY 
-	pass
+	
 
 func exit()->void:
 	pass
@@ -20,6 +19,8 @@ func handle_input(_event:InputEvent)->PlayerState:
 	if _event.is_action_released("jump") and human.velocity.y <0:
 		human.velocity.y = 0
 		return state_jump_down
+	if _event.is_action_pressed("dash") and human.can_dash():
+		return state_dash
 	return next_state
 
 func process(_delta:float)->PlayerState:

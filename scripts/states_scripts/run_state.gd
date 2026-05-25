@@ -9,7 +9,8 @@ func init()->void:
 	pass
 	
 func enter()->void:
-	human.animated_sprite_2d.play("walk")
+	human.animation_player.play("run")
+	human.is_jumping_up = false
 	print("entered: ",name)
 	pass
 
@@ -19,8 +20,11 @@ func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	if _event.is_action_pressed("jump"):
+	if _event.is_action_pressed("jump") and human.can_jump():
 		return state_jump_up
+	if _event.is_action_pressed("dash") and human.can_dash():
+		print("###event: ",_event)
+		return state_dash
 	return next_state
 
 func process(_delta:float)->PlayerState:

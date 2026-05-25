@@ -1,4 +1,4 @@
-class_name JumpDownState extends PlayerState
+class_name HittedState extends PlayerState
 
 
 #region /// state references
@@ -9,22 +9,16 @@ func init()->void:
 	pass
 	
 func enter()->void:
-	human.animation_player.play("jump-down")
 	pass
 
 func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	if _event.is_action_pressed("dash") and human.can_dash():
-		return state_dash
 	return next_state
 
 func process(_delta:float)->PlayerState:
 	return next_state
 	
 func physics_process(_delta:float)->PlayerState:
-	human.allow_human_to_move_h()
-	if human.is_on_floor():
-		return state_idle_breath
 	return next_state

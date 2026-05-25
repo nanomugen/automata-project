@@ -1,6 +1,6 @@
 class_name PlayerState extends Node
 
-var human : Human2
+var human : Human
 var next_state : PlayerState
 
 #region /// state references
@@ -8,6 +8,8 @@ var next_state : PlayerState
 @onready var state_idle_breath: IdleState = %state_idle_breath
 @onready var state_jump_up: JumpUpState = %state_jump_up
 @onready var state_jump_down: JumpDownState = %state_jump_down
+@onready var state_dash: DashState = %state_dash
+@onready var state_hitted: HittedState = %state_hitted
 
 #endregion
 

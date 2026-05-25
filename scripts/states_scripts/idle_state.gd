@@ -9,7 +9,8 @@ func init()->void:
 	pass
 	
 func enter()->void:
-	human.animated_sprite_2d.play("idle-breath")
+	human.animation_player.play("idle-breath")
+	human.is_jumping_up = false
 	print("entered: ",name)
 	pass
 
@@ -18,9 +19,13 @@ func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	if _event.is_action_pressed("jump"):
+	if _event.is_action_pressed("jump") and human.can_jump():
 		return state_jump_up
-	
+	if _event.is_action_pressed("dash") and human.can_dash():
+		if _event.axis_value >0.5:
+			return next_state
+		print("###event: ",_event)
+		return state_dash
 	return next_state
 
 func process(_delta:float)->PlayerState:

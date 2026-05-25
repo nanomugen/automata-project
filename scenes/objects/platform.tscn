@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://efgrp2ihel42" path="res://scripts/platform.gd" id="1_dotdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4t87"]
-size = Vector2(160, 25)
+size = Vector2(160, 15)
 
 [sub_resource type="Gradient" id="Gradient_dotdq"]
 offsets = PackedFloat32Array(0.5030366, 1)
@@ -31,7 +31,7 @@ grow_horizontal = 2
 color = Color(0.25766784, 0.4661066, 0.5137611, 0.70000005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2042083413]
-position = Vector2(0, -12.5)
+position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_v4t87")
 one_way_collision = true
 

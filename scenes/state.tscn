@@ -11,7 +11,9 @@ z_index = 1
 script = ExtResource("1_ihbxb")
 
 [node name="background" type="Node2D" parent="." unique_id=179257615]
+z_index = -1
 position = Vector2(0, -25)
+scale = Vector2(1, 1.0072507)
 
 [node name="ColorRect" type="ColorRect" parent="background" unique_id=42565891]
 anchors_preset = 7
