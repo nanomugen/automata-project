@@ -21,6 +21,8 @@ func handle_input(_event:InputEvent)->PlayerState:
 		return state_jump_down
 	if Input.is_action_just_pressed_by_event("dash",_event) and human.can_dash():
 		return state_dash
+	if _event.is_action_pressed("attack"):
+		return state_attack_air
 	return next_state
 
 func process(_delta:float)->PlayerState:

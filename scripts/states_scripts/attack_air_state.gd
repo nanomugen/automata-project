@@ -11,7 +11,7 @@ func init()->void:
 	pass
 	
 func enter()->void:
-	human.animation_player.play("attack-idle")
+	human.animation_player.play("attack-air")
 	human.animation_player.animation_finished.connect(_on_animation_finished)
 	pass
 
@@ -31,6 +31,8 @@ func process(_delta:float)->PlayerState:
 				return state_idle_breath
 			else:
 				return state_run
+		else:
+			return state_jump_down
 	return next_state
 	
 func physics_process(_delta:float)->PlayerState:
@@ -39,5 +41,5 @@ func physics_process(_delta:float)->PlayerState:
 
 
 func _on_animation_finished(anim_name: StringName) -> void:
-	if(anim_name == "attack-idle"):
+	if(anim_name == "attack-air"):
 		finished_attack = true

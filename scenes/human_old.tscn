@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c056unam7sfhv"]
+[gd_scene format=3 uid="uid://bm8qwcl65wy7p"]
 
 [ext_resource type="Script" uid="uid://pp42xtkra6ib" path="res://scripts/human_old.gd" id="1_skkhg"]
 [ext_resource type="Texture2D" uid="uid://djlysugr4lhc8" path="res://assets/automata-animation-3.png" id="2_vcbhh"]
