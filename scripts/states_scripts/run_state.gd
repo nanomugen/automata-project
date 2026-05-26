@@ -12,6 +12,8 @@ func enter()->void:
 	human.animation_player.play("run")
 	human.is_jumping_up = false
 	print("entered: ",name)
+	human.dashed_on_air = false
+	human.jumped_once = false
 	pass
 
 func exit()->void:
@@ -22,9 +24,10 @@ func exit()->void:
 func handle_input(_event:InputEvent)->PlayerState:
 	if _event.is_action_pressed("jump") and human.can_jump():
 		return state_jump_up
-	if _event.is_action_pressed("dash") and human.can_dash():
-		print("###event: ",_event)
+	if Input.is_action_just_pressed_by_event("dash",_event) and human.can_dash():
 		return state_dash
+	if _event.is_action_pressed("attack"):
+		return state_attack_ground
 	return next_state
 
 func process(_delta:float)->PlayerState:
@@ -38,5 +41,6 @@ func physics_process(_delta:float)->PlayerState:
 		if human.coyote_time_started == false:
 			human.coyote_time_start()
 		if human.coyote_time_ended == true:
+			human.jumped_once = true
 			return state_jump_down
 	return next_state

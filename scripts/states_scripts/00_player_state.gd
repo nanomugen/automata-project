@@ -10,6 +10,8 @@ var next_state : PlayerState
 @onready var state_jump_down: JumpDownState = %state_jump_down
 @onready var state_dash: DashState = %state_dash
 @onready var state_hitted: HittedState = %state_hitted
+@onready var state_attack_ground: AttackGroundState = %state_attack_ground
+@onready var state_attack_air: AttackAirState = %state_attack_air
 
 #endregion
 

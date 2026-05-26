@@ -17,7 +17,11 @@ func enter()->void:
 	human.velocity.y = 0.0
 	var orientation = -1 if human.sprite_2d.flip_h else 1
 	human.velocity.x = human.DASH_SPEED * orientation
-	pass
+	human.is_dashing = true
+	if not human.is_on_floor():
+		human.dashed_on_air = true
+	else:
+		human.jumped_once = false
 
 func exit()->void:
 	human.cancel_gravity = false

@@ -24,6 +24,8 @@ var is_freezed:bool = false
 var direction:Vector2 = Vector2.ZERO
 var second_jump_enabled:bool = false
 var wall_slide_enabled:bool = false
+var dashed_on_air:bool = false
+var jumped_once:bool = false
 
 var coyote_time_started = false
 var coyote_time_ended = false
@@ -55,6 +57,12 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	#print("unhandled input")
 	if is_freezed:return
+	if event.is_action("dash"):
+		print(event)
+	if event.is_action_pressed("dash"):
+		print("pressed: ",event)
+	if event.is_action_released("dash"):
+		print("released: ",event)
 	change_state(current_state.handle_input(event))
 
 func _process(_delta: float) -> void:
@@ -136,8 +144,23 @@ func coyote_time_start():
 	
 func hit_damage(damage:Damage):
 	pass
+	
 func can_jump()->bool:
-	return true
+	if not second_jump_enabled:
+		if jumped_once:
+			return false
+		else:
+			return true
+		
+	
+	return false
+	
+	
 func can_dash()->bool:
 	if is_dashing: return false
-	return true
+	if is_on_floor():
+		dashed_on_air = false
+		return true
+	elif not dashed_on_air:
+		return true
+	return false

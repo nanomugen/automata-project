@@ -10,7 +10,7 @@ func init()->void:
 func enter()->void:
 	human.animation_player.play("jump-up")
 	human.velocity.y = human.JUMP_VELOCITY 
-	
+	human.jumped_once = true
 
 func exit()->void:
 	pass
@@ -19,7 +19,7 @@ func handle_input(_event:InputEvent)->PlayerState:
 	if _event.is_action_released("jump") and human.velocity.y <0:
 		human.velocity.y = 0
 		return state_jump_down
-	if _event.is_action_pressed("dash") and human.can_dash():
+	if Input.is_action_just_pressed_by_event("dash",_event) and human.can_dash():
 		return state_dash
 	return next_state
 
