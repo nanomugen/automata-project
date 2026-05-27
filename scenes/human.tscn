@@ -889,6 +889,29 @@ offset_bottom = 21.0
 theme_override_font_sizes/font_size = 8
 text = "on wall"
 
+[node name="on_floor" type="ColorRect" parent="debug_nodes" unique_id=1209494413]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = 24.0
+offset_right = 5.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="debug_nodes/on_floor" unique_id=1901199966]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 54.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 8
+text = "on floor"
+
 [node name="States" type="Node" parent="." unique_id=1693194233]
 
 [node name="state_idle_breath" type="Node" parent="States" unique_id=564857952]

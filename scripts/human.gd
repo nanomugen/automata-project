@@ -24,6 +24,7 @@ var is_freezed:bool = false
 var direction:Vector2 = Vector2.ZERO
 var second_jump_enabled:bool = false
 var wall_slide_enabled:bool = false
+var dash_enabled:bool = true
 var dashed_on_air:bool = false
 var jumped_once:bool = false
 
@@ -68,6 +69,20 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if is_freezed:return
 	update_direction()
+	if is_on_floor():
+		$debug_nodes/on_floor.color = Color.GREEN
+	else:
+		$debug_nodes/on_floor.color = Color.RED
+	if is_on_wall():
+		if is_on_wall_only():
+			$debug_nodes/on_wall.color = Color.BLUE
+			$debug_nodes/on_wall/Label2.text = "on wall only"
+		else:
+			$debug_nodes/on_wall.color = Color.GREEN
+			$debug_nodes/on_wall/Label2.text = "on wall"
+	else:
+		$debug_nodes/on_wall.color = Color.RED
+		$debug_nodes/on_wall/Label2.text = "on wall"
 	 
 	
 	change_state(current_state.process(_delta))
@@ -157,6 +172,7 @@ func can_jump()->bool:
 	
 	
 func can_dash()->bool:
+	if not dash_enabled: return false
 	if is_dashing: return false
 	if is_on_floor():
 		dashed_on_air = false
@@ -164,3 +180,8 @@ func can_dash()->bool:
 	elif not dashed_on_air:
 		return true
 	return false
+
+func can_wall_slide()->bool:
+	if not wall_slide_enabled: return false
+	return false
+	
