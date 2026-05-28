@@ -21,6 +21,8 @@ var previous_state:PlayerState:
 const MAX_FALL_VELOCITY:float = 1500.0
 
 var is_freezed:bool = false
+
+
 var direction:Vector2 = Vector2.ZERO
 var second_jump_enabled:bool = false
 var wall_slide_enabled:bool = false
@@ -31,7 +33,10 @@ var jumped_once:bool = false
 var coyote_time_started = false
 var coyote_time_ended = false
 @export var coyote_time:float = 0.125
-
+var is_hitted:bool = false
+var is_invincible:bool = false
+@export var invincible_time:float = 1.0
+var invincible_time_counter:float = 1.0
 var cancel_gravity:bool = false
 var is_dashing:bool = false
 var is_jumping_up:bool = false
@@ -45,6 +50,7 @@ const FLOOR_MAX_ANGLE = deg_to_rad(46)
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape: CollisionShape2D = $collision_shape
 
 #endregion
 
@@ -69,6 +75,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if is_freezed:return
 	update_direction()
+	check_invincible(_delta)
 	if is_on_floor():
 		$debug_nodes/on_floor.color = Color.GREEN
 	else:
@@ -130,6 +137,7 @@ func change_state( new_state:PlayerState)-> PlayerState:
 	return null
 
 func update_direction() ->void:
+	if is_hitted: return
 	#var _prev_direction = direction
 	var x_axis = Input.get_axis("left","right")
 	var y_axis = Input.get_axis("up","down")
@@ -157,7 +165,11 @@ func coyote_time_start():
 	coyote_time_ended = true
 	$debug_nodes/coyote_time_rect.color = Color.RED
 	
-func hit_damage(damage:Damage):
+func hit_damage(damage:Damage,respawn:Marker2D):
+	if is_invincible: return
+	%state_hitted.current_damage = damage
+	%state_hitted.current_respawn = respawn
+	change_state(%state_hitted)
 	pass
 	
 func can_jump()->bool:
@@ -184,4 +196,25 @@ func can_dash()->bool:
 func can_wall_slide()->bool:
 	if not wall_slide_enabled: return false
 	return false
+
+func set_invincible()->void:
+	is_invincible = true
+	invincible_time_counter = invincible_time
 	
+func check_invincible(delta:float)->void:
+	if is_invincible:
+		invincible_time_counter -= delta
+		
+		
+		if invincible_time_counter <= 0.0:
+			is_invincible = false
+			check_pos_invincible()
+		else:
+			print(int(1000* invincible_time_counter) % 10)
+			if int(1000* invincible_time_counter) % 10 > 6:
+				sprite_2d.visible = false
+			else:
+				sprite_2d.visible = true
+
+func check_pos_invincible()->void:
+	pass

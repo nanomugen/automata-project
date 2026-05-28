@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="1_vnmkj"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="2_ygg0a"]
+[ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="3_itc1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
 size = Vector2(800, 100)
@@ -157,3 +158,10 @@ position = Vector2(666, -190)
 
 [node name="human" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
 position = Vector2(197, -639)
+
+[node name="spikes" parent="." unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-580, -263)
+respawn = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="spikes" unique_id=1421204196]
+position = Vector2(-95, 1)
