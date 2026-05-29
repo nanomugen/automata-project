@@ -1,7 +1,6 @@
-extends Node2D
+class_name Spikes extends HurtableNode2D
 
-@onready var damage: Damage = $damage
-@export var respawn: Marker2D;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	damage.position_respawn = respawn
@@ -14,8 +13,22 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("encostou no spike")
+	
 	if body is not Human:
 		return
 	var human:Human = body
+	if human.global_position.y <=  global_position.y:
+		damage.hit_jump = true
+	if global_position.x < respawn.global_position.x:
+		damage.orientation = -1
+	else:
+		damage.orientation = 1
+	human.set_hurtable_node(self)
 	human.hit_damage(damage,respawn)
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is not Human:
+		return
+	var human:Human = body
+	human.remove_hurtable_node(self)

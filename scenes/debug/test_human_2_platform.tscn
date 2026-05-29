@@ -157,7 +157,7 @@ color = Color(0.08627451, 0.20784314, 0.1254902, 1)
 position = Vector2(666, -190)
 
 [node name="human" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
-position = Vector2(197, -639)
+position = Vector2(-791, -413)
 
 [node name="spikes" parent="." unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-580, -263)

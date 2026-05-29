@@ -35,8 +35,10 @@ var coyote_time_ended = false
 @export var coyote_time:float = 0.125
 var is_hitted:bool = false
 var is_invincible:bool = false
-@export var invincible_time:float = 1.0
-var invincible_time_counter:float = 1.0
+@export var invincible_time:float = 0.8
+var invincible_time_counter:float
+var invincible_buffer: HurtableNode2D = null
+
 var cancel_gravity:bool = false
 var is_dashing:bool = false
 var is_jumping_up:bool = false
@@ -51,6 +53,7 @@ const FLOOR_MAX_ANGLE = deg_to_rad(46)
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $collision_shape
+@onready var camera_2d: GameCamera = $Camera2D
 
 #endregion
 
@@ -204,17 +207,21 @@ func set_invincible()->void:
 func check_invincible(delta:float)->void:
 	if is_invincible:
 		invincible_time_counter -= delta
-		
-		
 		if invincible_time_counter <= 0.0:
 			is_invincible = false
+			sprite_2d.visible = true
 			check_pos_invincible()
 		else:
-			print(int(1000* invincible_time_counter) % 10)
-			if int(1000* invincible_time_counter) % 10 > 6:
-				sprite_2d.visible = false
-			else:
-				sprite_2d.visible = true
+			if int(1000* invincible_time_counter) % 7 > 3:
+				sprite_2d.visible = !sprite_2d.visible
 
 func check_pos_invincible()->void:
-	pass
+	if invincible_buffer != null:
+		hit_damage(invincible_buffer.damage,invincible_buffer.respawn)
+
+func set_hurtable_node(hurtable:HurtableNode2D)->void:
+	invincible_buffer = hurtable
+	
+func remove_hurtable_node(hurtable:HurtableNode2D)->void:
+	if invincible_buffer == hurtable:
+		invincible_buffer = null

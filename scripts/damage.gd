@@ -4,6 +4,8 @@ extends Node2D
 @export var have_respawn:bool = false
 @export var position_respawn:Marker2D
 @export var hit_value:int = 0
+var hit_jump:bool = false
+var orientation:int = 1
 
 func _ready() -> void:
 	pass # Replace with function body.
