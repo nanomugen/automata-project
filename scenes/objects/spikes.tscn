@@ -4,36 +4,34 @@
 [ext_resource type="PackedScene" uid="uid://lctpvmll6uu4" path="res://scenes/logic/damage.tscn" id="2_tkv1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkv1w"]
-size = Vector2(180, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a2x"]
-size = Vector2(172, 21)
+size = Vector2(105, 4)
 
 [node name="spikes" type="Node2D" unique_id=705382697]
 script = ExtResource("1_bxa7l")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2108528293]
-polygon = PackedVector2Array(0, 0, 30, -52, 60, 0)
+polygon = PackedVector2Array(0, 0, 20, -36, 40, 0)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygon2D" unique_id=1252038149]
 color = Color(0.52912915, 0.52912915, 0.52912915, 0.29500002)
-polygon = PackedVector2Array(28, -45, 10, -13, 27, -6)
+polygon = PackedVector2Array(20, -31, 8, -8, 18, -6)
 
 [node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1279100979]
 position = Vector2(60, 0)
-polygon = PackedVector2Array(0, 0, 30, -52, 60, 0)
+polygon = PackedVector2Array(-20, 0, 0, -36, 20, 0)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygon2D2" unique_id=1441368170]
 color = Color(0.52912915, 0.52912915, 0.52912915, 0.29500002)
-polygon = PackedVector2Array(28, -45, 10, -13, 27, -6)
+polygon = PackedVector2Array(0, -31, -15, -6, -2, -7)
 
 [node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1342125907]
 position = Vector2(120, 0)
-polygon = PackedVector2Array(0, 0, 30, -52, 60, 0)
+polygon = PackedVector2Array(-40, 0, -20, -38, -3, 0)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Polygon2D3" unique_id=1599402096]
+position = Vector2(-49, 5)
 color = Color(0.52912915, 0.52912915, 0.52912915, 0.29500002)
-polygon = PackedVector2Array(28, -45, 10, -13, 27, -6)
+polygon = PackedVector2Array(29, -36, 12, -10, 27, -11)
 
 [node name="damage" parent="." unique_id=1500415403 instance=ExtResource("2_tkv1w")]
 position = Vector2(88, 0)
@@ -43,19 +41,18 @@ have_respawn = true
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1700275326]
-position = Vector2(90, -13)
+position = Vector2(59.5, -2)
 shape = SubResource("RectangleShape2D_tkv1w")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1512523936]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1917225963]
-position = Vector2(90, -38.5)
-shape = SubResource("RectangleShape2D_y7a2x")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=74792809]
+polygon = PackedVector2Array(6, -5, 20, -32, 100, -32, 114, -4)
 
 [node name="Stroke" type="Polygon2D" parent="." unique_id=15330957]
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(30, -52, 60, 0, 90, -52, 120, 0, 150, -52, 180, 0, 184, 0, 150, -59, 120, -7, 90, -59, 60, -7, 30, -59, -5, 0, 0, 0)
+polygon = PackedVector2Array(20, -32, 40, 0, 60, -33, 80, 0, 100, -32, 116, 0, 120, 0, 100, -39, 80, -7, 60, -40, 40, -7, 20, -40, 0, 0, 4, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

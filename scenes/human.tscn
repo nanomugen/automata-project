@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx5es27pccdya" path="res://scripts/human.gd" id="1_lcw25"]
 [ext_resource type="Texture2D" uid="uid://djlysugr4lhc8" path="res://assets/automata-animation-3.png" id="2_67gc1"]
+[ext_resource type="Texture2D" uid="uid://du68it5l2xw4c" path="res://assets/automata-animation-24.png" id="2_cxv4x"]
 [ext_resource type="Texture2D" uid="uid://dqaf55wbgwj0h" path="res://assets/automata-animation-2-22.png" id="3_nwpxy"]
 [ext_resource type="Texture2D" uid="uid://c1nacktedqbtq" path="res://assets/automata-animation-2.png" id="4_c7dlj"]
 [ext_resource type="Texture2D" uid="uid://jeleojw2aoqt" path="res://assets/penguin-idle.png" id="5_rml1w"]
@@ -14,9 +15,13 @@
 [ext_resource type="Script" uid="uid://bwtdv2vhfyu1e" path="res://scripts/states_scripts/jump_up_state.gd" id="11_rml1w"]
 [ext_resource type="Script" uid="uid://d1afmr1wy4yxe" path="res://scripts/states_scripts/jump_down_state.gd" id="12_l2cia"]
 [ext_resource type="Script" uid="uid://c6sfuug336hj" path="res://scripts/states_scripts/dash_state.gd" id="14_34snk"]
+[ext_resource type="Script" uid="uid://c20b32dojdm05" path="res://scripts/states_scripts/jump_wall_slide_state.gd" id="14_qqtfv"]
 [ext_resource type="Script" uid="uid://cuwhrvt5joi27" path="res://scripts/states_scripts/hitted_state.gd" id="15_wo28b"]
 [ext_resource type="Script" uid="uid://cj1q33j3ecb3c" path="res://scripts/states_scripts/attack_ground_state.gd" id="16_wo28b"]
 [ext_resource type="Script" uid="uid://cj7snkjyfaxoh" path="res://scripts/states_scripts/attack_air_state.gd" id="17_f68cc"]
+[ext_resource type="Script" uid="uid://nlhm3ca54dab" path="res://scripts/states_scripts/attack_run_state.gd" id="18_dyrg8"]
+[ext_resource type="Script" uid="uid://d2uw77mk25t6q" path="res://scripts/states_scripts/attack_dash_state.gd" id="20_gmtd2"]
+[ext_resource type="Script" uid="uid://d0csosu8m0kmg" path="res://scripts/states_scripts/wall_slide_state.gd" id="21_ss4x0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwu2t"]
 atlas = ExtResource("2_67gc1")
@@ -684,6 +689,38 @@ tracks/0/keys = {
 "values": [64, 65, 66, 65, 64]
 }
 
+[sub_resource type="Animation" id="Animation_1ttmb"]
+resource_name = "attack-run"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [128, 129, 130, 129, 128]
+}
+
+[sub_resource type="Animation" id="Animation_k2c8j"]
+resource_name = "attack_wall_slide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [120, 121, 122, 121, 120]
+}
+
 [sub_resource type="Animation" id="Animation_cxv4x"]
 resource_name = "dash"
 tracks/0/type = "value"
@@ -814,11 +851,29 @@ tracks/0/keys = {
 "values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
 
+[sub_resource type="Animation" id="Animation_fv3o2"]
+resource_name = "wall_slide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [112]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_34snk"]
 _data = {
 &"RESET": SubResource("Animation_x4nh6"),
 &"attack-air": SubResource("Animation_ss4x0"),
 &"attack-idle": SubResource("Animation_gmtd2"),
+&"attack-run": SubResource("Animation_1ttmb"),
+&"attack_wall_slide": SubResource("Animation_k2c8j"),
 &"dash": SubResource("Animation_cxv4x"),
 &"hitted": SubResource("Animation_qqtfv"),
 &"idle-blink": SubResource("Animation_34snk"),
@@ -826,7 +881,8 @@ _data = {
 &"jump-down": SubResource("Animation_f68cc"),
 &"jump-up": SubResource("Animation_wo28b"),
 &"recover": SubResource("Animation_20eej"),
-&"run": SubResource("Animation_dyrg8")
+&"run": SubResource("Animation_dyrg8"),
+&"wall_slide": SubResource("Animation_fv3o2")
 }
 
 [node name="human" type="CharacterBody2D" unique_id=1506472261]
@@ -835,11 +891,11 @@ collision_layer = 2
 script = ExtResource("1_lcw25")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123887080]
-position = Vector2(0, -63)
+position = Vector2(2, -63.000004)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_x4nh6")
+texture = ExtResource("2_cxv4x")
 hframes = 8
-vframes = 15
+vframes = 18
 frame = 16
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1596704037]
@@ -951,6 +1007,10 @@ script = ExtResource("9_nwpxy")
 unique_name_in_owner = true
 script = ExtResource("11_rml1w")
 
+[node name="state_jump_wall_slide" type="Node" parent="States" unique_id=306146442]
+unique_name_in_owner = true
+script = ExtResource("14_qqtfv")
+
 [node name="state_jump_down" type="Node" parent="States" unique_id=1719872394]
 unique_name_in_owner = true
 script = ExtResource("12_l2cia")
@@ -967,9 +1027,21 @@ script = ExtResource("15_wo28b")
 unique_name_in_owner = true
 script = ExtResource("16_wo28b")
 
+[node name="state_attack_run" type="Node" parent="States" unique_id=76918811]
+unique_name_in_owner = true
+script = ExtResource("18_dyrg8")
+
 [node name="state_attack_air" type="Node" parent="States" unique_id=1236979746]
 unique_name_in_owner = true
 script = ExtResource("17_f68cc")
+
+[node name="state_attack_dash" type="Node" parent="States" unique_id=582574198]
+unique_name_in_owner = true
+script = ExtResource("20_gmtd2")
+
+[node name="state_wall_slide" type="Node" parent="States" unique_id=1654137138]
+unique_name_in_owner = true
+script = ExtResource("21_ss4x0")
 
 [node name="StateLabel" type="Label" parent="." unique_id=1049231606]
 anchors_preset = 8

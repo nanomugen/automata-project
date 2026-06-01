@@ -12,54 +12,287 @@ size = Vector2(800, 100)
 [node name="background" type="Node2D" parent="." unique_id=1933918670]
 
 [node name="ColorRect" type="ColorRect" parent="background" unique_id=907697148]
-offset_top = -40.0
-offset_right = 1715.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -250.0
+offset_right = -399.0
+offset_bottom = -210.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect9" type="ColorRect" parent="background" unique_id=1342365618]
+offset_left = -2114.0
+offset_top = -150.0
+offset_right = -399.0
+offset_bottom = -110.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect10" type="ColorRect" parent="background" unique_id=1513549890]
+offset_left = -2114.0
+offset_top = -50.0
+offset_right = -399.0
+offset_bottom = -10.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect2" type="ColorRect" parent="background" unique_id=45035394]
-offset_top = -329.0
-offset_right = 1715.0
-offset_bottom = -289.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -550.0
+offset_right = -399.0
+offset_bottom = -510.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect3" type="ColorRect" parent="background" unique_id=1308352300]
-offset_top = -233.0
-offset_right = 1715.0
-offset_bottom = -193.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -450.0
+offset_right = -399.0
+offset_bottom = -410.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect4" type="ColorRect" parent="background" unique_id=2092234231]
-offset_top = -135.0
-offset_right = 1715.0
-offset_bottom = -95.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -350.0
+offset_right = -399.0
+offset_bottom = -310.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect5" type="ColorRect" parent="background" unique_id=2140468920]
-offset_top = -425.0
-offset_right = 1715.0
-offset_bottom = -385.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -650.0
+offset_right = -399.0
+offset_bottom = -610.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect6" type="ColorRect" parent="background" unique_id=1692079726]
-offset_top = -714.0
-offset_right = 1715.0
-offset_bottom = -674.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -950.0
+offset_right = -399.0
+offset_bottom = -910.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect7" type="ColorRect" parent="background" unique_id=642805240]
-offset_top = -618.0
-offset_right = 1715.0
-offset_bottom = -578.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -850.0
+offset_right = -399.0
+offset_bottom = -810.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="ColorRect8" type="ColorRect" parent="background" unique_id=1206855734]
-offset_top = -520.0
-offset_right = 1715.0
-offset_bottom = -480.0
-color = Color(0.8860804, 0.6074757, 0.5997398, 1)
+offset_left = -2114.0
+offset_top = -750.0
+offset_right = -399.0
+offset_bottom = -710.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect11" type="ColorRect" parent="background" unique_id=368623744]
+offset_left = -2123.0
+offset_top = -1250.0
+offset_right = -408.0
+offset_bottom = -1210.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect12" type="ColorRect" parent="background" unique_id=356053714]
+offset_left = -2123.0
+offset_top = -1150.0
+offset_right = -408.0
+offset_bottom = -1110.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect13" type="ColorRect" parent="background" unique_id=2042945000]
+offset_left = -2123.0
+offset_top = -1050.0
+offset_right = -408.0
+offset_bottom = -1010.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect14" type="ColorRect" parent="background" unique_id=1443266172]
+offset_left = -2123.0
+offset_top = -1550.0
+offset_right = -408.0
+offset_bottom = -1510.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect15" type="ColorRect" parent="background" unique_id=1780550652]
+offset_left = -2123.0
+offset_top = -1450.0
+offset_right = -408.0
+offset_bottom = -1410.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect16" type="ColorRect" parent="background" unique_id=435840409]
+offset_left = -2123.0
+offset_top = -1350.0
+offset_right = -408.0
+offset_bottom = -1310.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect17" type="ColorRect" parent="background" unique_id=1354447508]
+offset_left = -2123.0
+offset_top = -1650.0
+offset_right = -408.0
+offset_bottom = -1610.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect18" type="ColorRect" parent="background" unique_id=639505261]
+offset_left = -2123.0
+offset_top = -1950.0
+offset_right = -408.0
+offset_bottom = -1910.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect19" type="ColorRect" parent="background" unique_id=482679106]
+offset_left = -2123.0
+offset_top = -1850.0
+offset_right = -408.0
+offset_bottom = -1810.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect20" type="ColorRect" parent="background" unique_id=150739335]
+offset_left = -2123.0
+offset_top = -1750.0
+offset_right = -408.0
+offset_bottom = -1710.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect21" type="ColorRect" parent="background" unique_id=210448697]
+offset_left = -2111.0
+offset_top = -2250.0
+offset_right = -396.0
+offset_bottom = -2210.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect22" type="ColorRect" parent="background" unique_id=1037111186]
+offset_left = -2111.0
+offset_top = -2150.0
+offset_right = -396.0
+offset_bottom = -2110.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect23" type="ColorRect" parent="background" unique_id=1427877116]
+offset_left = -2111.0
+offset_top = -2050.0
+offset_right = -396.0
+offset_bottom = -2010.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect24" type="ColorRect" parent="background" unique_id=43595531]
+offset_left = -2111.0
+offset_top = -2550.0
+offset_right = -396.0
+offset_bottom = -2510.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect25" type="ColorRect" parent="background" unique_id=412225694]
+offset_left = -2111.0
+offset_top = -2450.0
+offset_right = -396.0
+offset_bottom = -2410.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect26" type="ColorRect" parent="background" unique_id=1827293614]
+offset_left = -2111.0
+offset_top = -2350.0
+offset_right = -396.0
+offset_bottom = -2310.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect27" type="ColorRect" parent="background" unique_id=545032714]
+offset_left = -2111.0
+offset_top = -2650.0
+offset_right = -396.0
+offset_bottom = -2610.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect28" type="ColorRect" parent="background" unique_id=523040080]
+offset_left = -2111.0
+offset_top = -2950.0
+offset_right = -396.0
+offset_bottom = -2910.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect29" type="ColorRect" parent="background" unique_id=316045998]
+offset_left = -2111.0
+offset_top = -2850.0
+offset_right = -396.0
+offset_bottom = -2810.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect30" type="ColorRect" parent="background" unique_id=258615788]
+offset_left = -2111.0
+offset_top = -2750.0
+offset_right = -396.0
+offset_bottom = -2710.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect31" type="ColorRect" parent="background" unique_id=1127128359]
+offset_left = -2111.0
+offset_top = -3250.0
+offset_right = -396.0
+offset_bottom = -3210.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect32" type="ColorRect" parent="background" unique_id=262825237]
+offset_left = -2111.0
+offset_top = -3150.0
+offset_right = -396.0
+offset_bottom = -3110.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect33" type="ColorRect" parent="background" unique_id=1962777422]
+offset_left = -2111.0
+offset_top = -3050.0
+offset_right = -396.0
+offset_bottom = -3010.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect35" type="ColorRect" parent="background" unique_id=745536022]
+offset_left = -2111.0
+offset_top = -3450.0
+offset_right = -396.0
+offset_bottom = -3410.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
+
+[node name="ColorRect36" type="ColorRect" parent="background" unique_id=1567444757]
+offset_left = -2111.0
+offset_top = -3350.0
+offset_right = -396.0
+offset_bottom = -3310.0
+scale = Vector2(2.2799988, 1)
+color = Color(0.53252506, 0.77574474, 0.86311376, 0.25300002)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1015933855]
-scale = Vector2(2.1599998, 1)
+scale = Vector2(2.1599998, 7.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1709109981]
 position = Vector2(400, 50)
@@ -68,12 +301,12 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1148150678]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=192490305]
-position = Vector2(1815, -1625)
-rotation = 1.5707964
-scale = Vector2(2.1599998, 1)
+position = Vector2(1713.0001, 708)
+rotation = 4.712389
+scale = Vector2(5.32, 7.039996)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1767424288]
 position = Vector2(400, 50)
@@ -82,12 +315,12 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=1408272558]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1061545503]
-position = Vector2(-1991, -1893)
+position = Vector2(-2031.9999, -3432)
 rotation = 1.5707964
-scale = Vector2(2.1599998, 1)
+scale = Vector2(4.9734287, 7.9658217)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=241747417]
 position = Vector2(400, 50)
@@ -96,7 +329,20 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=614506515]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=1294468308]
+position = Vector2(-2733.0002, -4171)
+scale = Vector2(6.4399967, 7.440004)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=802956814]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D9" unique_id=169193947]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1934627153]
 position = Vector2(1457.0001, -250)
@@ -110,7 +356,77 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=76626624]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+color = Color(0.06288305, 0.18327263, 0.111926906, 1)
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="." unique_id=702855495]
+position = Vector2(408.0005, -1200)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15" unique_id=624324086]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D15" unique_id=78669152]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.25882354, 0.41568628, 0.32156864, 1)
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="." unique_id=835548848]
+position = Vector2(722.0005, -912.99994)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16" unique_id=1199770611]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D16" unique_id=546954812]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.31764707, 0.5764706, 0.41960785, 1)
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="." unique_id=31865435]
+position = Vector2(1085.0004, -659)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17" unique_id=500639903]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D17" unique_id=491917798]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.5019608, 0.6901961, 0.5764706, 1)
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="." unique_id=1193737821]
+position = Vector2(-193.99951, -1779)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14" unique_id=1801189762]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D14" unique_id=1190822786]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.06288305, 0.18327263, 0.111926906, 1)
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="." unique_id=1373690794]
+position = Vector2(95.00049, -1484)
+rotation = 1.5707964
+scale = Vector2(0.3199998, 2.1199994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13" unique_id=1681916625]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D13" unique_id=1408709475]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.09803922, 0.28627452, 0.17254902, 1)
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=342920546]
 position = Vector2(1059, -163.99998)
@@ -124,11 +440,66 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D7" unique_id=1978217398]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.084585615, 0.20661247, 0.12445537, 1)
+color = Color(0.06288305, 0.18327263, 0.111926906, 1)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1857118265]
+position = Vector2(-1212.9999, -628.99994)
+rotation = 1.5707964
+scale = Vector2(0.1599998, 3.3199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=655625446]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D8" unique_id=945045425]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=2137513686]
+position = Vector2(-1016, -914.99994)
+scale = Vector2(0.1599998, 3.3199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=341763591]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D10" unique_id=1245906019]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=2105520046]
+position = Vector2(-1016, -2167)
+scale = Vector2(0.1599998, 10.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=1844250308]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D11" unique_id=341553318]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1027523006]
+position = Vector2(-680, -2167)
+scale = Vector2(0.1599998, 15.840005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=1904022081]
+position = Vector2(400, 50)
+shape = SubResource("RectangleShape2D_vnmkj")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D12" unique_id=1040939230]
+offset_right = 800.0
+offset_bottom = 100.0
+color = Color(0.0627451, 0.18431373, 0.11372549, 1)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1225324228]
 position = Vector2(-2072, -259)
-scale = Vector2(2.1599998, 1)
+scale = Vector2(2.1599998, 8.119999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1784438335]
 position = Vector2(400, 50)
@@ -137,12 +508,12 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=941366528]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.08627451, 0.20784314, 0.1254902, 1)
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=840222998]
 position = Vector2(-343.99997, -258.99997)
 rotation = 0.1525545
-scale = Vector2(2.1599998, 1)
+scale = Vector2(2.1599998, 7.4897914)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1344924613]
 position = Vector2(400, 50)
@@ -151,17 +522,65 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=292243796]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.08627451, 0.20784314, 0.1254902, 1)
+color = Color(0.0031390267, 0.08485951, 0.032933056, 1)
 
 [node name="platform" parent="." unique_id=1120527333 instance=ExtResource("2_ygg0a")]
 position = Vector2(666, -190)
 
 [node name="human" parent="." unique_id=1506472261 instance=ExtResource("1_vnmkj")]
-position = Vector2(-791, -413)
+position = Vector2(-1307, -854)
 
 [node name="spikes" parent="." unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
-position = Vector2(-580, -263)
+position = Vector2(-579, -263)
 respawn = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="spikes" unique_id=1421204196]
 position = Vector2(-95, 1)
+
+[node name="spikes2" parent="." unique_id=1918213430 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-1170, -259)
+respawn = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="spikes2" unique_id=697023280]
+position = Vector2(238, -4)
+
+[node name="spikes3" parent="." unique_id=1339017222 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-1302, -500)
+rotation = -3.1415927
+respawn = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="spikes3" unique_id=1536908076]
+position = Vector2(329.00003, -231.99995)
+
+[node name="spikes4" parent="." unique_id=1135685203 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-681, -592)
+rotation = -1.5707964
+respawn = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="spikes4" unique_id=202619270]
+position = Vector2(350.00003, -270.99994)
+
+[node name="spikes5" parent="." unique_id=2075697655 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-683, -1414)
+rotation = -1.5707964
+respawn = NodePath("../spikes4/Marker2D")
+
+[node name="spikes6" parent="." unique_id=234260317 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-683, -1985)
+rotation = -1.5707964
+respawn = NodePath("../spikes4/Marker2D")
+
+[node name="spikes7" parent="." unique_id=178166386 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-886, -1862)
+rotation = -4.712389
+respawn = NodePath("../spikes4/Marker2D")
+
+[node name="spikes8" parent="." unique_id=136952003 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-888, -1309)
+rotation = -4.712389
+respawn = NodePath("../spikes4/Marker2D")
+
+[node name="spikes9" parent="." unique_id=1277835717 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
+position = Vector2(-888, -765)
+rotation = -4.712389
+respawn = NodePath("../spikes4/Marker2D")

@@ -1,6 +1,7 @@
-class_name JumpUpState extends PlayerState
+class_name JumpWallSlideState extends PlayerState
 
-
+@export var delay_change_direction:float = 0.1
+var delay_change_direction_count:float
 #region /// state references
 #reference to all the other states
 #endregion
@@ -8,9 +9,12 @@ func init()->void:
 	pass
 	
 func enter()->void:
+	delay_change_direction_count = delay_change_direction
 	human.animation_player.play("jump-up")
-	human.velocity.y = human.JUMP_VELOCITY 
+	human.velocity.y = human.JUMP_VELOCITY
+	human.velocity.x = -human.wall_slide_direction * human.JUMP_VELOCITY * 0.4
 	human.jumped_once = true
+	print("human.direction: ",human.direction) 
 
 func exit()->void:
 	pass
@@ -48,7 +52,12 @@ func process(_delta:float)->PlayerState:
 	return next_state
 	
 func physics_process(_delta:float)->PlayerState:
-	human.allow_human_to_move_h()
+	if delay_change_direction_count < 0.0:
+		human.allow_human_to_move_h()
+		
+	else:
+		delay_change_direction_count -= _delta
+	
 	if human.is_on_floor():
 		return state_idle_breath
 	if human.velocity.y >= 0:

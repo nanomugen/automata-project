@@ -15,15 +15,18 @@ var previous_state:PlayerState:
 @export var JUMP_TIME_TO_PEAK: float = 0.4
 @export var JUMP_TIME_TO_DESCEND: float = 0.3
 
+
 @onready var JUMP_VELOCITY:float = (2.0 * JUMP_HEIGHT)/JUMP_TIME_TO_PEAK * -1.0
 @onready var JUMP_GRAVITY:float = (-2.0 * JUMP_HEIGHT)/(JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK) * -1.0
 @onready var FALL_GRAVITY:float = (-2.0 * JUMP_HEIGHT)/(JUMP_TIME_TO_DESCEND * JUMP_TIME_TO_DESCEND) * -1.0
 const MAX_FALL_VELOCITY:float = 1500.0
 
+
 var is_freezed:bool = false
 
 
 var direction:Vector2 = Vector2.ZERO
+var wall_slide_direction:int = 0
 var second_jump_enabled:bool = false
 var wall_slide_enabled:bool = false
 var dash_enabled:bool = true
@@ -42,6 +45,8 @@ var invincible_buffer: HurtableNode2D = null
 var cancel_gravity:bool = false
 var is_dashing:bool = false
 var is_jumping_up:bool = false
+var is_wall_sliding:bool = false
+var wall_sliding_velocity:float = 100.0
 
 const FLOOR_SNAP_LENGTH = 32.0
 const FLOOR_MAX_ANGLE = deg_to_rad(46)
@@ -61,18 +66,10 @@ const FLOOR_MAX_ANGLE = deg_to_rad(46)
 func _ready() -> void:
 	floor_snap_length = FLOOR_SNAP_LENGTH
 	floor_max_angle = FLOOR_MAX_ANGLE
-	print("human: ",JUMP_VELOCITY," ",JUMP_GRAVITY," ",FALL_GRAVITY)
 	initialize_states()
 
 func _unhandled_input(event: InputEvent) -> void:
-	#print("unhandled input")
 	if is_freezed:return
-	if event.is_action("dash"):
-		print(event)
-	if event.is_action_pressed("dash"):
-		print("pressed: ",event)
-	if event.is_action_released("dash"):
-		print("released: ",event)
 	change_state(current_state.handle_input(event))
 
 func _process(_delta: float) -> void:
@@ -100,11 +97,11 @@ func _process(_delta: float) -> void:
 	
 func _physics_process(_delta: float) -> void:
 	if is_freezed:return
-	if not is_on_floor() and not cancel_gravity:
+	if is_wall_sliding:
+		velocity.y = wall_sliding_velocity
+	elif not is_on_floor() and not cancel_gravity:
 		velocity.y += get_custom_gravity() * _delta  
 		velocity.y = clamp(velocity.y ,velocity.y,MAX_FALL_VELOCITY)
-	#velocity.y = new_velocity
-	#print(velocity.y)
 	move_and_slide() 
 	change_state(current_state.physics_process(_delta))
 	
@@ -119,10 +116,7 @@ func initialize_states() -> void:
 		return
 	for state in states:
 		state.init()
-	#print(states)
-	#states.append(%state_idle_breath)
 	state_label.text = current_state.name
-	#change_state(current_state)
 	current_state.enter()
 	
 func change_state( new_state:PlayerState)-> PlayerState:
@@ -140,11 +134,15 @@ func change_state( new_state:PlayerState)-> PlayerState:
 	return null
 
 func update_direction() ->void:
+	#print("direction: ",direction)
 	if is_hitted: return
+	#if is_wall_sliding: return
 	#var _prev_direction = direction
+	#if not is_wall_sliding:
 	var x_axis = Input.get_axis("left","right")
 	var y_axis = Input.get_axis("up","down")
 	direction = Vector2(x_axis,y_axis)
+	if is_wall_sliding or is_dashing: return
 	if direction.x > 0.0:
 		sprite_2d.flip_h = false
 	elif direction.x < 0.0:
@@ -177,6 +175,8 @@ func hit_damage(damage:Damage,respawn:Marker2D):
 	
 func can_jump()->bool:
 	if not second_jump_enabled:
+		if is_on_floor():return true
+		if is_wall_sliding: return true
 		if jumped_once:
 			return false
 		else:
@@ -198,7 +198,8 @@ func can_dash()->bool:
 
 func can_wall_slide()->bool:
 	if not wall_slide_enabled: return false
-	return false
+	if is_on_floor(): return false
+	return true
 
 func set_invincible()->void:
 	is_invincible = true

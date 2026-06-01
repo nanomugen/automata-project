@@ -12,11 +12,14 @@ var next_state : PlayerState
 @onready var state_hitted: HittedState = %state_hitted
 @onready var state_attack_ground: AttackGroundState = %state_attack_ground
 @onready var state_attack_air: AttackAirState = %state_attack_air
+@onready var state_attack_run: AttackRunState = %state_attack_run
+@onready var state_attack_dash: AttackDashState = %state_attack_dash
+@onready var state_wall_slide: WallSlideState = %state_wall_slide
+@onready var state_jump_wall_slide: JumpWallSlideState = %state_jump_wall_slide
 
 #endregion
 
 func init()->void:
-	print("init: ",self)
 	pass
 	
 func enter()->void:

@@ -13,6 +13,7 @@ script = ExtResource("1_7em14")
 
 [node name="fade_transition" type="ColorRect" parent="." unique_id=1277966013]
 visible = false
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

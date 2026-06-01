@@ -31,6 +31,8 @@ func exit()->void:
 func handle_input(_event:InputEvent)->PlayerState:
 	if _event.is_action_pressed("jump") and human.can_jump():
 		return state_jump_up
+	if _event.is_action_pressed("attack"):
+		return state_attack_dash
 	return next_state
 
 func process(_delta:float)->PlayerState:

@@ -106,13 +106,14 @@ func fade_in_out(time:float,mid_signal:Signal):
 	tween = create_tween()
 	fade_transition.color = Color(0,0,0,0)
 	fade_transition.show()
-	tween.tween_property(fade_transition,"color",Color(0,0,0,1),time/2)
+	tween.tween_property(fade_transition,"color",Color(0,0,0,1),time/4)
 	
 	tween.tween_callback(func(): 
 		
 		print("inside the emit")
 		mid_signal.emit()
 		)
-	tween.tween_property(fade_transition,"color",Color(0,0,0,0),time/2)
+	tween.tween_property(fade_transition,"tooltip_text"," ",time/2)
+	tween.tween_property(fade_transition,"color",Color(0,0,0,0),time/4)
 	tween.tween_property(fade_transition,"visible",false,0.0)
 	

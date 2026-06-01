@@ -22,6 +22,7 @@ func init()->void:
 	
 func enter()->void:
 	human.camera_2d.apply_shake()
+	Input.start_joy_vibration(0,0.2,0.2,0.3)
 	respawn_position = current_respawn.global_position
 	ended_animation = false
 	can_transition = false
@@ -32,8 +33,9 @@ func enter()->void:
 	time_hitted_counter = time_of_hitted
 	human.animation_player.play("hitted")
 	human.collision_shape.set_deferred("disabled",true)
-	if current_damage.hit_jump:
-		human.velocity.y = human.JUMP_VELOCITY *0.8
+	print("hit_jump: ", current_damage.hit_jump)
+	#if current_damage.hit_jump:
+	human.velocity.y = human.JUMP_VELOCITY *0.8
 	var custom_direction = -1 if human.sprite_2d.flip_h else 1
 	human.velocity.x = custom_direction * human.JUMP_VELOCITY/2
 	pass
@@ -58,7 +60,7 @@ func process(_delta:float)->PlayerState:
 	if can_transition:
 		can_transition = false
 		if current_damage.have_respawn:
-			GlobalHud.fade_in_out(0.5,on_respawn_transition)
+			GlobalHud.fade_in_out(0.6,on_respawn_transition)
 	if ended_animation:
 		return state_idle_breath
 	return next_state

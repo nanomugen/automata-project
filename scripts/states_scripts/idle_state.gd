@@ -9,9 +9,9 @@ func init()->void:
 	pass
 	
 func enter()->void:
+	print("entered: ",name)
 	human.animation_player.play("idle-breath")
 	human.is_jumping_up = false
-	print("entered: ",name)
 	human.dashed_on_air = false
 	human.jumped_once = false
 	pass
