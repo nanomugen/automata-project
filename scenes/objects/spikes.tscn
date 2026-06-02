@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://lctpvmll6uu4" path="res://scenes/logic/damage.tscn" id="2_tkv1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkv1w"]
-size = Vector2(105, 4)
+size = Vector2(97, 4)
 
 [node name="spikes" type="Node2D" unique_id=705382697]
 script = ExtResource("1_bxa7l")
@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_tkv1w")
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=74792809]
-polygon = PackedVector2Array(6, -5, 20, -32, 100, -32, 114, -4)
+polygon = PackedVector2Array(10, -5, 20, -29, 100, -29, 109, -5)
 
 [node name="Stroke" type="Polygon2D" parent="." unique_id=15330957]
 color = Color(0, 0, 0, 1)

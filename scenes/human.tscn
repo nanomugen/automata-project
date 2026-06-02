@@ -640,7 +640,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7jhf"]
 radius = 15.0
-height = 118.0
+height = 110.0
 
 [sub_resource type="Animation" id="Animation_x4nh6"]
 length = 0.001
@@ -908,7 +908,7 @@ autoplay = "idle-breath"
 
 [node name="collision_shape" type="CollisionShape2D" parent="." unique_id=1890674657]
 z_index = 2
-position = Vector2(0, -59)
+position = Vector2(0, -55)
 shape = SubResource("CapsuleShape2D_c7jhf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118880137]
