@@ -27,11 +27,12 @@ var is_freezed:bool = false
 
 var direction:Vector2 = Vector2.ZERO
 var wall_slide_direction:int = 0
-var second_jump_enabled:bool = false
-var wall_slide_enabled:bool = false
+var second_jump_enabled:bool = true
+var wall_slide_enabled:bool = true
 var dash_enabled:bool = true
 var dashed_on_air:bool = false
 var jumped_once:bool = false
+var jumped_twice:bool = false
 
 var coyote_time_started = false
 var coyote_time_ended = false
@@ -181,7 +182,13 @@ func can_jump()->bool:
 			return false
 		else:
 			return true
-		
+	else:
+		if is_on_floor():return true
+		if is_wall_sliding: return true
+		if jumped_twice:
+			return false
+		else:
+			return true
 	
 	return false
 	

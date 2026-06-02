@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bbyc5jbuk1e52"]
+
+[ext_resource type="Script" uid="uid://bxadmr8wjcunr" path="res://scripts/debug_menu.gd" id="1_3iwd1"]
+
+[node name="debug_menu" type="CanvasLayer" unique_id=2147356288]
+script = ExtResource("1_3iwd1")
+
+[node name="Control" type="Control" parent="." unique_id=1065129367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=481184064]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -981.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=910301820]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/HBoxContainer" unique_id=1043731799]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1274899461]
+layout_mode = 2
+
+[node name="DashButton" type="CheckButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1320867743]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+
+[node name="Label" type="Label" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1368356526]
+layout_mode = 2
+text = "dash"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1493469831]
+layout_mode = 2
+
+[node name="WallSlideButton" type="CheckButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=584692254]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+
+[node name="Label" type="Label" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=523229063]
+layout_mode = 2
+text = "wall slide"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=197515178]
+layout_mode = 2
+
+[node name="DoubleJumpButton" type="CheckButton" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=943297785]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+
+[node name="Label" type="Label" parent="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=368438015]
+layout_mode = 2
+text = "double jump"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1441060741]
+layout_mode = 2
+
+[connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/DashButton" to="." method="_on_dash_button_toggled"]
+[connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/WallSlideButton" to="." method="_on_wall_slide_button_toggled"]
+[connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3/DoubleJumpButton" to="." method="_on_double_jump_button_toggled"]

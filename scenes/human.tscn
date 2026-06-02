@@ -639,8 +639,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7jhf"]
-radius = 15.0
-height = 110.0
+radius = 13.0
+height = 76.0
 
 [sub_resource type="Animation" id="Animation_x4nh6"]
 length = 0.001
@@ -891,6 +891,15 @@ collision_layer = 2
 script = ExtResource("1_lcw25")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123887080]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cxv4x")
+offset = Vector2(0, -212)
+hframes = 8
+vframes = 18
+frame = 16
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=243689019]
+visible = false
 position = Vector2(2, -63.000004)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cxv4x")
@@ -908,8 +917,15 @@ autoplay = "idle-breath"
 
 [node name="collision_shape" type="CollisionShape2D" parent="." unique_id=1890674657]
 z_index = 2
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_c7jhf")
+
+[node name="collision_shape2" type="CollisionShape2D" parent="." unique_id=1718149907]
+visible = false
+z_index = 2
 position = Vector2(0, -55)
 shape = SubResource("CapsuleShape2D_c7jhf")
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118880137]
 limit_enabled = false

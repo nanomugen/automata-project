@@ -16,7 +16,8 @@ func exit()->void:
 	pass
 
 func handle_input(_event:InputEvent)->PlayerState:
-	
+	if _event.is_action_pressed("jump") and human.can_jump():
+		return state_jump_up
 	if Input.is_action_just_pressed_by_event("dash",_event) and human.can_dash():
 		return state_dash
 	if _event.is_action_pressed("attack"):
@@ -24,7 +25,7 @@ func handle_input(_event:InputEvent)->PlayerState:
 	return next_state
 
 func process(_delta:float)->PlayerState:
-	if human.is_on_wall_only():
+	if human.is_on_wall_only() and human.can_wall_slide():
 		if human.direction.x < 0.0:
 			var collision = human.get_last_slide_collision()
 			var normal = collision.get_normal()

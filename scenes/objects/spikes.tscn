@@ -7,6 +7,7 @@
 size = Vector2(97, 4)
 
 [node name="spikes" type="Node2D" unique_id=705382697]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_bxa7l")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2108528293]
@@ -48,7 +49,7 @@ shape = SubResource("RectangleShape2D_tkv1w")
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=74792809]
-polygon = PackedVector2Array(10, -5, 20, -29, 100, -29, 109, -5)
+polygon = PackedVector2Array(10, -5, 18.749998, -24.999998, 101.24999, -24.999998, 109, -5)
 
 [node name="Stroke" type="Polygon2D" parent="." unique_id=15330957]
 color = Color(0, 0, 0, 1)

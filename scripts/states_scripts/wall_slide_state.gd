@@ -14,6 +14,7 @@ func enter()->void:
 	human.is_jumping_up = false
 	human.dashed_on_air = false
 	human.jumped_once = false
+	human.jumped_twice = false
 	human.velocity.x = 0
 	
 	pass

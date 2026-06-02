@@ -34,8 +34,10 @@ scale = Vector2(1, 100)
 [node name="discovery" type="Control" parent="." unique_id=1876185680]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 28.0
+offset_top = 451.0
+offset_right = 68.0
+offset_bottom = 491.0
 
 [node name="buttons_tutorial" type="Control" parent="." unique_id=1293102824]
 layout_mode = 3

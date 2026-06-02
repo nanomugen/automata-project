@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="1_vnmkj"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="2_ygg0a"]
 [ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="3_itc1y"]
+[ext_resource type="PackedScene" uid="uid://bbyc5jbuk1e52" path="res://scenes/menus/debug_menu.tscn" id="4_2p5jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
 size = Vector2(800, 100)
@@ -584,3 +585,5 @@ respawn = NodePath("../spikes4/Marker2D")
 position = Vector2(-888, -765)
 rotation = -4.712389
 respawn = NodePath("../spikes4/Marker2D")
+
+[node name="debug_menu" parent="." unique_id=647967328 instance=ExtResource("4_2p5jr")]

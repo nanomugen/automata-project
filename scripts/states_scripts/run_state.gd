@@ -14,6 +14,7 @@ func enter()->void:
 	print("entered: ",name)
 	human.dashed_on_air = false
 	human.jumped_once = false
+	human.jumped_twice = false
 	pass
 
 func exit()->void:
