@@ -27,7 +27,6 @@ GlobalHud="*uid://dosv2jc52cjor"
 [display]
 
 window/size/resizable=false
-window/stretch/mode="viewport"
 
 [input]
 
