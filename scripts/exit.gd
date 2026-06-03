@@ -12,9 +12,11 @@ extends Node2D
 @export var is_final:bool = false
 @export var is_secret:bool = false
 
+
 var object_discovery:ObjectDiscovery
 var inside_area:bool = false
 var opened:bool = false
+var visited:bool = false
 func _ready() -> void:
 	var state_parent:State = get_parent()
 	object_discovery = state_parent.object_discovery
@@ -28,6 +30,7 @@ func reset_exit():
 	color_rect.color = color_closed
 	inside_area = false
 	opened = false
+	visited = false
 	
 func update_opened(current_value) -> void:
 	label.text = str(current_value)+"/"+str(goal)
@@ -45,6 +48,7 @@ func update_opened(current_value) -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
+	visited = true
 	object_discovery.add_exit(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:

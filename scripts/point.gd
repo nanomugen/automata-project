@@ -12,6 +12,8 @@ extends Node2D
 var object_discovery:ObjectDiscovery
 var is_pressed:bool = false
 var inside_area:bool = false
+var visited:bool = false
+
 func _ready() -> void:
 	object_discovery = phase.object_discovery
 	color_rect.color = color_unpressed
@@ -29,10 +31,12 @@ func pressed() -> void:
 func reset_button():
 	color_rect.color = color_unpressed
 	is_pressed = false
+	visited = false
 	
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
-	object_discovery.add_point(self)
+	visited = true
+	object_discovery.update(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	print("exited")
