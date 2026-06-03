@@ -38,7 +38,7 @@ func _set_button_phase_path(path:String):
 	get_tree().change_scene_to_file(path)
 
 func go_to_main_menu():
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu_screens/main_menu_screen.tscn")
 
 func fade_in():
 	fade_trasition.color = Color(0,0,0,0)

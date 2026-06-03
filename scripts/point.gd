@@ -8,11 +8,12 @@ extends Node2D
 @export var value:int;
 @export var color_unpressed = Color(1,0,0,0.7)
 @export var color_pressed = Color(0,10,0,0.7)
-
-
+@export var phase:Phase
+var object_discovery:ObjectDiscovery
 var is_pressed:bool = false
 var inside_area:bool = false
 func _ready() -> void:
+	object_discovery = phase.object_discovery
 	color_rect.color = color_unpressed
 	label.text = str(value)
 
@@ -23,7 +24,7 @@ func pressed() -> void:
 	else:
 		color_rect.color = color_pressed
 	is_pressed = !is_pressed
-	GlobalHud.add_point(self)
+	object_discovery.add_point(self)
 	
 func reset_button():
 	color_rect.color = color_unpressed
@@ -31,7 +32,7 @@ func reset_button():
 	
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	inside_area = true
-	GlobalHud.add_point(self)
+	object_discovery.add_point(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	print("exited")

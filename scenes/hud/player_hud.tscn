@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dosv2jc52cjor"]
 
 [ext_resource type="Script" uid="uid://b5xmj5cowppbn" path="res://scripts/player_hud.gd" id="1_7em14"]
+[ext_resource type="PackedScene" uid="uid://kybt6eqd6gts" path="res://scenes/hud/object_discovery.tscn" id="2_1g7pp"]
 [ext_resource type="Texture2D" uid="uid://bxhvvdolms7ar" path="res://assets/buttons-arrows.png" id="2_3dwfp"]
 [ext_resource type="Texture2D" uid="uid://bp3ytn2su8mvb" path="res://assets/buttons-ctrl.png" id="3_17prt"]
 [ext_resource type="Texture2D" uid="uid://b5ievjcvwy2bk" path="res://assets/button-shift.png" id="4_1g7pp"]
 [ext_resource type="Texture2D" uid="uid://dydngr36br33u" path="res://assets/button-space.png" id="5_byfoi"]
+[ext_resource type="PackedScene" uid="uid://doobevgfv5dwp" path="res://scenes/hud/key_button.tscn" id="6_17prt"]
 
 [node name="player_hud" type="CanvasLayer" unique_id=1674099476]
 process_mode = 3
@@ -31,25 +33,18 @@ offset_right = 1594.0
 offset_bottom = 18.0
 scale = Vector2(1, 100)
 
-[node name="discovery" type="Control" parent="." unique_id=1876185680]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 28.0
-offset_top = 451.0
-offset_right = 68.0
-offset_bottom = 491.0
+[node name="discovery" parent="." unique_id=980450785 instance=ExtResource("2_1g7pp")]
 
 [node name="buttons_tutorial" type="Control" parent="." unique_id=1293102824]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 636.0
-offset_right = 219.14282
-offset_bottom = 0.57141113
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.7, 0.7)
+offset_left = -230.0
+offset_right = 572.28564
+offset_bottom = 747.1428
+grow_horizontal = 0
+scale = Vector2(0.2871769, 0.2871769)
 
 [node name="buttons_arrows" type="TextureRect" parent="buttons_tutorial" unique_id=382229908]
 layout_mode = 0
@@ -145,61 +140,23 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "MAIN MENU"
 
-[node name="help_button" type="Control" parent="." unique_id=1627558260]
-layout_mode = 3
+[node name="help_button" parent="." unique_id=1296764692 instance=ExtResource("6_17prt")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -80.0
-offset_bottom = 80.0
+offset_left = -68.0
+offset_top = 22.0
+offset_right = -68.0
+offset_bottom = 22.0
 grow_horizontal = 0
-
-[node name="ColorRect" type="ColorRect" parent="help_button" unique_id=710742543]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -19.5
-offset_right = 24.0
-offset_bottom = 24.5
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.48962224, 0.48962224, 0.48962218, 1)
-
-[node name="ColorRect" type="ColorRect" parent="help_button/ColorRect" unique_id=1610864022]
-layout_mode = 0
-offset_left = 4.0
-offset_top = -1.5
-offset_right = 40.0
-offset_bottom = 36.5
-
-[node name="Label" type="Label" parent="help_button/ColorRect/ColorRect" unique_id=1166997085]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
-text = "ESC"
-horizontal_alignment = 1
-vertical_alignment = 1
+button_label = " ESC"
 
 [node name="fps" type="Label" parent="." unique_id=1579447104]
-offset_left = 883.0
-offset_top = 14.0
-offset_right = 977.0
-offset_bottom = 59.0
-theme_override_colors/font_color = Color(0, 0, 0.6177731, 1)
-theme_override_font_sizes/font_size = 18
+offset_left = 16.0
+offset_top = 106.0
+offset_right = 110.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.19249818, 0.52413833, 0.18970153, 1)
+theme_override_font_sizes/font_size = 12
 
 [connection signal="pressed" from="buttons_tutorial/back_to_menu_button" to="." method="_on_back_to_menu_button_pressed"]

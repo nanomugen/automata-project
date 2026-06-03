@@ -1,6 +1,8 @@
 class_name Phase
 extends Node2D
+
 @onready var human: Human = $human
+@export var object_discovery:ObjectDiscovery
 @export var start_state: State;
 
 @export var phase_name:String

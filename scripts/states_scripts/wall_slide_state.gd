@@ -9,15 +9,14 @@ func init()->void:
 	pass
 	
 func enter()->void:
+	#human.velocity.x = 0
 	human.animation_player.play("wall_slide")
 	human.is_wall_sliding = true
 	human.is_jumping_up = false
 	human.dashed_on_air = false
 	human.jumped_once = false
 	human.jumped_twice = false
-	human.velocity.x = 0
 	
-	pass
 
 func exit()->void:
 	human.is_wall_sliding = false
@@ -35,7 +34,8 @@ func handle_input(_event:InputEvent)->PlayerState:
 	return next_state
 
 func process(_delta:float)->PlayerState:
-	if not human.is_on_wall_only(): return state_jump_down
+	if not human.is_on_wall_only(): 
+		return state_jump_down
 	if human.direction.x > 0.0 and human.wall_slide_direction == 1:
 		return state_jump_down
 		

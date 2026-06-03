@@ -30,26 +30,8 @@ func handle_input(_event:InputEvent)->PlayerState:
 	return next_state
 
 func process(_delta:float)->PlayerState:
-	if human.is_on_wall_only() and human.can_wall_slide():
-		if human.direction.x < 0.0:
-			var collision = human.get_last_slide_collision()
-			var normal = collision.get_normal()
-			# Check if the wall is to the left
-			if normal.x > 0:
-				human.wall_slide_direction = 1
-				human.sprite_2d.flip_h = false
-				return state_wall_slide
-		
-		elif human.direction.x > 0.0:
-			var collision = human.get_last_slide_collision()
-			var normal = collision.get_normal()
-		# Check if the wall is to the right
-			if normal.x < 0:
-				human.wall_slide_direction = -1
-				human.sprite_2d.flip_h = true
-				return state_wall_slide
 	return next_state
-	
+
 func physics_process(_delta:float)->PlayerState:
 	human.allow_human_to_move_h()
 	if human.is_on_floor():

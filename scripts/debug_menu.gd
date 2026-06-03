@@ -1,8 +1,6 @@
 extends CanvasLayer
 class_name DebugMenu
-@onready var double_jump_button: CheckButton = $PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3/DoubleJumpButton
-@onready var wall_slide_button: CheckButton = $PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/WallSlideButton
-@onready var dash_button: CheckButton = $PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/DashButton
+
 var human:Human
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

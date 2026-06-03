@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="6_q0ukw"]
 [ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="7_5ljec"]
 [ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="8_5ljec"]
-[ext_resource type="PackedScene" uid="uid://bvbnikpydmild" path="res://scenes/objects/respawn_spot.tscn" id="8_ynfqv"]
 
 [node name="phase_02" type="Node2D" unique_id=17414887]
 
@@ -45,10 +44,10 @@ goal = 8
 
 [node name="spikes" parent="phase/start_state" unique_id=705382697 node_paths=PackedStringArray("respawn") instance=ExtResource("7_5ljec")]
 position = Vector2(-360, -26)
-respawn = NodePath("respawn_spot")
+respawn = NodePath("Marker2D")
 
-[node name="respawn_spot" parent="phase/start_state/spikes" unique_id=1108253298 instance=ExtResource("8_ynfqv")]
-position = Vector2(-165, -29)
+[node name="Marker2D" type="Marker2D" parent="phase/start_state/spikes" unique_id=33937521]
+position = Vector2(-109.99999, -11.249998)
 
 [node name="State" parent="phase" unique_id=757655170 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_xv3b0")]
 position = Vector2(2745, -1525)

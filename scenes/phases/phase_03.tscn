@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://l5sxg2tbd73a"]
 
 [ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="1_jb5qg"]
-[ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human_old.tscn" id="2_ign0f"]
 [ext_resource type="PackedScene" uid="uid://df3muksf8weke" path="res://scenes/state-new.tscn" id="3_6bugm"]
 [ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="4_6n1p1"]
 [ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="5_m5snb"]
@@ -10,15 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="8_6bugm"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="9_6n1p1"]
 [ext_resource type="Script" uid="uid://dkjwrvrc5pd8g" path="res://scripts/respawn_spot.gd" id="9_m5snb"]
+[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="10_6n1p1"]
 
 [node name="phase_03" type="Node2D" unique_id=568160273 node_paths=PackedStringArray("start_state")]
 script = ExtResource("1_jb5qg")
 start_state = NodePath("start_state")
 phase_name = "phase_03"
 metadata/_custom_type_script = "uid://be3l3gl88kqsy"
-
-[node name="human" parent="." unique_id=1506472261 instance=ExtResource("2_ign0f")]
-position = Vector2(-208, -1056)
 
 [node name="start_state" parent="." unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_6bugm")]
 init = NodePath("init")
@@ -181,3 +178,5 @@ position = Vector2(3841, -552)
 
 [node name="block3" parent="blocks3" unique_id=2140216016 instance=ExtResource("7_x31qs")]
 position = Vector2(6895, -348)
+
+[node name="human" parent="." unique_id=1506472261 instance=ExtResource("10_6n1p1")]

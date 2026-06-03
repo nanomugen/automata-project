@@ -15,7 +15,7 @@ func _on_back_button_pressed() -> void:
 	tween.tween_callback(go_to_main_menu)
 	
 func go_to_main_menu():
-	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu_screens/main_menu_screen.tscn")
 
 func fade_in():
 	fade_trasition.color = Color(0,0,0,0)

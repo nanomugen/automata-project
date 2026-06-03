@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ct381273fjas3"]
 
-[ext_resource type="Script" uid="uid://ccuqvqisb7omb" path="res://scripts/main_options.gd" id="1_sk2vr"]
-[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_hfi38"]
+[ext_resource type="Script" uid="uid://ccuqvqisb7omb" path="res://scripts/main_options.gd" id="1_40rrw"]
+[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_081xb"]
 
-[node name="main_options" type="Node2D" unique_id=634228196]
-script = ExtResource("1_sk2vr")
+[node name="main_options_screen" type="Node2D" unique_id=634228196]
+script = ExtResource("1_40rrw")
 
 [node name="options_control" type="Control" parent="." unique_id=1266434734]
 layout_mode = 3
@@ -24,7 +24,7 @@ offset_right = 1847.0
 offset_bottom = 998.0
 text = "BACK TO MAIN MENU"
 
-[node name="fade_trasition" parent="options_control" unique_id=1907557553 instance=ExtResource("2_hfi38")]
+[node name="fade_trasition" parent="options_control" unique_id=1907557553 instance=ExtResource("2_081xb")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

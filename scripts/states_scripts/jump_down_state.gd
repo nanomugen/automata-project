@@ -10,6 +10,7 @@ func init()->void:
 	
 func enter()->void:
 	human.animation_player.play("jump-down")
+	human.jumped_once = true
 	pass
 
 func exit()->void:

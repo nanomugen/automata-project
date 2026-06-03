@@ -638,6 +638,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqtfv"]
+height = 88.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7jhf"]
 radius = 13.0
 height = 76.0
@@ -888,6 +891,7 @@ _data = {
 [node name="human" type="CharacterBody2D" unique_id=1506472261]
 z_index = 2
 collision_layer = 2
+safe_margin = 0.8
 script = ExtResource("1_lcw25")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123887080]
@@ -917,8 +921,8 @@ autoplay = "idle-breath"
 
 [node name="collision_shape" type="CollisionShape2D" parent="." unique_id=1890674657]
 z_index = 2
-position = Vector2(0, -38)
-shape = SubResource("CapsuleShape2D_c7jhf")
+position = Vector2(0, -44)
+shape = SubResource("CapsuleShape2D_qqtfv")
 
 [node name="collision_shape2" type="CollisionShape2D" parent="." unique_id=1718149907]
 visible = false

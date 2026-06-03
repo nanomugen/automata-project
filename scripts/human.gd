@@ -189,8 +189,7 @@ func can_jump()->bool:
 			return false
 		else:
 			return true
-	
-	return false
+
 	
 	
 func can_dash()->bool:

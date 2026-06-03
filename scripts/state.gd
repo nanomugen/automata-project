@@ -8,11 +8,14 @@ extends Node2D
 @export var doors:Array[Door]
 @export var human: Human
 
+var object_discovery:ObjectDiscovery
+
 var initPos:Vector2; 
 var current_value:int = 0
 var this_is_current_state:bool = false
 func _ready() -> void:
 	initPos = init.position;
+	object_discovery = get_parent().find_child("object_discovery")
 func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack") and this_is_current_state:
@@ -62,14 +65,14 @@ func check_exits()->void:
 			transition_next_state(filtered_exits[0])
 
 func transition_next_state(exit:Exit)->void:
-	GlobalHud.clear_hud()
+	object_discovery.clear_hud()
 	if exit.is_final :
 		var completion_code =  "secret_completed" if exit.is_secret else "completed"
 		var parent_phase:Phase = get_parent()
 		parent_phase._on_conclude_phase(completion_code) 
 		#####################
 		#isso ta errado, precisa consertar essa lógica, call down, signal up
-		get_tree().change_scene_to_file("res://scenes/menus/congratulations.tscn")
+		get_tree().change_scene_to_file("res://scenes/menu_screens/congratulations_screen.tscn")
 	if exit.nextState == null:
 		return
 	for p in points:

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dde8kumnw7gqm"]
 
-[ext_resource type="Script" uid="uid://2g7xtm4rgg5g" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://2g7xtm4rgg5g" path="res://scripts/main_menu.gd" id="1_8eix3"]
+[ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_7ex4m"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=1238081732]
-script = ExtResource("1_l6cm7")
+[node name="MainMenuScreen" type="CanvasLayer" unique_id=1238081732]
+script = ExtResource("1_8eix3")
 
 [node name="button_manager" type="Control" parent="." unique_id=1980806789]
 layout_mode = 3
@@ -53,11 +53,15 @@ text = "TUTORIAL"
 layout_mode = 2
 text = "DEBUG"
 
+[node name="debug2" type="Button" parent="button_manager/VBoxContainer" unique_id=2057536298]
+layout_mode = 2
+text = "DEBUG2"
+
 [node name="quit" type="Button" parent="button_manager/VBoxContainer" unique_id=955194155]
 layout_mode = 2
 text = "EXIT"
 
-[node name="fade_trasition" parent="." unique_id=1907557553 instance=ExtResource("2_ekxnf")]
+[node name="fade_trasition" parent="." unique_id=1907557553 instance=ExtResource("2_7ex4m")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,4 +74,5 @@ grow_vertical = 2
 [connection signal="pressed" from="button_manager/VBoxContainer/option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="button_manager/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="button_manager/VBoxContainer/debug" to="." method="_on_debug_pressed"]
+[connection signal="pressed" from="button_manager/VBoxContainer/debug2" to="." method="_on_debug_2_pressed"]
 [connection signal="pressed" from="button_manager/VBoxContainer/quit" to="." method="_on_quit_pressed"]

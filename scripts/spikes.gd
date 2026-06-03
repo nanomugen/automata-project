@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	
+	if body == null: return
 	if body is not Human:
 		return
 	var human:Human = body

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="1_vnmkj"]
 [ext_resource type="PackedScene" uid="uid://cfkh7kekes4ir" path="res://scenes/objects/platform.tscn" id="2_ygg0a"]
 [ext_resource type="PackedScene" uid="uid://gmkypocajrw0" path="res://scenes/objects/spikes.tscn" id="3_itc1y"]
-[ext_resource type="PackedScene" uid="uid://bbyc5jbuk1e52" path="res://scenes/menus/debug_menu.tscn" id="4_2p5jr"]
+[ext_resource type="PackedScene" uid="uid://bbyc5jbuk1e52" path="res://scenes/hud/debug_menu.tscn" id="4_2p5jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnmkj"]
 size = Vector2(800, 100)
@@ -553,37 +553,39 @@ respawn = NodePath("Marker2D")
 [node name="Marker2D" type="Marker2D" parent="spikes3" unique_id=1536908076]
 position = Vector2(329.00003, -231.99995)
 
+[node name="Marker2D" type="Marker2D" parent="." unique_id=202619270]
+position = Vector2(-950, -923)
+rotation = -1.5707964
+scale = Vector2(0.8, 0.8)
+
 [node name="spikes4" parent="." unique_id=1135685203 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-681, -592)
 rotation = -1.5707964
-respawn = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="spikes4" unique_id=202619270]
-position = Vector2(350.00003, -270.99994)
+respawn = NodePath("../Marker2D")
 
 [node name="spikes5" parent="." unique_id=2075697655 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-683, -1414)
 rotation = -1.5707964
-respawn = NodePath("../spikes4/Marker2D")
+respawn = NodePath("../Marker2D")
 
 [node name="spikes6" parent="." unique_id=234260317 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-683, -1985)
 rotation = -1.5707964
-respawn = NodePath("../spikes4/Marker2D")
+respawn = NodePath("../Marker2D")
 
 [node name="spikes7" parent="." unique_id=178166386 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-886, -1862)
 rotation = -4.712389
-respawn = NodePath("../spikes4/Marker2D")
+respawn = NodePath("../Marker2D")
 
 [node name="spikes8" parent="." unique_id=136952003 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
 position = Vector2(-888, -1309)
 rotation = -4.712389
-respawn = NodePath("../spikes4/Marker2D")
+respawn = NodePath("../Marker2D")
 
 [node name="spikes9" parent="." unique_id=1277835717 node_paths=PackedStringArray("respawn") instance=ExtResource("3_itc1y")]
-position = Vector2(-888, -765)
+position = Vector2(-888, -683)
 rotation = -4.712389
-respawn = NodePath("../spikes4/Marker2D")
+respawn = NodePath("../Marker2D")
 
 [node name="debug_menu" parent="." unique_id=647967328 instance=ExtResource("4_2p5jr")]
