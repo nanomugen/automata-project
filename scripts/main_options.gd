@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 @onready var fade_trasition: ColorRect = $options_control/fade_trasition
 

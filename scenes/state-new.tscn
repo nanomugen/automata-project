@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://cangodxs74nii" path="res://scripts/state.gd" id="1_qslxi"]
 
 [sub_resource type="Gradient" id="Gradient_qslxi"]
-offsets = PackedFloat32Array(0, 0.27564102, 0.6474359, 1)
-colors = PackedColorArray(0, 0, 1, 1, 0.29333633, 0.2859691, 4.813075e-08, 1, 0.5498085, 0.29384652, 2.8878452e-07, 1, 1, 0, 0, 1)
+colors = PackedColorArray(0.24335402, 0.2419177, 0.22949952, 1, 0.658763, 0.7001348, 0.67126524, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ng56v"]
 gradient = SubResource("Gradient_qslxi")
-fill_from = Vector2(0, 1)
+fill_from = Vector2(0.49545455, 1)
+fill_to = Vector2(0.4909091, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihbxb"]
 size = Vector2(3500, 200)
@@ -19,6 +19,7 @@ z_index = 1
 script = ExtResource("1_qslxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=521623404]
+z_index = -1
 position = Vector2(100.00001, -1749.9999)
 scale = Vector2(51.593746, 51.562496)
 texture = SubResource("GradientTexture2D_ng56v")

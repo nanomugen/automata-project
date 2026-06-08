@@ -1,13 +1,14 @@
-extends Node2D
-
-@onready var h_reference: ColorRect = $StaticBody2D/h_reference
+extends Control
+class_name HelpMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	h_reference.visible = false
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
+
+func toggle_visiblility():
+	visible = !visible

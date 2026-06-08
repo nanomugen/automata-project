@@ -2,15 +2,11 @@ class_name PlayerHud
 extends CanvasLayer
 
 
-@onready var buttons_tutorial: Control = $buttons_tutorial
-@onready var help_button: Control = $help_button
-
+#@onready var buttons_tutorial: Control = $buttons_tutorial
+@onready var menu_button: KeyButton = $menu_button
 @onready var fade_transition: ColorRect = $fade_transition
-
-@onready var fps: Label = $fps
-
+@onready var fps: Label = $PanelContainer/HBoxContainer/left_menu_container/fps
 signal call_transition
-
 var tween:Tween
 
 var ingame_menu_visibility = false
@@ -18,20 +14,21 @@ var ingame_menu_visibility = false
 func _ready() -> void:
 	call_transition.connect(fade_in_out)
 	fade_transition.visible = false
-	buttons_tutorial.visible = false
+#	buttons_tutorial.visible = false
 
 func _process(_delta: float) -> void:
 	fps.text = str(Engine.get_frames_per_second())
 	if Input.is_action_just_pressed("ingame_menu") and ingame_menu_visibility:
 		if DataSystem.DATA_OBJECT["show_tutorial"]:
-			buttons_tutorial.visible = !buttons_tutorial.visible 
-			help_button.visible = !help_button.visible
+#			buttons_tutorial.visible = !buttons_tutorial.visible 
+			menu_button.visible = !menu_button.visible
+			
 
 
 
 
 func _on_back_to_menu_button_pressed() -> void:
-	buttons_tutorial.visible = false
+#	buttons_tutorial.visible = false
 	ingame_menu_visibility = false
 	
 	fade_in()

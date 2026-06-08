@@ -1,169 +1,165 @@
 [gd_scene format=3 uid="uid://drynjb8bn6nrq"]
 
-[ext_resource type="Script" uid="uid://cvlmjy5jiflli" path="res://scripts/main_old.gd" id="1_gmwqm"]
-[ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="2_j4tx2"]
-[ext_resource type="PackedScene" uid="uid://c056unam7sfhv" path="res://scenes/human_old.tscn" id="3_3bf2v"]
-[ext_resource type="PackedScene" uid="uid://cvvm0rjegww4g" path="res://scenes/state.tscn" id="4_c3vjc"]
+[ext_resource type="PackedScene" uid="uid://d4bntx5n7fu7c" path="res://scenes/phase.tscn" id="1_ekn81"]
+[ext_resource type="PackedScene" uid="uid://df3muksf8weke" path="res://scenes/state-new.tscn" id="3_ekn81"]
 [ext_resource type="PackedScene" uid="uid://cssc6i0m4504h" path="res://scenes/objects/init.tscn" id="5_17ixv"]
 [ext_resource type="PackedScene" uid="uid://dx35h0vtsw52k" path="res://scenes/objects/point.tscn" id="6_02g4t"]
+[ext_resource type="PackedScene" uid="uid://dhik4eoryng3g" path="res://scenes/exit.tscn" id="6_7f5bu"]
 [ext_resource type="PackedScene" uid="uid://doyb58iw80nit" path="res://scenes/objects/exit.tscn" id="7_k4kw4"]
 [ext_resource type="PackedScene" uid="uid://ckv2580uld7gj" path="res://scenes/objects/door.tscn" id="8_2w15g"]
 [ext_resource type="PackedScene" uid="uid://bpm04wrkddwxf" path="res://scenes/tutorial/tutorial_generic.tscn" id="9_gmwqm"]
 [ext_resource type="PackedScene" uid="uid://cvynbjxtqwupf" path="res://scenes/objects/door_button.tscn" id="9_v7n07"]
 [ext_resource type="PackedScene" uid="uid://ckvoiq47w75yr" path="res://scenes/objects/block-2.tscn" id="10_gg1wb"]
+[ext_resource type="PackedScene" uid="uid://bg4pm3r0xk3ml" path="res://scenes/human.tscn" id="11_ekn81"]
 [ext_resource type="PackedScene" uid="uid://byxgdqtbh457c" path="res://scenes/objects/ruler.tscn" id="14_507sh"]
 
-[node name="phase01" type="Node2D" unique_id=448904820]
-script = ExtResource("1_gmwqm")
+[node name="phase_tutorial" type="Node2D" unique_id=448904820]
 
-[node name="Phase" type="Node2D" parent="." unique_id=462732468 node_paths=PackedStringArray("start_state")]
-script = ExtResource("2_j4tx2")
-start_state = NodePath("Start_State")
-metadata/_custom_type_script = "uid://be3l3gl88kqsy"
+[node name="phase" parent="." unique_id=43470455 node_paths=PackedStringArray("start_state") instance=ExtResource("1_ekn81")]
+start_state = NodePath("State3")
+phase_name = "phase_tutorial"
 
-[node name="human" parent="Phase" unique_id=606522244 instance=ExtResource("3_3bf2v")]
-z_index = 2
-position = Vector2(1572, -35)
+[node name="human" parent="phase" unique_id=1506472261 instance=ExtResource("11_ekn81")]
+position = Vector2(951, -200)
 
-[node name="Start_State" parent="Phase" unique_id=697267880 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("4_c3vjc")]
-position = Vector2(1287, 0)
+[node name="State3" parent="phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_ekn81")]
 init = NodePath("init")
 points = [NodePath("points/point")]
-exits = [NodePath("exits/exit")]
+exits = [NodePath("exits/exit2")]
 human = NodePath("../human")
 
-[node name="init" parent="Phase/Start_State" unique_id=1642130846 instance=ExtResource("5_17ixv")]
-position = Vector2(-125, -138)
+[node name="init" parent="phase/State3" unique_id=1642130846 instance=ExtResource("5_17ixv")]
+position = Vector2(6, -221)
 
-[node name="points" type="Node2D" parent="Phase/Start_State" unique_id=751447996]
+[node name="points" type="Node2D" parent="phase/State3" unique_id=751447996]
+position = Vector2(131, -83)
 
-[node name="point" parent="Phase/Start_State/points" unique_id=1221197503 instance=ExtResource("6_02g4t")]
-position = Vector2(-746, -100)
+[node name="point" parent="phase/State3/points" unique_id=1221197503 instance=ExtResource("6_02g4t")]
+position = Vector2(-1288, -95)
 value = 5
 
-[node name="exits" type="Node2D" parent="Phase/Start_State" unique_id=79155740]
+[node name="exits" type="Node2D" parent="phase/State3" unique_id=79155740]
+position = Vector2(131, -83)
 
-[node name="exit" parent="Phase/Start_State/exits" unique_id=1504513773 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
-position = Vector2(747, -143)
-nextState = NodePath("../../../State")
+[node name="exit2" parent="phase/State3/exits" unique_id=999031583 node_paths=PackedStringArray("nextState") instance=ExtResource("6_7f5bu")]
+position = Vector2(1266, -129)
+nextState = NodePath("../../../State4")
 goal = 5
 
-[node name="block28" parent="Phase/Start_State" unique_id=663636396 instance=ExtResource("10_gg1wb")]
-position = Vector2(-1251, -2126)
+[node name="block28" parent="phase/State3" unique_id=663636396 instance=ExtResource("10_gg1wb")]
+position = Vector2(-1120, -2209)
 scale = Vector2(5.840005, 1)
 
-[node name="tutorials" type="Node2D" parent="Phase/Start_State" unique_id=792121454]
-position = Vector2(-1287, 0)
+[node name="tutorials" type="Node2D" parent="phase/State3" unique_id=792121454]
+position = Vector2(-1156, -83)
 
-[node name="point_tutorial" parent="Phase/Start_State/tutorials" unique_id=1339971707 instance=ExtResource("9_gmwqm")]
-position = Vector2(539, -102)
+[node name="point_tutorial" parent="phase/State3/tutorials" unique_id=1339971707 instance=ExtResource("9_gmwqm")]
+position = Vector2(6, -42)
 text = "Este é um ponto, pontos são acionados ao apertar o botão de ação, o ponto tem um valor associado. Quando o botão é acionado  este valor associado será contabilizado ao valor do jogador. Quando o valor do jogador for equivalente ao valor de uma ou mais saídas do estado atual, a saída será habilitada."
 
-[node name="exit_tutorial" parent="Phase/Start_State/tutorials" unique_id=864717428 instance=ExtResource("9_gmwqm")]
-position = Vector2(1835, -100)
+[node name="exit_tutorial" parent="phase/State3/tutorials" unique_id=864717428 instance=ExtResource("9_gmwqm")]
+position = Vector2(2299, -8)
 text = "Esta é uma saída, ela tem um valor associado a ela, quando o seu valor associado for igual ao valor que o jogador acumulou durante o estado atual, ela será aberta. uma saída pode levar a algum outro estado dentro da mesma fase ou, caso seja uma saída final, a saída leva ao fim da fase, que é o objetivo."
 
-[node name="tutorial_generic" parent="Phase/Start_State" unique_id=1312081596 instance=ExtResource("9_gmwqm")]
-position = Vector2(-118, -99)
+[node name="tutorial_generic" parent="phase/State3" unique_id=1312081596 instance=ExtResource("9_gmwqm")]
+position = Vector2(-258, -96)
 text = "Este é o início da fase, toda fase tem um ou mais estados, ao transitar para outro estado, o jogador é posicionado no ponto de partida daquele estado, o objetivo é chegar a uma saída final da fase. Para informações dos controles, aperte ESC para abrir o menu lateral."
 
-[node name="State" parent="Phase" unique_id=143421711 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("4_c3vjc")]
-position = Vector2(3936, 0)
+[node name="State4" parent="phase" unique_id=1616553829 node_paths=PackedStringArray("init", "points", "exits", "doors", "human") instance=ExtResource("3_ekn81")]
+position = Vector2(4326, 0)
 init = NodePath("init2")
 points = [NodePath("points/point3")]
 exits = [NodePath("exits/exit2")]
 doors = [NodePath("doors/door_set_3/door")]
 human = NodePath("../human")
 
-[node name="init2" parent="Phase/State" unique_id=975750784 instance=ExtResource("5_17ixv")]
-position = Vector2(-375, -172)
+[node name="init2" parent="phase/State4" unique_id=975750784 instance=ExtResource("5_17ixv")]
+position = Vector2(-285, -249)
 
-[node name="exits" type="Node2D" parent="Phase/State" unique_id=436879237]
+[node name="exits" type="Node2D" parent="phase/State4" unique_id=436879237]
+position = Vector2(551, -77)
 
-[node name="exit2" parent="Phase/State/exits" unique_id=1396614756 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
-position = Vector2(-1102, -166)
-nextState = NodePath("../../../State2")
+[node name="exit2" parent="phase/State4/exits" unique_id=1396614756 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
+position = Vector2(-1747, -160)
+nextState = NodePath("../../../State5")
 goal = 11
 
-[node name="points" type="Node2D" parent="Phase/State" unique_id=598647539]
+[node name="points" type="Node2D" parent="phase/State4" unique_id=598647539]
+position = Vector2(551, -77)
 
-[node name="point3" parent="Phase/State/points" unique_id=709430568 instance=ExtResource("6_02g4t")]
+[node name="point3" parent="phase/State4/points" unique_id=709430568 instance=ExtResource("6_02g4t")]
 position = Vector2(1074, -122)
 value = 11
 
-[node name="objects" type="Node2D" parent="Phase/State" unique_id=510224061]
+[node name="objects" type="Node2D" parent="phase/State4" unique_id=510224061]
+position = Vector2(551, -77)
 
-[node name="block" parent="Phase/State/objects" unique_id=1086114970 instance=ExtResource("10_gg1wb")]
+[node name="block" parent="phase/State4/objects" unique_id=1086114970 instance=ExtResource("10_gg1wb")]
 position = Vector2(376, -328)
 scale = Vector2(4.1200094, 1)
 
-[node name="doors" type="Node2D" parent="Phase/State" unique_id=1548777202]
-position = Vector2(653, -242)
+[node name="doors" type="Node2D" parent="phase/State4" unique_id=1548777202]
+position = Vector2(1204, -319)
 
-[node name="door_set_3" type="Node2D" parent="Phase/State/doors" unique_id=2037759728]
+[node name="door_set_3" type="Node2D" parent="phase/State4/doors" unique_id=2037759728]
 position = Vector2(44, -49)
 
-[node name="door" parent="Phase/State/doors/door_set_3" unique_id=1602113240 node_paths=PackedStringArray("buttons") instance=ExtResource("8_2w15g")]
+[node name="door" parent="phase/State4/doors/door_set_3" unique_id=1602113240 node_paths=PackedStringArray("buttons") instance=ExtResource("8_2w15g")]
 position = Vector2(-322, 14)
 rotation = 1.5707964
 buttons = [NodePath("../door_button")]
 
-[node name="door_button" parent="Phase/State/doors/door_set_3" unique_id=1035277124 instance=ExtResource("9_v7n07")]
+[node name="door_button" parent="phase/State4/doors/door_set_3" unique_id=1035277124 instance=ExtResource("9_v7n07")]
 position = Vector2(-713, 165)
 
-[node name="tutorial_generic" parent="Phase/State" unique_id=1409517180 instance=ExtResource("9_gmwqm")]
-position = Vector2(-18, -100)
+[node name="tutorial_generic" parent="phase/State4" unique_id=1409517180 instance=ExtResource("9_gmwqm")]
+position = Vector2(533, -177)
 text = "Dentro dos estados pode haver portas e botões que se associam entre si  e se combinam em cores, uma porta pode precisar ser acionada por um ou mais botões associados a ela, um botão pode também abrir mais de uma passagem. As portas também servem de plataforma, em algumas situações podem ajudar a alcançar pontos antes inacessíveis, inclusive em outros estados da mesma fase."
 
-[node name="State2" parent="Phase" unique_id=1827339490 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("4_c3vjc")]
-position = Vector2(6537, 0)
+[node name="State5" parent="phase" unique_id=297648855 node_paths=PackedStringArray("init", "points", "exits", "human") instance=ExtResource("3_ekn81")]
+position = Vector2(4313, 3881)
 init = NodePath("init")
 points = [NodePath("points/point"), NodePath("points/point2"), NodePath("points/point3")]
-exits = [NodePath("exits/exit"), NodePath("exits/exit2")]
+exits = [NodePath("exits/exit2"), NodePath("exits/exit")]
 human = NodePath("../human")
 
-[node name="init" parent="Phase/State2" unique_id=2074669800 instance=ExtResource("5_17ixv")]
-position = Vector2(6, -200)
+[node name="init" parent="phase/State5" unique_id=2074669800 instance=ExtResource("5_17ixv")]
+position = Vector2(363, -209)
 
-[node name="exits" type="Node2D" parent="Phase/State2" unique_id=100921124]
+[node name="exits" type="Node2D" parent="phase/State5" unique_id=100921124]
+position = Vector2(150, -91)
 
-[node name="exit2" parent="Phase/State2/exits" unique_id=255611467 instance=ExtResource("7_k4kw4")]
-position = Vector2(928, -200)
+[node name="exit2" parent="phase/State5/exits" unique_id=255611467 instance=ExtResource("7_k4kw4")]
+position = Vector2(1317, -116)
 goal = 8
 is_final = true
 
-[node name="exit" parent="Phase/State2/exits" unique_id=1210684717 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
-position = Vector2(-1052, -200)
-nextState = NodePath("../../../Start_State")
+[node name="exit" parent="phase/State5/exits" unique_id=1210684717 node_paths=PackedStringArray("nextState") instance=ExtResource("7_k4kw4")]
+position = Vector2(-1498, -118)
+nextState = NodePath("../../../State3")
 goal = 10
 
-[node name="points" type="Node2D" parent="Phase/State2" unique_id=53144639]
+[node name="points" type="Node2D" parent="phase/State5" unique_id=53144639]
+position = Vector2(150, -91)
 
-[node name="point" parent="Phase/State2/points" unique_id=458086273 instance=ExtResource("6_02g4t")]
+[node name="point" parent="phase/State5/points" unique_id=458086273 instance=ExtResource("6_02g4t")]
 position = Vector2(-604, -99)
 value = 5
 
-[node name="point2" parent="Phase/State2/points" unique_id=223561440 instance=ExtResource("6_02g4t")]
+[node name="point2" parent="phase/State5/points" unique_id=223561440 instance=ExtResource("6_02g4t")]
 position = Vector2(-756, -99)
 value = 5
 
-[node name="point3" parent="Phase/State2/points" unique_id=1230216074 instance=ExtResource("6_02g4t")]
-position = Vector2(599, -99)
+[node name="point3" parent="phase/State5/points" unique_id=1230216074 instance=ExtResource("6_02g4t")]
+position = Vector2(881, -105)
 value = 3
 
-[node name="tutorial_generic" parent="Phase/State2/points" unique_id=580482357 instance=ExtResource("9_gmwqm")]
-position = Vector2(-453, -100)
+[node name="tutorial_generic" parent="phase/State5/points" unique_id=580482357 instance=ExtResource("9_gmwqm")]
+position = Vector2(-371, -9)
 text = "Um estado pode ter mais de uma saída, que pode levar a estados já visitados anteriores, novos estados e ao final da fase, será necessário encontrar a combinação de pontos correta a ser acionada para alcançar o valor do jogador necessário para uma determinada saída, por isso será necessário considerar quais dos pontos devem ser acionados. No canto superior esquerdo é possível ver quais saídas e pontos que já foram encontrados durante o estado e qual a situação deles. "
 
-[node name="objects" type="Node2D" parent="Phase/State2" unique_id=1155547437]
+[node name="objects" type="Node2D" parent="phase/State5" unique_id=1155547437]
+position = Vector2(150, -91)
 
-[node name="ruler" parent="Phase" unique_id=276425642 instance=ExtResource("14_507sh")]
-position = Vector2(-2344, -3604)
-
-[node name="testValue" type="Label" parent="Phase" unique_id=2003271680]
-offset_left = 531.0
-offset_top = -14.0
-offset_right = 638.0
-offset_bottom = 9.0
-text = "teste de texto"
-metadata/_edit_use_anchors_ = true
+[node name="ruler" parent="phase/State5" unique_id=276425642 instance=ExtResource("14_507sh")]
+position = Vector2(-7422, -432)

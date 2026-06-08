@@ -47,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Label2" type="Label" parent="." unique_id=1914172692]
+[node name="Label" type="Label" parent="." unique_id=1914172692]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

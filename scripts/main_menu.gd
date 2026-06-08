@@ -3,23 +3,17 @@ extends CanvasLayer
 @onready var fade_trasition: ColorRect = $fade_trasition
 
 var tween:Tween 
-@onready var debug: Button = $button_manager/VBoxContainer/debug
-@onready var debug_2: Button = $button_manager/VBoxContainer/debug2
+
 
 func _ready():
-	debug.visible = false
-	debug_2.visible = false
 	print(fade_trasition.get_child(0))
 	
 	fade_out()
 	GlobalHud.ingame_menu_visibility = false
-	GlobalHud.help_button.visible = false
+	GlobalHud.menu_button.visible = false
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("dash") and Input.is_action_pressed("attack"):
-		debug.visible = true
-		debug_2.visible = true
-
+	pass
 func _on_start_pressed() -> void:
 	if Input.is_action_pressed("dash") and Input.is_action_pressed("attack"):
 		fade_in()
@@ -42,11 +36,6 @@ func _on_option_pressed() -> void:
 	tween = create_tween()
 	tween.tween_callback(go_to_options)
 
-func _on_debug_pressed() -> void:
-	fade_in()
-	tween = create_tween()
-	tween.tween_callback(go_to_debug)
-	
 func _on_debug_2_pressed() -> void:
 	fade_in()
 	tween = create_tween()

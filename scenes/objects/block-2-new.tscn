@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1bbfy1kh53dp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
-size = Vector2(200, 200)
+size = Vector2(100, 100)
 
 [node name="block" type="Node2D" unique_id=663636396]
 
@@ -9,7 +9,8 @@ size = Vector2(200, 200)
 show_behind_parent = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=533660394]
-position = Vector2(100, 100)
+z_index = -1
+position = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_3gtdk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1285590486]
@@ -18,8 +19,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 200.0
-offset_bottom = 200.0
+offset_right = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.078941576, 0.15864754, 0.0916402, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)

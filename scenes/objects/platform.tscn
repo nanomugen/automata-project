@@ -6,11 +6,24 @@
 size = Vector2(160, 15)
 
 [sub_resource type="Gradient" id="Gradient_dotdq"]
-offsets = PackedFloat32Array(0.5030366, 1)
-colors = PackedColorArray(0.34611073, 0.28029788, 0.58711326, 1, 0.31918404, 0.1873419, 0.4220398, 0)
+offsets = PackedFloat32Array(0, 0.12820514, 0.5192308, 1)
+colors = PackedColorArray(0.14444613, 0.1966866, 0.2190288, 1, 0.123923235, 0.1705617, 0.19051212, 1, 0.27327767, 0.35537666, 0.39056113, 1, 0.27395758, 0.3574912, 0.39151636, 0.102000006)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8dp8w"]
 gradient = SubResource("Gradient_dotdq")
+width = 160
+height = 50
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Gradient" id="Gradient_8dp8w"]
+offsets = PackedFloat32Array(0.5030366, 1)
+colors = PackedColorArray(0.27450982, 0.35686275, 0.39215687, 1, 0.27395758, 0.3574912, 0.39151636, 0.102000006)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jb4ro"]
+gradient = SubResource("Gradient_8dp8w")
+width = 154
+height = 32
 fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.5, 1)
 
@@ -28,44 +41,18 @@ offset_top = -25.0
 offset_right = 20.0
 offset_bottom = 125.0
 grow_horizontal = 2
-color = Color(0.25766784, 0.4661066, 0.5137611, 0.70000005)
+color = Color(0.25766784, 0.4661066, 0.5137611, 0.21100001)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2042083413]
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_v4t87")
 one_way_collision = true
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=204186535]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -25.0
-offset_right = 75.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.5179158, 0.38410568, 0.7528677, 0.8)
-
-[node name="ColorRect2" type="ColorRect" parent="StaticBody2D" unique_id=347285519]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -25.0
-offset_right = 80.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.4487543, 0.14532694, 0.8106401, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1130862062]
 position = Vector2(-1.4305115e-06, 1.66893e-06)
-scale = Vector2(2.5, 0.78125)
 texture = SubResource("GradientTexture2D_8dp8w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2086020368]
+visible = false
+position = Vector2(-1.4305115e-06, 1.66893e-06)
+texture = SubResource("GradientTexture2D_jb4ro")

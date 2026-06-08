@@ -357,7 +357,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=76626624]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.06288305, 0.18327263, 0.111926906, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="." unique_id=702855495]
 position = Vector2(408.0005, -1200)
@@ -441,7 +441,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D7" unique_id=1978217398]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.06288305, 0.18327263, 0.111926906, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1857118265]
 position = Vector2(-1212.9999, -628.99994)
@@ -455,7 +455,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D8" unique_id=945045425]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=2137513686]
 position = Vector2(-1016, -914.99994)
@@ -468,7 +468,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D10" unique_id=1245906019]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=2105520046]
@@ -482,7 +482,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D11" unique_id=341553318]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1027523006]
@@ -496,7 +496,7 @@ shape = SubResource("RectangleShape2D_vnmkj")
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D12" unique_id=1040939230]
 offset_right = 800.0
 offset_bottom = 100.0
-color = Color(0.0627451, 0.18431373, 0.11372549, 1)
+color = Color(0.12156863, 0.16862746, 0.14901961, 1)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1225324228]
 position = Vector2(-2072, -259)

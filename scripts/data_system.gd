@@ -12,7 +12,7 @@ var DATA_OBJECT: Dictionary = {
 	"player_abillities":{
 		"dash":true,
 		"double_jump":false,
-		"wall_jump":false
+		"wall_slide":false
 	},
 	"phases":{
 		"phase_01":{

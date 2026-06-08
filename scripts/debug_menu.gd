@@ -1,20 +1,21 @@
 extends CanvasLayer
 class_name DebugMenu
 
+@onready var dash_button: CheckButton = $Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/DashButton
+@onready var wall_slide_button: CheckButton = $Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/WallSlideButton
+@onready var double_jump_button: CheckButton = $Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3/DoubleJumpButton
+
 var human:Human
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	human = get_parent().find_children("","Human").get(0)
-	#human = find_children("","Human").get(0)
-	if human != null:
-		print("!=null")
-	else:
-		print("null")
-	pass # Replace with function body.
+	dash_button.button_pressed = human.dash_enabled
+	wall_slide_button.button_pressed = human.wall_slide_enabled
+	double_jump_button.button_pressed = human.second_jump_enabled
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

@@ -2,10 +2,11 @@ class_name Phase
 extends Node2D
 
 @onready var human: Human = $human
-@export var object_discovery:ObjectDiscovery
 @export var start_state: State;
 
 @export var phase_name:String
+
+@export var object_discovery:ObjectDiscovery
 
 
 func _ready() -> void:
@@ -14,15 +15,21 @@ func _ready() -> void:
 	var pos:Vector2 = start_state.initPos + start_state.position;
 	start_state.this_is_current_state = true
 	human.position = pos;
+	print("***********************")
+	if not start_state.is_node_ready():
+		await start_state.ready
+	print("***********************2")
+	object_discovery.state_transition(start_state)
 	
 func _process(_delta: float) -> void:
 	pass
 
 func _on_conclude_phase(conclusion_code:String):
-	if phase_name == "" or phase_name == null:
-		return
+	if phase_name == "" or phase_name == null:return
+	if !DataSystem.DATA_OBJECT["phases"].has(phase_name):return
 	if conclusion_code in ["completed","secret_completed"]:
 		DataSystem.DATA_OBJECT["phases"][phase_name][conclusion_code] = true
 	else:
 		return
 	DataSystem._save()
+	

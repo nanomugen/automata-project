@@ -28,6 +28,10 @@ GlobalHud="*uid://dosv2jc52cjor"
 
 window/size/resizable=false
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 left={

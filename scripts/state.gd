@@ -8,14 +8,13 @@ extends Node2D
 @export var doors:Array[Door]
 @export var human: Human
 
-var object_discovery:ObjectDiscovery
-
+var phase:Phase
 var initPos:Vector2; 
 var current_value:int = 0
 var this_is_current_state:bool = false
 func _ready() -> void:
 	initPos = init.position;
-	object_discovery = get_parent().find_child("object_discovery")
+	phase = get_parent()
 func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("attack") and this_is_current_state:
@@ -65,16 +64,18 @@ func check_exits()->void:
 			transition_next_state(filtered_exits[0])
 
 func transition_next_state(exit:Exit)->void:
-	object_discovery.clear_hud()
+	print("transition_next_state")
 	if exit.is_final :
 		var completion_code =  "secret_completed" if exit.is_secret else "completed"
-		var parent_phase:Phase = get_parent()
-		parent_phase._on_conclude_phase(completion_code) 
+		
+		phase._on_conclude_phase(completion_code) 
 		#####################
 		#isso ta errado, precisa consertar essa lógica, call down, signal up
 		get_tree().change_scene_to_file("res://scenes/menu_screens/congratulations_screen.tscn")
+	print("transition_next_state 2")
 	if exit.nextState == null:
 		return
+	print("transition_next_state 3")
 	for p in points:
 		p.reset_button()
 	for e in exits:
@@ -83,7 +84,7 @@ func transition_next_state(exit:Exit)->void:
 	var pos:Vector2 = exit.nextState.initPos + exit.nextState.position;
 	this_is_current_state = false
 	exit.nextState.this_is_current_state = true
-	
+	phase.object_discovery.state_transition(exit.nextState)
 	var transition_camera:Camera2D = human.get_node("Camera2D")
 	transition_camera.reparent(human.get_parent())
 	transition_camera.position_smoothing_enabled = false

@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://be3l3gl88kqsy" path="res://scripts/phase.gd" id="1_blum4"]
 [ext_resource type="PackedScene" uid="uid://kybt6eqd6gts" path="res://scenes/hud/object_discovery.tscn" id="2_hgg22"]
+[ext_resource type="PackedScene" uid="uid://bbyc5jbuk1e52" path="res://scenes/hud/debug_menu.tscn" id="3_wj08e"]
 
 [node name="phase" type="Node2D" unique_id=43470455 node_paths=PackedStringArray("object_discovery")]
 script = ExtResource("1_blum4")
 object_discovery = NodePath("object_discovery")
 
 [node name="object_discovery" parent="." unique_id=1813055136 instance=ExtResource("2_hgg22")]
+
+[node name="debug_menu" parent="." unique_id=2147356288 instance=ExtResource("3_wj08e")]

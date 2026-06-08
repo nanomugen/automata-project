@@ -1,19 +1,34 @@
-[gd_scene format=3 uid="uid://brkcr0bosmu37"]
+[gd_scene format=3 uid="uid://kybt6eqd6gts"]
 
 [ext_resource type="Script" uid="uid://cqqu30shwdmvg" path="res://scripts/object_discovery.gd" id="1_et362"]
 
 [node name="object_discovery" type="CanvasLayer" unique_id=1813055136]
 script = ExtResource("1_et362")
 
-[node name="Container" type="Container" parent="." unique_id=24429000]
+[node name="Control" type="Control" parent="." unique_id=1473890946]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_behavior_recursive = 1
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=2136530200]
+[node name="Container" type="HFlowContainer" parent="Control" unique_id=1433367881]
+layout_mode = 0
+offset_right = 436.0
+offset_bottom = 373.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Container" unique_id=2136530200]
 layout_mode = 2
 
-[node name="ExitsContainer" type="VBoxContainer" parent="Container/HBoxContainer" unique_id=895789144]
+[node name="ExitsContainer" type="VBoxContainer" parent="Control/Container/HBoxContainer" unique_id=895789144]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="PointsContainer" type="VBoxContainer" parent="Container/HBoxContainer" unique_id=89546331]
+[node name="PointsContainer" type="VBoxContainer" parent="Control/Container/HBoxContainer" unique_id=89546331]
 layout_mode = 2
+size_flags_horizontal = 3

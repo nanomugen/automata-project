@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b5xmj5cowppbn" path="res://scripts/player_hud.gd" id="1_7em14"]
 [ext_resource type="PackedScene" uid="uid://kybt6eqd6gts" path="res://scenes/hud/object_discovery.tscn" id="2_1g7pp"]
-[ext_resource type="Texture2D" uid="uid://bxhvvdolms7ar" path="res://assets/buttons-arrows.png" id="2_3dwfp"]
-[ext_resource type="Texture2D" uid="uid://bp3ytn2su8mvb" path="res://assets/buttons-ctrl.png" id="3_17prt"]
-[ext_resource type="Texture2D" uid="uid://b5ievjcvwy2bk" path="res://assets/button-shift.png" id="4_1g7pp"]
-[ext_resource type="Texture2D" uid="uid://dydngr36br33u" path="res://assets/button-space.png" id="5_byfoi"]
 [ext_resource type="PackedScene" uid="uid://doobevgfv5dwp" path="res://scenes/hud/key_button.tscn" id="6_17prt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fsuj"]
 
 [node name="player_hud" type="CanvasLayer" unique_id=1674099476]
 process_mode = 3
@@ -33,114 +31,7 @@ offset_right = 1594.0
 offset_bottom = 18.0
 scale = Vector2(1, 100)
 
-[node name="discovery" parent="." unique_id=980450785 instance=ExtResource("2_1g7pp")]
-
-[node name="buttons_tutorial" type="Control" parent="." unique_id=1293102824]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -230.0
-offset_right = 572.28564
-offset_bottom = 747.1428
-grow_horizontal = 0
-scale = Vector2(0.2871769, 0.2871769)
-
-[node name="buttons_arrows" type="TextureRect" parent="buttons_tutorial" unique_id=382229908]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 28.0
-offset_right = 370.0
-offset_bottom = 212.0
-texture = ExtResource("2_3dwfp")
-
-[node name="label_arrows" type="Label" parent="buttons_tutorial/buttons_arrows" unique_id=474522519]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 175.0
-offset_top = 4.0
-offset_right = 476.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.27492478, 0.5839723, 0.53651965, 1)
-theme_override_font_sizes/font_size = 48
-text = "MOVEMENTS"
-
-[node name="buttons_ctrl" type="TextureRect" parent="buttons_tutorial" unique_id=1441275244]
-layout_mode = 0
-offset_left = 171.0
-offset_top = 328.0
-offset_right = 271.0
-offset_bottom = 419.0
-texture = ExtResource("3_17prt")
-
-[node name="label_ctrl" type="Label" parent="buttons_tutorial/buttons_ctrl" unique_id=449747759]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 4.0
-offset_right = 407.0
-offset_bottom = 71.0
-theme_override_colors/font_color = Color(0.27492478, 0.5839723, 0.53651965, 1)
-theme_override_font_sizes/font_size = 48
-text = "ACTION"
-
-[node name="buttons_shift" type="TextureRect" parent="buttons_tutorial" unique_id=1357805597]
-layout_mode = 0
-offset_left = 171.0
-offset_top = 429.0
-offset_right = 271.0
-offset_bottom = 521.0
-texture = ExtResource("4_1g7pp")
-
-[node name="label_shift" type="Label" parent="buttons_tutorial/buttons_shift" unique_id=1163985863]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 4.0
-offset_right = 353.0
-offset_bottom = 71.0
-theme_override_colors/font_color = Color(0.27492478, 0.5839723, 0.53651965, 1)
-theme_override_font_sizes/font_size = 48
-text = "DASH"
-
-[node name="buttons_space" type="TextureRect" parent="buttons_tutorial" unique_id=430859713]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 220.0
-offset_right = 348.0
-offset_bottom = 311.0
-texture = ExtResource("5_byfoi")
-
-[node name="label_space" type="Label" parent="buttons_tutorial/buttons_space" unique_id=1465235126]
-layout_mode = 0
-offset_left = 308.0
-offset_top = 4.0
-offset_right = 432.0
-offset_bottom = 71.0
-theme_override_colors/font_color = Color(0.27492478, 0.5839723, 0.53651965, 1)
-theme_override_font_sizes/font_size = 48
-text = "JUMP"
-
-[node name="back_to_menu_button" type="Button" parent="buttons_tutorial" unique_id=1856211902]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -175.42863
-offset_top = -98.57141
-offset_right = 174.57135
-offset_bottom = -18.571411
-grow_horizontal = 2
-grow_vertical = 0
-text = "MAIN MENU"
-
-[node name="help_button" parent="." unique_id=1296764692 instance=ExtResource("6_17prt")]
+[node name="menu_button" parent="." unique_id=1296764692 instance=ExtResource("6_17prt")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -151,12 +42,70 @@ offset_bottom = 22.0
 grow_horizontal = 0
 button_label = " ESC"
 
-[node name="fps" type="Label" parent="." unique_id=1579447104]
-offset_left = 16.0
-offset_top = 106.0
-offset_right = 110.0
-offset_bottom = 151.0
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2133140009]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 287.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0fsuj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1534093960]
+layout_mode = 2
+
+[node name="left_menu_container" type="HBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1215949141]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="object_discovery" parent="PanelContainer/HBoxContainer/left_menu_container" unique_id=1813055136 instance=ExtResource("2_1g7pp")]
+
+[node name="fps" type="Label" parent="PanelContainer/HBoxContainer/left_menu_container" unique_id=1579447104]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.19249818, 0.52413833, 0.18970153, 1)
 theme_override_font_sizes/font_size = 12
 
-[connection signal="pressed" from="buttons_tutorial/back_to_menu_button" to="." method="_on_back_to_menu_button_pressed"]
+[node name="right_menu_container" type="HBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=912594351]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=465840203]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.0
+offset_right = -1.0
+offset_bottom = 286.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=1791361495]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer" unique_id=582566789]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=29075896]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="debug_toggle" type="CheckButton" parent="PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1314799835]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "debug menu"
+
+[node name="help_toggle" type="CheckButton" parent="PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=420035831]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "buttons help"
+
+[node name="fps_toggle" type="CheckButton" parent="PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1345696703]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+text = "show fps"

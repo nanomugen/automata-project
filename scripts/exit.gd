@@ -4,6 +4,7 @@ extends Node2D
 @onready var color_rect: ColorRect = $Area2D/ColorRect
 @onready var label: Label = $Label
 
+signal on_entered_exit_update_exititemhud_signal(exit:Exit)
 
 @export var nextState: State
 @export var goal:int
@@ -12,14 +13,11 @@ extends Node2D
 @export var is_final:bool = false
 @export var is_secret:bool = false
 
-
-var object_discovery:ObjectDiscovery
 var inside_area:bool = false
 var opened:bool = false
 var visited:bool = false
+
 func _ready() -> void:
-	var state_parent:State = get_parent()
-	object_discovery = state_parent.object_discovery
 	color_rect.color =  color_closed
 	label.text = "0/"+str(goal)
 
@@ -44,12 +42,14 @@ func update_opened(current_value) -> void:
 		opened = false
 		color_rect.color = color_closed
 		print("current_value != goal")
-	object_discovery.update_exit(self)
+	on_entered_exit_update_exititemhud_signal.emit(self)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	print("###########################")
+	print("exit: on area")
 	inside_area = true
 	visited = true
-	object_discovery.add_exit(self)
+	on_entered_exit_update_exititemhud_signal.emit(self)
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	inside_area = false

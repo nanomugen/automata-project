@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccuqvqisb7omb" path="res://scripts/main_options.gd" id="1_40rrw"]
 [ext_resource type="PackedScene" uid="uid://iov3r3lk8wlt" path="res://scenes/fade_trasition.tscn" id="2_081xb"]
 
-[node name="main_options_screen" type="Node2D" unique_id=634228196]
+[node name="main_options_screen" type="CanvasLayer" unique_id=808627203]
 script = ExtResource("1_40rrw")
 
 [node name="options_control" type="Control" parent="." unique_id=1266434734]
@@ -11,17 +11,15 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="back_button" type="Button" parent="options_control" unique_id=1397900642]
 layout_mode = 0
-offset_left = 1587.0
-offset_top = 927.0
-offset_right = 1847.0
-offset_bottom = 998.0
+offset_left = 831.0
+offset_top = 536.0
+offset_right = 1091.0
+offset_bottom = 607.0
 text = "BACK TO MAIN MENU"
 
 [node name="fade_trasition" parent="options_control" unique_id=1907557553 instance=ExtResource("2_081xb")]
@@ -30,7 +28,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.0
-offset_bottom = 0.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -55,5 +53,3 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="options_control/back_button" to="." method="_on_back_button_pressed"]
-[connection signal="timeout" from="options_control/fade_trasition/fade_out_timer" to="." method="_on_fade_out_timer_timeout"]
-[connection signal="timeout" from="options_control/fade_trasition/fade_in_timer" to="." method="_on_fade_in_timer_timeout"]

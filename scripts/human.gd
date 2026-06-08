@@ -27,9 +27,9 @@ var is_freezed:bool = false
 
 var direction:Vector2 = Vector2.ZERO
 var wall_slide_direction:int = 0
-var second_jump_enabled:bool = true
-var wall_slide_enabled:bool = true
-var dash_enabled:bool = true
+var second_jump_enabled:bool = false
+var wall_slide_enabled:bool = false
+var dash_enabled:bool = false
 var dashed_on_air:bool = false
 var jumped_once:bool = false
 var jumped_twice:bool = false

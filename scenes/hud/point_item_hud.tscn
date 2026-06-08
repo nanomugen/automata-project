@@ -3,19 +3,27 @@
 [ext_resource type="Script" uid="uid://blgukxw2rp5jo" path="res://scripts/point_item_hud.gd" id="1_x7yhm"]
 
 [node name="point_item_hud" type="Control" unique_id=1831623706]
+custom_minimum_size = Vector2(85, 50)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 85.0
+offset_bottom = 50.0
+size_flags_vertical = 3
 script = ExtResource("1_x7yhm")
 
 [node name="enabled" type="ColorRect" parent="." unique_id=54726654]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
 
 [node name="value" type="Label" parent="." unique_id=288160180]
 layout_mode = 0
-offset_left = 45.0
-offset_right = 99.0
-offset_bottom = 40.0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = 104.0
+offset_bottom = 45.0
 theme_override_colors/font_color = Color(0, 0.45411357, 0.45411357, 1)
 theme_override_font_sizes/font_size = 26
+text = "00"

@@ -65,9 +65,6 @@ button_pressed = true
 layout_mode = 2
 text = "double jump"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1441060741]
-layout_mode = 2
-
 [connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/DashButton" to="." method="_on_dash_button_toggled"]
 [connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/WallSlideButton" to="." method="_on_wall_slide_button_toggled"]
 [connection signal="toggled" from="Control/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer3/DoubleJumpButton" to="." method="_on_double_jump_button_toggled"]
